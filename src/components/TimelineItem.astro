@@ -1,0 +1,28 @@
+---
+interface Props {
+  year: string;
+  title: string;
+  description: string;
+  isLast?: boolean;
+}
+
+const { year, title, description, isLast = false } = Astro.props;
+---
+
+<div class="relative flex gap-6 md:gap-10 pb-12" data-animate>
+  <!-- Timeline Line & Dot -->
+  <div class="flex flex-col items-center shrink-0">
+    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold-400 to-gold-500 flex items-center justify-center shadow-lg shadow-gold-400/20 z-10">
+      <span class="text-xs font-bold text-white font-body">{year}</span>
+    </div>
+    {!isLast && (
+      <div class="w-0.5 flex-1 bg-gradient-to-b from-gold-400/40 to-forest-200/20 mt-2"></div>
+    )}
+  </div>
+
+  <!-- Content Card -->
+  <div class="flex-1 bg-white rounded-xl shadow-sm border border-slate-100 p-5 md:p-6 hover:shadow-md transition-shadow duration-300 -mt-1">
+    <h3 class="text-lg font-heading font-bold text-slate-900 mb-2">{title}</h3>
+    <p class="text-sm text-slate-600 leading-relaxed m-0">{description}</p>
+  </div>
+</div>

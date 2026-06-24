@@ -1,0 +1,31 @@
+---
+interface StatItem {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  stats: readonly StatItem[] | StatItem[];
+}
+
+const { stats } = Astro.props;
+---
+
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+  {stats.map((stat, i) => (
+    <div
+      class:list={[
+        "text-center py-4 lg:py-0",
+        i < stats.length - 1 ? "lg:border-r lg:border-forest-700/40" : "",
+      ]}
+      data-animate
+    >
+      <p class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gold-400 mb-2">
+        {stat.value}
+      </p>
+      <p class="text-xs md:text-sm font-semibold uppercase tracking-[0.15em] text-forest-200/60">
+        {stat.label}
+      </p>
+    </div>
+  ))}
+</div>

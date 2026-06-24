@@ -1,0 +1,47 @@
+---
+interface Props {
+  name: string;
+  image: string;
+  description: string;
+  forms: readonly string[] | string[];
+  grade?: string;
+}
+
+const { name, image, description, forms, grade } = Astro.props;
+---
+
+<div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-slate-100" data-animate>
+  <!-- Image -->
+  <div class="relative overflow-hidden aspect-[4/3]">
+    <img
+      src={image}
+      alt={name}
+      loading="lazy"
+      decoding="async"
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+    />
+    {grade && (
+      <span class="absolute top-4 left-4 bg-forest-900/90 backdrop-blur-sm text-gold-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+        {grade}
+      </span>
+    )}
+  </div>
+
+  <!-- Content -->
+  <div class="p-5 md:p-6">
+    <h3 class="text-lg md:text-xl font-heading font-bold text-slate-900 mb-3">
+      {name}
+    </h3>
+    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+      {description}
+    </p>
+    <!-- Available Forms -->
+    <div class="flex flex-wrap gap-2">
+      {forms.map((form) => (
+        <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-forest-700 bg-forest-50 border border-forest-200 px-3 py-1 rounded-full">
+          {form}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>

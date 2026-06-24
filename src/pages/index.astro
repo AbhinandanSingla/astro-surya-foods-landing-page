@@ -1,50 +1,198 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import MasterLayout from "../layouts/MasterLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import StatsCounter from "../components/StatsCounter.astro";
+import { STATS } from "../consts";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<MasterLayout
+  title="Surya Foods — Milling Excellence Since 1999"
+  description="Surya Foods is a Government of India recognized rice export house, milling premium Basmati rice since 1999. Partner with us for global exports and domestic distribution."
+  transparentNav={true}
+>
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="relative min-h-screen flex items-center">
+    <!-- Background Image -->
+    <img
+      src="https://images.unsplash.com/photo-1536304929831-ee1ca9d44726?w=1920&q=80"
+      alt="Golden rice paddy field at sunset"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-forest-950/95 via-forest-950/80 to-forest-950/50"></div>
+
+    <div class="relative z-10 container-custom py-32 md:py-40">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400 mb-6 animate-fade-in">
+          Government Recognized Export House
+        </p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-[1.1] mb-6">
+          Milling Excellence<br />
+          <span class="text-gradient-gold">Since 1999.</span>
+        </h1>
+        <p class="text-base md:text-lg text-forest-100/80 leading-relaxed mb-10 max-w-xl">
+          From the fertile fields of India to tables across the globe — Surya Foods delivers premium Basmati rice with uncompromising quality and trust.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/global-exports" class="btn-primary">
+            Explore Global Exports
+          </a>
+          <a href="/048-brand" class="btn-secondary">
+            Discover 048 Brand
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 text-white/40">
+      <span class="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-white/40 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ STATS BAR ═══════════════════ -->
+  <section class="bg-forest-900 py-12 md:py-16">
+    <div class="container-custom">
+      <StatsCounter stats={STATS} />
+    </div>
+  </section>
+
+  <!-- ═══════════════════ OUR LEGACY ═══════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Text -->
+        <div data-animate>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">
+            Our Legacy
+          </p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 leading-tight mb-4">
+            The Backbone of India's Rice Industry
+          </h2>
+          <div class="gold-line mb-6"></div>
+          <p class="text-base text-slate-600 leading-relaxed mb-6">
+            For over two decades, Surya Foods has been the silent powerhouse behind some of India's most recognized rice brands. Our state-of-the-art milling and processing infrastructure enables us to deliver consistently superior quality at scale.
+          </p>
+          <p class="text-base text-slate-600 leading-relaxed mb-8">
+            We've built our reputation not on marketing, but on the quality of every grain that leaves our facility. Our clients trust us because we deliver — every shipment, every time, without compromise.
+          </p>
+          <ul class="space-y-3 list-none p-0 m-0">
+            {[
+              "State-of-the-art milling and sortex facilities",
+              "Capacity to process 50,000+ MT annually",
+              "Trusted supplier to India's largest FMCG brands",
+              "Government recognized star export house",
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-forest-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-sm text-slate-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Image -->
+        <div data-animate>
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80"
+              alt="Modern rice processing facility"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-[400px] md:h-[500px] object-cover"
+            />
+            <!-- Decorative Accent -->
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gold-400/20 rounded-2xl -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ BUSINESS PATHWAYS ═══════════════════ -->
+  <section class="section-padding bg-cream">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Partner With Us"
+        title="Two Powerful Avenues"
+        subtitle="Choose the partnership model that fits your business. Whether you operate globally or across India, we have the right program for you."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <!-- Card 1: Global Exports -->
+        <a href="/global-exports" class="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline" data-animate>
+          <img
+            src="https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=800&q=80"
+            alt="Global shipping and exports"
+            loading="lazy"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/40 to-transparent group-hover:from-forest-950/95 transition-all duration-500"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400 mb-2">International Trade</p>
+            <h3 class="text-2xl md:text-3xl font-heading font-bold text-white mb-3">Global Exports</h3>
+            <p class="text-sm text-white/70 mb-4 max-w-sm">
+              Premium Basmati rice for international markets. 1121, 1509, 1718, and Pusa varieties in Raw, Steam, and Sella forms.
+            </p>
+            <span class="inline-flex items-center text-sm font-semibold text-gold-400 group-hover:gap-3 gap-2 transition-all duration-300">
+              Explore Export Program
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Card 2: 048 Brand -->
+        <a href="/048-brand" class="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline" data-animate>
+          <img
+            src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=800&q=80"
+            alt="Premium rice brand 048"
+            loading="lazy"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/40 to-transparent group-hover:from-forest-950/95 transition-all duration-500"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400 mb-2">Domestic Retail</p>
+            <h3 class="text-2xl md:text-3xl font-heading font-bold text-white mb-3">048 Premium Rice</h3>
+            <p class="text-sm text-white/70 mb-4 max-w-sm">
+              Our flagship D2C brand. Majesty and Platinum collections for the discerning Indian household.
+            </p>
+            <span class="inline-flex items-center text-sm font-semibold text-gold-400 group-hover:gap-3 gap-2 transition-all duration-300">
+              Discover 048 Brand
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CTA BANNER ═══════════════════ -->
+  <section class="section-padding bg-forest-900 relative overflow-hidden">
+    <!-- Subtle pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    <div class="relative container-custom text-center max-w-3xl mx-auto" data-animate>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+        Ready to Build a<br />Lasting Partnership?
+      </h2>
+      <p class="text-base md:text-lg text-forest-200/70 mb-10 max-w-xl mx-auto">
+        Whether you're an international broker or a domestic distributor, we'd love to hear from you.
+      </p>
+      <a href="/global-exports#inquiry-form" class="btn-gold">
+        Get In Touch
+      </a>
+    </div>
+  </section>
+</MasterLayout>

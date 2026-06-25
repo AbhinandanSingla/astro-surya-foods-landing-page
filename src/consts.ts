@@ -3,17 +3,18 @@
 
 export const SITE_TITLE = "Surya Foods";
 export const SITE_DESCRIPTION =
-  "Surya Foods is a Government of India recognized rice export house, milling premium Basmati rice since 1999. Partner with us for global exports and domestic distribution.";
+  "Surya Foods is an internationally certified rice export house, milling premium Basmati rice since 1999. Partner with us for global exports and domestic distribution.";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Global Exports", href: "/global-exports" },
   { label: "048 Brand", href: "/048-brand" },
   { label: "Heritage & Quality", href: "/heritage" },
+  { label: "Blog", href: "/blog" },
 ] as const;
 
 export const TRUST_BAR_TEXT =
-  "Government of India Recognized Export House  |  ISO 22000:2018  |  FSSAI Certified";
+  "Trusted Since 1999  |  ISO 22000 Certified  |  Exporting to 15+ Countries";
 
 export const STATS = [
   { value: "25+", label: "Years of Legacy" },
@@ -31,12 +32,12 @@ export const CERTIFICATIONS = [
   {
     name: "FSSAI License",
     description:
-      "Government of India food safety compliance, mandatory for all food manufacturing and processing units.",
+      "India's highest food safety compliance, mandatory for all food manufacturing and processing units.",
   },
   {
-    name: "Govt. Export House",
+    name: "DGFT Registered Exporter",
     description:
-      "Recognized by the Directorate General of Foreign Trade, Ministry of Commerce, Government of India.",
+      "Registered with the Directorate General of Foreign Trade (DGFT) as an established export house.",
   },
   {
     name: "APEDA Registration",
@@ -94,7 +95,7 @@ export const TIMELINE = [
     year: "2015",
     title: "Export House Recognition",
     description:
-      "Recognized by the Government of India as an established export house under DGFT, Ministry of Commerce — a testament to our export excellence.",
+      "Recognized as an established export house under DGFT — a testament to our consistent export excellence and international trade credibility.",
   },
   {
     year: "2018",

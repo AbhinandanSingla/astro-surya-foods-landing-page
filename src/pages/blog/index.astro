@@ -1,0 +1,96 @@
+---
+import MasterLayout from "../../layouts/MasterLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<MasterLayout
+  title="Blog — Surya Foods"
+  description="Industry insights, rice knowledge, and company updates from Surya Foods. Stay informed about Basmati rice trends, quality standards, and global trade."
+>
+  <!-- Hero Banner -->
+  <section class="bg-forest-900 py-16 md:py-20">
+    <div class="container-custom text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400 mb-4">
+        Insights & Updates
+      </p>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">
+        The Surya Foods Blog
+      </h1>
+      <p class="text-base md:text-lg text-forest-200/70 max-w-2xl mx-auto">
+        Industry knowledge, company news, and expert insights from over 25 years in the Basmati rice trade.
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="section-padding bg-cream">
+    <div class="container-custom">
+      {posts.length === 0 ? (
+        <div class="text-center py-20">
+          <p class="text-lg text-slate-500">No articles published yet. Check back soon.</p>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {posts.map((post) => (
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              pubDate={post.data.pubDate}
+              heroImage={post.data.heroImage}
+              category={post.data.category}
+              slug={post.id}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- RSS CTA -->
+  <section class="bg-white py-12 border-t border-slate-100">
+    <div class="container-custom text-center">
+      <p class="text-sm text-slate-500 mb-3">Stay updated with our latest articles</p>
+      <a
+        href="/rss.xml"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-forest-700 hover:text-gold-600 transition-colors no-underline"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6.18 15.64a2.18 2.18 0 012.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 012.18-2.18M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44m0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93v-2.83z" />
+        </svg>
+        Subscribe via RSS
+      </a>
+    </div>
+  </section>
+
+  <!-- Blog listing structured data -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Surya Foods Blog",
+      "description": "Industry insights, rice knowledge, and company updates from Surya Foods.",
+      "url": "https://suryafoods.com/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Surya Foods",
+        "url": "https://suryafoods.com",
+      },
+      "blogPost": posts.map((post) => ({
+        "@type": "BlogPosting",
+        "headline": post.data.title,
+        "description": post.data.description,
+        "datePublished": post.data.pubDate.toISOString(),
+        "url": `https://suryafoods.com/blog/${post.id}`,
+      })),
+    })}
+  />
+</MasterLayout>

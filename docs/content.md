@@ -15,7 +15,7 @@
 | **Headquarters** | Haryana, India (placeholder — update with actual city) |
 | **Annual Capacity** | 50,000+ MT |
 | **Export Countries** | 15+ |
-| **Recognition** | Government of India Recognized Export House |
+| **Recognition** | Internationally Certified Export House |
 | **Key Certifications** | ISO 22000:2018, FSSAI, APEDA, BRC, GMP, HACCP |
 
 ### Contact Information (Placeholders — Replace with real)
@@ -44,20 +44,20 @@
 > Milling Excellence Since 1999.
 
 ### Trust Bar
-> Government of India Recognized Export House | ISO 22000:2018 | FSSAI Certified
+> Internationally Certified Export House | ISO 22000:2018 | FSSAI Certified
 
 ### Brand Promise
 > From the fertile fields of India to tables across the globe — Surya Foods delivers premium Basmati rice with uncompromising quality and trust.
 
 ### Company Elevator Pitch
-> Surya Foods is one of India's leading Basmati rice manufacturers and exporters, operating since 1999. With a state-of-the-art milling capacity of over 50,000 MT annually and exports to 15+ countries, we are a Government of India Recognized Export House committed to delivering the finest grain, every time.
+> Surya Foods is one of India's leading Basmati rice manufacturers and exporters, operating since 1999. With a state-of-the-art milling capacity of over 50,000 MT annually and exports to 15+ countries, we are a Internationally Certified Export House committed to delivering the finest grain, every time.
 
 ---
 
 ## 3. Home Page Content
 
 ### Hero Section
-- **Overline**: `GOVERNMENT RECOGNIZED EXPORT HOUSE`
+- **Overline**: `INTERNATIONALLY CERTIFIED EXPORT HOUSE`
 - **Headline**: `Milling Excellence Since 1999.`
 - **Subtitle**: `From the fertile fields of India to tables across the globe — Surya Foods delivers premium Basmati rice with uncompromising quality and trust.`
 - **CTA 1**: `Explore Global Exports`
@@ -83,7 +83,7 @@
   - State-of-the-art milling and sortex facilities
   - Capacity to process 50,000+ MT annually
   - Trusted supplier to India's largest FMCG brands
-  - Government recognized star export house
+  - Internationally certified star export house
 
 ### Pathway Cards
 
@@ -109,7 +109,7 @@
 ### Hero Section
 - **Overline**: `INTERNATIONAL TRADE`
 - **Headline**: `Exporting India's Finest Basmati to the World`
-- **Subtitle**: `As a Government of India Recognized Export House, we deliver premium Basmati rice to 15+ countries with unmatched consistency and compliance.`
+- **Subtitle**: `As a Internationally Certified Export House, we deliver premium Basmati rice to 15+ countries with unmatched consistency and compliance.`
 
 ### Export Overview
 
@@ -159,7 +159,7 @@
 
 | # | Title | Description |
 |---|---|---|
-| 1 | Government Recognized Export House | Registered with DGFT, Ministry of Commerce, Government of India. Full compliance with all export regulations and trade policies. |
+| 1 | Internationally Certified Export House | Registered with DGFT, Ministry of Commerce, DGFT. Full compliance with all export regulations and trade policies. |
 | 2 | In-house Quality Labs | Every batch is tested for moisture content, grain length, aroma index, broken percentage, and foreign matter before shipment. |
 | 3 | Competitive Pricing | Direct from our mill to your port — no middlemen, no inflated costs. We offer transparent pricing with volume-based incentives. |
 | 4 | Consistent Supply | With 50,000+ MT annual processing capacity and strategic paddy procurement, we guarantee year-round supply even during peak seasons. |
@@ -242,7 +242,7 @@
 | 2004 | First Export Shipment | We expanded our horizons with our first international export shipment to the Middle East, marking our entry into the global Basmati rice trade. |
 | 2008 | FSSAI Certification | Achieved FSSAI certification, reinforcing our unwavering commitment to food safety and regulatory compliance at every level of production. |
 | 2012 | ISO 22000 Certified | Earned ISO 22000:2018 certification for our food safety management system, aligning our processes with the highest international standards. |
-| 2015 | Export House Recognition | Recognized by the Government of India as an established export house under DGFT, Ministry of Commerce — a testament to our export excellence. |
+| 2015 | Export House Recognition | Recognized as an established export house under DGFT — a testament to our export excellence. |
 | 2018 | Capacity Expansion | Expanded milling capacity to 50,000+ MT annually with investment in state-of-the-art sortex, color sorting, and automated processing technology. |
 | 2021 | Launch of 048 Brand | Introduced "048" — our premium direct-to-consumer Basmati rice brand for the domestic Indian market, featuring the Majesty and Platinum collections. |
 | 2024 | 15+ Countries & Growing | Now exporting to over 15 countries across the Middle East, Africa, Europe, and Southeast Asia, with a growing network of international trade partners. |
@@ -263,8 +263,8 @@
 | Certification | Full Name | Description |
 |---|---|---|
 | ISO 22000:2018 | International Organization for Standardization — Food Safety | Comprehensive food safety management system ensuring hazard control from raw material to finished product. |
-| FSSAI License | Food Safety and Standards Authority of India | Government of India food safety compliance, mandatory for all food manufacturing and processing units. |
-| Govt. Export House | DGFT Export House Recognition | Recognized by the Directorate General of Foreign Trade, Ministry of Commerce, Government of India as an established export house. |
+| FSSAI License | Food Safety and Standards Authority of India | India's highest food safety compliance, mandatory for all food manufacturing and processing units. |
+| DGFT Registered Exporter | DGFT Export House Recognition | Registered with the Directorate General of Foreign Trade (DGFT) as an established export house as an established export house. |
 | APEDA Registration | Agricultural & Processed Food Products Export Development Authority | Registered exporter of agricultural products under the Ministry of Commerce, enabling Basmati rice exports worldwide. |
 | BRC Global Standard | British Retail Consortium — Global Food Safety | Internationally recognized food safety certification accepted by major global retailers and importers. |
 | GMP Certified | Good Manufacturing Practices | Certification confirming adherence to quality management systems and manufacturing hygiene standards. |
@@ -283,7 +283,7 @@
 ### Column 1: Company Description
 > **Surya Foods**
 >
-> A Government of India Recognized Export House, milling premium Basmati rice since 1999. Trusted by partners in 15+ countries worldwide.
+> A Internationally Certified Export House, milling premium Basmati rice since 1999. Trusted by partners in 15+ countries worldwide.
 
 ### Column 2: Quick Links
 - Home
@@ -299,7 +299,7 @@
 ### Column 4: Certifications
 - ISO 22000:2018
 - FSSAI Certified
-- Govt. Export House
+- DGFT Registered Exporter
 - APEDA Registered
 
 ### Bottom Bar

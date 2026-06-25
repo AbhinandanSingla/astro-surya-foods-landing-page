@@ -8,7 +8,8 @@ interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image = "/og-default.jpg" } = Astro.props;
+const { title, description, image = "/og-default.png" } = Astro.props;
+const ogImageURL = new URL(image, Astro.url);
 ---
 
 <!-- Global Metadata -->
@@ -16,6 +17,7 @@ const { title, description, image = "/og-default.jpg" } = Astro.props;
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#1a3a2a" />
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,34 +30,73 @@ const { title, description, image = "/og-default.jpg" } = Astro.props;
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
+<!-- RSS Feed Discovery -->
+<link rel="alternate" type="application/rss+xml" title="Surya Foods Blog" href="/rss.xml" />
+
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="author" content="Surya Foods" />
+<meta name="keywords" content="Basmati rice, rice exporter, rice manufacturer, 1121 Basmati, premium rice, India rice export, Surya Foods, 048 rice" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={ogImageURL} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Surya Foods" />
+<meta property="og:locale" content="en_US" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={ogImageURL} />
 
-<!-- Structured Data -->
+<!-- Structured Data: Organization -->
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Surya Foods",
-  "description": "Government of India Recognized Export House — Premium Basmati Rice Manufacturer & Exporter since 1999.",
+  "description": "Internationally Certified Export House — Premium Basmati Rice Manufacturer & Exporter since 1999.",
   "url": "https://suryafoods.com",
+  "logo": "https://suryafoods.com/og-default.png",
   "foundingDate": "1999",
   "industry": "Rice Manufacturing & Export",
   "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 100 },
-  "areaServed": "Worldwide"
+  "areaServed": "Worldwide",
+  "sameAs": [
+    "https://linkedin.com/company/suryafoods",
+    "https://instagram.com/suryafoods"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Sales & Export Inquiries",
+    "email": "exports@suryafoods.com",
+    "availableLanguage": ["English", "Hindi"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Karnal",
+    "addressRegion": "Haryana",
+    "addressCountry": "IN"
+  }
+})} />
+
+<!-- Structured Data: WebSite (for sitelinks search) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Surya Foods",
+  "url": "https://suryafoods.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://suryafoods.com/blog?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 })} />

@@ -117,7 +117,7 @@ interface Props {
 ```
 <header>
   ├── Trust Bar (always visible)
-  │   └── "Government of India Recognized Export House | ISO 22000:2018 | FSSAI Certified"
+  │   └── "Internationally Certified Export House | ISO 22000:2018 | FSSAI Certified"
   │
   ├── Nav Bar (sticky)
   │   ├── Logo ("SURYA FOODS" text)
@@ -193,7 +193,7 @@ None — uses constants from `consts.ts`.
   ├── Column 4: Certifications
   │   ├── ISO 22000:2018
   │   ├── FSSAI Certified
-  │   ├── Govt. Export House
+  │   ├── DGFT Registered Exporter
   │   └── APEDA Registered
   │
   ├── Divider (gold accent line)

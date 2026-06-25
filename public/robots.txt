@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://suryafoods.com/sitemap-index.xml
+
+# LLM Context
+# See /llms.txt for AI-friendly site information

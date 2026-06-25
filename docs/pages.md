@@ -21,7 +21,7 @@ All pages use `MasterLayout` with `transparentNav={true}`.
 
 **File**: `src/pages/index.astro`  
 **Title**: `Surya Foods — Milling Excellence Since 1999`  
-**Description**: `Surya Foods is a Government of India recognized rice export house, milling premium Basmati rice since 1999. Partner with us for global exports and domestic distribution.`
+**Description**: `Surya Foods is a internationally certified rice export house, milling premium Basmati rice since 1999. Partner with us for global exports and domestic distribution.`
 
 ### Section 1: Hero (Full Screen)
 
@@ -33,7 +33,7 @@ All pages use `MasterLayout` with `transparentNav={true}`.
 | **Content position** | Left-aligned, vertically centered |
 
 **Content:**
-- Overline: `GOVERNMENT RECOGNIZED EXPORT HOUSE`
+- Overline: `INTERNATIONALLY CERTIFIED EXPORT HOUSE`
 - H1: `Milling Excellence Since 1999.`
 - Subtitle: `From the fertile fields of India to tables across the globe — Surya Foods delivers premium Basmati rice with uncompromising quality and trust.`
 - CTA 1 (Primary): `Explore Global Exports` → `/global-exports`
@@ -71,7 +71,7 @@ Uses `StatsCounter` component.
   - State-of-the-art milling and sortex facilities
   - Capacity to process 50,000+ MT annually
   - Trusted supplier to India's largest FMCG brands
-  - Government recognized star export house
+  - Internationally certified star export house
 - **Image**: Modern rice mill factory interior or sortex machinery
 
 ### Section 4: Business Pathways
@@ -119,7 +119,7 @@ Both cards use hover effects: overlay darkens, text slides up slightly, subtle s
 
 **File**: `src/pages/global-exports.astro`  
 **Title**: `Global Exports — Surya Foods`  
-**Description**: `Export premium Indian Basmati rice worldwide. Surya Foods offers 1121, 1509, 1718, and Pusa Basmati in Raw, Steam, and Sella forms. Government recognized export house.`
+**Description**: `Export premium Indian Basmati rice worldwide. Surya Foods offers 1121, 1509, 1718, and Pusa Basmati in Raw, Steam, and Sella forms. Internationally certified export house.`
 
 ### Section 1: Hero (70vh)
 
@@ -132,7 +132,7 @@ Both cards use hover effects: overlay darkens, text slides up slightly, subtle s
 **Content:**
 - Overline: `INTERNATIONAL TRADE`
 - H1: `Exporting India's Finest Basmati to the World`
-- Subtitle: `As a Government of India Recognized Export House, we deliver premium Basmati rice to 15+ countries with unmatched consistency and compliance.`
+- Subtitle: `As a Internationally Certified Export House, we deliver premium Basmati rice to 15+ countries with unmatched consistency and compliance.`
 
 ### Section 2: Export Overview
 
@@ -204,7 +204,7 @@ Uses `ProductCard` component for each.
 - Image: Rice quality lab / testing / modern factory
 - H2: `The Surya Foods Advantage`
 - Feature list with icons:
-  1. **Government Recognized Export House** — Registered with DGFT, Ministry of Commerce
+  1. **Internationally Certified Export House** — Registered with DGFT, Ministry of Commerce
   2. **In-house Quality Labs** — Every batch tested for moisture, grain length, aroma, and purity
   3. **Competitive Pricing** — Direct from mill to port, eliminating middlemen
   4. **Consistent Supply** — 50,000+ MT annual processing capacity ensures year-round availability
@@ -373,7 +373,7 @@ Uses `LeadForm` component with `formType="distributor"`.
 | `2004` | `First Export Shipment` | Expanded horizons with our first international export shipment to the Middle East, marking our entry into global markets. |
 | `2008` | `FSSAI Certification` | Achieved FSSAI certification, reinforcing our commitment to food safety and regulatory compliance. |
 | `2012` | `ISO 22000:2018 Certified` | Earned ISO 22000 certification for our food safety management system, meeting international standards. |
-| `2015` | `Government Export House Recognition` | Recognized by the Government of India as an established export house under DGFT. |
+| `2015` | `Export House Recognition` | Recognized as an established export house under DGFT. |
 | `2018` | `Capacity Expansion` | Expanded milling capacity to 50,000+ MT annually with state-of-the-art sortex and processing technology. |
 | `2021` | `Launch of 048 Brand` | Introduced "048" — our premium D2C Basmati rice brand for the domestic Indian market. |
 | `2024` | `15+ Countries & Growing` | Now exporting to over 15 countries across the Middle East, Africa, Europe, and Southeast Asia. |
@@ -416,7 +416,7 @@ Uses `LeadForm` component with `formType="distributor"`.
 |---|---|
 | `ISO 22000:2018` | International food safety management system certification |
 | `FSSAI License` | Food Safety and Standards Authority of India compliance |
-| `Govt. Export House` | Government of India recognized export house under DGFT |
+| `DGFT Registered Exporter` | internationally certified export house under DGFT |
 | `APEDA Registration` | Agricultural and Processed Food Products Export Development Authority |
 | `BRC Global Standard` | British Retail Consortium global food safety standard |
 | `GMP Certified` | Good Manufacturing Practices certification |
@@ -441,7 +441,7 @@ Uses `LeadForm` component with `formType="distributor"`.
 
 ### Trust Bar (all pages)
 ```
-"Government of India Recognized Export House  |  ISO 22000:2018  |  FSSAI Certified"
+"Internationally Certified Export House  |  ISO 22000:2018  |  FSSAI Certified"
 ```
 - Always visible at the very top
 - Font: 11px uppercase, letter-spacing wide
@@ -500,7 +500,7 @@ See `components.md` → Footer section.
 
 | Page | Title | Meta Description | OG Image |
 |---|---|---|---|
-| Home | `Surya Foods — Milling Excellence Since 1999` | `Surya Foods is a Government of India recognized rice export house, milling premium Basmati rice since 1999. Partner with us for global exports and domestic distribution.` | Hero image |
-| Global Exports | `Global Exports — Surya Foods` | `Export premium Indian Basmati rice worldwide. 1121, 1509, 1718, and Pusa Basmati in Raw, Steam, and Sella forms. Government recognized export house.` | Shipping image |
+| Home | `Surya Foods — Milling Excellence Since 1999` | `Surya Foods is a internationally certified rice export house, milling premium Basmati rice since 1999. Partner with us for global exports and domestic distribution.` | Hero image |
+| Global Exports | `Global Exports — Surya Foods` | `Export premium Indian Basmati rice worldwide. 1121, 1509, 1718, and Pusa Basmati in Raw, Steam, and Sella forms. Internationally certified export house.` | Shipping image |
 | 048 Brand | `048 Premium Rice — Surya Foods` | `Discover 048 by Surya Foods — premium Basmati rice for the Indian household. Majesty and Platinum collections for Pan-India distribution.` | Brand image |
 | Heritage | `Heritage & Quality — Surya Foods` | `Since 1999, Surya Foods has been a pillar of India's rice industry. Explore our journey, certifications, and quality standards.` | Heritage image |

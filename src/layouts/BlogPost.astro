@@ -1,0 +1,168 @@
+---
+import MasterLayout from "./MasterLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  heroImage?: string;
+  author: string;
+  category: string;
+  tags: string[];
+}
+
+const { title, description, pubDate, updatedDate, heroImage, author, category, tags } = Astro.props;
+
+const formattedPubDate = pubDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const formattedUpdatedDate = updatedDate?.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+// Estimate reading time from the slot content
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<MasterLayout
+  title={`${title} — Surya Foods Blog`}
+  description={description}
+  image={heroImage}
+>
+  <article class="bg-white">
+    <!-- Hero Image -->
+    {heroImage && (
+      <div class="relative w-full h-[300px] md:h-[450px] overflow-hidden">
+        <img
+          src={heroImage}
+          alt={title}
+          class="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-950/60 via-transparent to-transparent"></div>
+      </div>
+    )}
+
+    <!-- Article Header -->
+    <div class="container-custom max-w-3xl mx-auto px-4 sm:px-6">
+      <header class={heroImage ? "-mt-20 relative z-10" : "pt-12"}>
+        <div class={heroImage ? "bg-white rounded-2xl shadow-xl p-6 md:p-10" : ""}>
+          <!-- Category Badge -->
+          <span class="inline-block text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-600 bg-gold-50 px-3 py-1 rounded-full mb-4">
+            {category}
+          </span>
+
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-900 leading-tight mb-4">
+            {title}
+          </h1>
+
+          <p class="text-base md:text-lg text-slate-500 leading-relaxed mb-6">
+            {description}
+          </p>
+
+          <!-- Meta Bar -->
+          <div class="flex flex-wrap items-center gap-4 text-sm text-slate-400 border-t border-slate-100 pt-4">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span>{author}</span>
+            </div>
+            <span class="text-slate-200">|</span>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <time datetime={pubDate.toISOString()}>{formattedPubDate}</time>
+            </div>
+            {formattedUpdatedDate && (
+              <>
+                <span class="text-slate-200">|</span>
+                <span class="text-forest-600 text-xs">Updated: {formattedUpdatedDate}</span>
+              </>
+            )}
+          </div>
+        </div>
+      </header>
+
+      <!-- Article Body -->
+      <div class="prose prose-lg prose-slate max-w-none py-10 md:py-14
+        prose-headings:font-heading prose-headings:text-slate-900 prose-headings:font-bold
+        prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-3
+        prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+        prose-p:text-slate-600 prose-p:leading-relaxed
+        prose-a:text-forest-600 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-forest-800 hover:prose-a:underline
+        prose-strong:text-slate-800
+        prose-ul:text-slate-600 prose-ol:text-slate-600
+        prose-li:marker:text-gold-500
+        prose-blockquote:border-l-gold-400 prose-blockquote:bg-cream prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:not-italic
+        prose-table:border-collapse prose-th:bg-forest-50 prose-th:text-forest-800 prose-th:font-semibold prose-th:text-left prose-th:px-4 prose-th:py-3 prose-td:px-4 prose-td:py-3 prose-td:border-b prose-td:border-slate-100
+        prose-img:rounded-xl prose-img:shadow-lg
+        prose-hr:border-slate-100
+      ">
+        <slot />
+      </div>
+
+      <!-- Tags -->
+      {tags.length > 0 && (
+        <div class="border-t border-slate-100 py-8">
+          <div class="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span class="text-xs font-medium text-forest-700 bg-forest-50 px-3 py-1.5 rounded-full">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Back to Blog -->
+      <div class="border-t border-slate-100 py-8 mb-8">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-forest-600 hover:text-forest-800 transition-colors no-underline"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+          Back to all articles
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Article Structured Data -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": title,
+      "description": description,
+      "image": heroImage,
+      "datePublished": pubDate.toISOString(),
+      "dateModified": (updatedDate ?? pubDate).toISOString(),
+      "author": {
+        "@type": "Organization",
+        "name": author,
+        "url": "https://suryafoods.com",
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Surya Foods",
+        "url": "https://suryafoods.com",
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": canonicalURL.href,
+      },
+    })}
+  />
+</MasterLayout>

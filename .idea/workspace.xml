@@ -1,4 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{}</component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3810d00-313f-46bc-94ff-9d3c18668a49" name="Changes" comment="feat: add floating contact buttons, update footer and header with contact info, and enhance documentation" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/Users/deepusingla/github/astro-surya-foods-landing-page" value="3FzbEpWBuoAECkP4UagFviJEShH" />
+    </persistenceIdMap>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AbhinandanSingla"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AbhinandanSingla/astro-surya-foods-landing-page.git",
+    "accountId": "53e89b25-8c9e-4eda-b649-f05431fb02c2"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="3FzbEpWBuoAECkP4UagFviJEShH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/deepusingla/github/astro-surya-foods-landing-page",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/Users/deepusingla/github/astro-surya-foods-landing-page/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
+        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3810d00-313f-46bc-94ff-9d3c18668a49" name="Changes" comment="" />
+      <created>1783080736344</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783080736344</updated>
+      <workItem from="1783080737743" duration="684000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: add floating contact buttons, update footer and header with contact info, and enhance documentation">
+      <option name="closed" value="true" />
+      <created>1783080760101</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1783080760101</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: add floating contact buttons, update footer and header with contact info, and enhance documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add floating contact buttons, update footer and header with contact info, and enhance documentation" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
 </project>

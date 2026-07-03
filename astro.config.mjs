@@ -8,7 +8,7 @@ import keystatic from "@keystatic/astro";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://suryafoods.com",
+	site: "https://suryafoodspatran.com",
 	integrations: [sitemap(), react(), keystatic()],
 	vite: {
 		plugins: [tailwindcss()],

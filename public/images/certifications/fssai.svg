@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <circle cx="60" cy="60" r="56" stroke="#1a6b3c" stroke-width="3" fill="#eef8f0"/>
+  <circle cx="60" cy="60" r="48" stroke="#d4a853" stroke-width="1.5" fill="white"/>
+  <text x="60" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="#1a6b3c">FSSAI</text>
+  <text x="60" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">FOOD SAFETY</text>
+  <text x="60" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">CERTIFIED</text>
+  <path d="M50 90 L55 95 L70 80" stroke="#1a6b3c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

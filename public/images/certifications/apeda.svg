@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <circle cx="60" cy="60" r="56" stroke="#ff6f00" stroke-width="3" fill="#fff8e1"/>
+  <circle cx="60" cy="60" r="48" stroke="#d4a853" stroke-width="1.5" fill="white"/>
+  <text x="60" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="#ff6f00">APEDA</text>
+  <text x="60" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">REGISTERED</text>
+  <text x="60" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">EXPORTER</text>
+  <path d="M50 88 L55 93 L70 78" stroke="#ff6f00" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

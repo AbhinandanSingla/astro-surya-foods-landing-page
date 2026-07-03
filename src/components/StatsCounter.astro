@@ -2,6 +2,7 @@
 interface StatItem {
   value: string;
   label: string;
+  icon?: string;
 }
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
 const { stats } = Astro.props;
 ---
 
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-0">
   {stats.map((stat, i) => (
     <div
       class:list={[
@@ -20,6 +21,7 @@ const { stats } = Astro.props;
       ]}
       data-animate
     >
+      {stat.icon && <Fragment set:html={stat.icon} />}
       <p class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gold-400 mb-2">
         {stat.value}
       </p>

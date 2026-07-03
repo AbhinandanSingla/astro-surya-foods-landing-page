@@ -18,6 +18,8 @@
 | `ProductCard` | `src/components/ProductCard.astro` | Rice grade card | Global Exports |
 | `TimelineItem` | `src/components/TimelineItem.astro` | Heritage timeline entry | Heritage |
 | `CertificationBadge` | `src/components/CertificationBadge.astro` | Certification display card | Heritage |
+| `BlogCard` | `src/components/BlogCard.astro` | Blog post preview card | Blog, Home |
+| `FloatingContact` | `src/components/FloatingContact.astro` | Fixed sidebar/bottom contact buttons (WhatsApp, Call, Inquiry, Location) | All pages (via MasterLayout) |
 | `MasterLayout` | `src/layouts/MasterLayout.astro` | Global page wrapper | All pages |
 
 ---

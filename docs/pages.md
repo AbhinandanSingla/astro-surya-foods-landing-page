@@ -338,23 +338,44 @@ Uses `LeadForm` component with `formType="distributor"`.
 ## 5. Heritage & Quality Page (`/heritage`)
 
 **File**: `src/pages/heritage.astro`  
-**Title**: `Heritage & Quality — Surya Foods`  
-**Description**: `Since 1999, Surya Foods has been a pillar of India's rice industry. Explore our journey, quality standards, and certifications that make us a trusted export partner.`
+**Title**: `Heritage & Quality — Surya Foods | The Singla Family Legacy`  
+**Description**: `From Luv Khush Pvt in 2002 to Surya Foods today — discover the Singla family's two-decade journey in India's rice industry. Trusted by KRBL, LT Foods, and more.`
 
 ### Section 1: Hero (70vh)
 
 | Property | Value |
 |---|---|
 | **Height** | `min-h-[70vh]` |
-| **Background** | Vintage rice mill / heritage agriculture / sepia-toned fields |
+| **Background** | `/images/gallery/rice-paddy.jpg` (local generated image) |
 | **Overlay** | Dark gradient |
 
 **Content:**
-- Overline: `ESTABLISHED 1999`
-- H1: `A Legacy Built on Quality`
-- Subtitle: `For over two decades, Surya Foods has been synonymous with trust, quality, and excellence in India's rice industry.`
+- Overline: `A FAMILY LEGACY SINCE 2002`
+- H1: `The Singla Family Rice Legacy`
+- Subtitle: `From a small milling unit to a global export powerhouse — two decades of passion, quality, and trust in every grain.`
 
-### Section 2: Company Timeline
+### Section 2: About Us / Our Story
+
+| Property | Value |
+|---|---|
+| **Background** | `bg-white` |
+| **Layout** | 2-column grid (text + factory image) |
+
+**Content:**
+- Overline: `ABOUT US`
+- H2: `The Story of the Singla Family`
+- Narrative paragraphs covering: 2002 Luv Khush Pvt founding → KRBL partnership → 2007 Sangam Pvt → 2013 Surya Foods establishment → 25+ countries today
+
+### Section 3: Trusted By
+
+| Property | Value |
+|---|---|
+| **Background** | `bg-cream` |
+| **Layout** | Centered flex-wrap client name cards |
+
+**Clients:** KRBL (India Gate), LT Foods (Daawat), Kohinoor Foods, Lal Qilla, Best Foods
+
+### Section 4: Company Timeline
 
 | Property | Value |
 |---|---|
@@ -369,14 +390,15 @@ Uses `LeadForm` component with `formType="distributor"`.
 
 | Year | Title | Description |
 |---|---|---|
-| `1999` | `The Beginning` | Surya Foods founded with a small milling unit in Haryana, driven by a vision to deliver quality rice to every corner of India. |
-| `2004` | `First Export Shipment` | Expanded horizons with our first international export shipment to the Middle East, marking our entry into global markets. |
-| `2008` | `FSSAI Certification` | Achieved FSSAI certification, reinforcing our commitment to food safety and regulatory compliance. |
-| `2012` | `ISO 22000:2018 Certified` | Earned ISO 22000 certification for our food safety management system, meeting international standards. |
-| `2015` | `Export House Recognition` | Recognized as an established export house under DGFT. |
-| `2018` | `Capacity Expansion` | Expanded milling capacity to 50,000+ MT annually with state-of-the-art sortex and processing technology. |
-| `2021` | `Launch of 048 Brand` | Introduced "048" — our premium D2C Basmati rice brand for the domestic Indian market. |
-| `2024` | `15+ Countries & Growing` | Now exporting to over 15 countries across the Middle East, Africa, Europe, and Southeast Asia. |
+| `2002` | `The Singla Family Enters the Rice Industry` | Established Luv Khush Pvt Ltd — first milling unit. |
+| `2005` | `Trusted by India's Biggest Brands` | Became supplier to KRBL (India Gate) and other FMCG players. |
+| `2007` | `Sangam Pvt — A New Chapter` | Separated and established Sangam Pvt Ltd independently. |
+| `2010` | `First International Exports` | First export shipments to the Middle East. |
+| `2013` | `Surya Foods is Born` | State-of-the-art rice milling facility established by the Singla family. |
+| `2016` | `FSSAI & ISO 22000 Certified` | Both certifications earned for food safety and quality management. |
+| `2018` | `Export House Recognition` | Recognized under DGFT and registered with APEDA. |
+| `2021` | `Launch of 048 Brand` | Premium D2C Basmati rice brand with Majesty and Platinum collections. |
+| `2024` | `25+ Countries & Growing` | Exporting to 25+ countries across the Middle East, Africa, Europe, and SE Asia. |
 
 ### Section 3: Our Process
 

@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FloatingContact from "../components/FloatingContact.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 
 interface Props {
   title: string;
@@ -36,6 +37,7 @@ const { title, description, image, transparentNav = false } = Astro.props;
 
     <Footer />
     <FloatingContact />
+    <CookieBanner />
 
     <!-- Global scroll animation observer -->
     <script>

@@ -10,9 +10,9 @@ category: "Company News"
 
 # From Paddy to Plate: The Surya Foods Story
 
-In 1999, in the heart of India's rice belt in Haryana, a small milling unit began operations with a bold vision — to deliver the highest quality Basmati rice to every corner of the globe. That unit was the seed of what would become **Surya Foods**, one of India's most trusted names in premium rice manufacturing and export.
+In 2002, in the heart of India's rice belt, a small milling unit began operations with a bold vision — to deliver the highest quality Basmati rice to every corner of the globe. That unit was the seed of what would become **Surya Foods**, one of India's most trusted names in premium rice manufacturing and export.
 
-## The Early Years (1999–2004)
+## The Early Years (2002–2007)
 
 The journey began with a single-line milling operation, processing locally sourced paddy from the fertile fields surrounding Karnal — often called the "Rice Bowl of India." From the very first batch, the focus was clear: **quality over quantity**.
 

@@ -146,7 +146,7 @@ MasterLayout.astro
 
 ### No Server-Side Data Fetching
 This is a purely static site. All content is hardcoded in:
-- **`src/consts.ts`** — site-wide constants (title, description, nav links, stats, certifications list)
+- **`src/consts.ts`** — site-wide constants (title, description, nav links, stats, certifications, timeline, trusted clients, gallery images, key to success, quotes, languages, contact info)
 - **Page files** — page-specific content is written directly in each `.astro` page
 - **Component props** — data is passed via Astro component props
 

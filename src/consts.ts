@@ -3,11 +3,11 @@
 
 export const SITE_TITLE = "Surya Foods";
 export const SITE_DESCRIPTION =
-  "Surya Foods is an internationally certified rice export house, milling premium Basmati rice since 1999. Partner with us for global exports and domestic distribution.";
+  "Surya Foods is a trusted rice manufacturer and exporter, milling premium Basmati rice since 2002. Partner with us for global exports and domestic distribution.";
 
 export const PHONE_NUMBER = "+919779204835";
 export const WHATSAPP_NUMBER = "919779204835";
-export const EMAIL = "exports@suryafoods.com";
+export const EMAIL = "contact@suryafoodspatran.com";
 export const MILL_ADDRESS = "Bishanpur Alias Banwala, Punjab, India";
 export const MILL_MAP_QUERY = "Bishanpur+Alias+Banwala+Punjab+India";
 
@@ -26,7 +26,7 @@ export const LANGUAGES = [
 ] as const;
 
 export const TRUST_BAR_TEXT =
-  "Trusted Since 1999  |  ISO 22000 Certified  |  Exporting to 25+ Countries";
+  "Trusted Since 2002  |  ISO 22000 Certified  |  Exporting to 25+ Countries";
 
 export const STATS = [
   { 
@@ -101,53 +101,67 @@ export const CERTIFICATIONS = [
 
 export const TIMELINE = [
   {
-    year: "1999",
-    title: "The Beginning",
+    year: "2002",
+    title: "The Singla Family Enters the Rice Industry",
     description:
-      "Surya Foods was founded with a small milling unit in Haryana, driven by a singular vision — to deliver the highest quality rice to every corner of India.",
+      "The Singla family began their journey in the rice industry by establishing Luv Khush Pvt Ltd — their first rice milling and processing unit. With a vision of delivering premium quality Basmati rice, the family laid the foundation of what would become a multi-decade legacy.",
   },
   {
-    year: "2004",
-    title: "First Export Shipment",
+    year: "2005",
+    title: "Trusted by India's Biggest Brands",
     description:
-      "We expanded our horizons with our first international export shipment to the Middle East, marking our entry into the global Basmati rice trade.",
+      "Within just a few years, the quality of our rice caught the attention of India's largest rice companies. We became a trusted supplier to KRBL (India Gate), one of India's most recognized rice brands, along with other major FMCG players.",
   },
   {
-    year: "2008",
-    title: "FSSAI Certification",
+    year: "2007",
+    title: "Sangam Pvt — A New Chapter",
     description:
-      "Achieved FSSAI certification, reinforcing our unwavering commitment to food safety and regulatory compliance at every level of production.",
+      "The Singla family separated from the original unit and established Sangam Pvt Ltd as an independent rice milling operation. This new venture allowed them to scale operations, invest in modern machinery, and serve a growing domestic and international clientele.",
   },
   {
-    year: "2012",
-    title: "ISO 22000 Certified",
+    year: "2010",
+    title: "First International Exports",
     description:
-      "Earned ISO 22000:2018 certification for our food safety management system, aligning our processes with the highest international standards.",
+      "Sangam Pvt ventured into global markets with its first export shipments to the Middle East, marking the family's entry into the international Basmati rice trade and building relationships that continue to this day.",
   },
   {
-    year: "2015",
-    title: "Export House Recognition",
+    year: "2013",
+    title: "Surya Foods is Born",
     description:
-      "Recognized as an established export house under DGFT — a testament to our consistent export excellence and international trade credibility.",
+      "The Singla family established Surya Foods — a state-of-the-art rice milling and processing facility built from the ground up. Equipped with the latest sortex, color sorting, and automated processing technology, Surya Foods represented the family's vision of world-class rice manufacturing.",
+  },
+  {
+    year: "2016",
+    title: "FSSAI & ISO 22000 Certified",
+    description:
+      "Surya Foods earned both FSSAI and ISO 22000:2018 certifications, reinforcing the company's unwavering commitment to food safety, quality management, and international compliance standards.",
   },
   {
     year: "2018",
-    title: "Capacity Expansion",
+    title: "Export House Recognition",
     description:
-      "Expanded milling capacity to 50,000+ MT annually with investment in state-of-the-art sortex, color sorting, and automated processing technology.",
+      "Recognized as an established export house under DGFT and registered with APEDA — a testament to Surya Foods' consistent export excellence and international trade credibility.",
   },
   {
     year: "2021",
     title: "Launch of 048 Brand",
     description:
-      'Introduced "048" — our premium direct-to-consumer Basmati rice brand for the domestic Indian market.',
+      'Introduced "048" — our premium direct-to-consumer Basmati rice brand for the domestic Indian market, offering Majesty and Platinum collections.',
   },
   {
     year: "2024",
-    title: "15+ Countries & Growing",
+    title: "25+ Countries & Growing",
     description:
-      "Now exporting to over 15 countries across the Middle East, Africa, Europe, and Southeast Asia.",
+      "Now exporting to over 25 countries across the Middle East, Africa, Europe, and Southeast Asia. Surya Foods continues the Singla family's legacy of delivering excellence, one grain at a time.",
   },
+] as const;
+
+export const TRUSTED_CLIENTS = [
+  "KRBL (India Gate)",
+  "LT Foods (Daawat)",
+  "Kohinoor Foods",
+  "Lal Qilla",
+  "Best Foods",
 ] as const;
 
 export const PRODUCTS = [

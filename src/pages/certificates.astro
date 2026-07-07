@@ -1,0 +1,107 @@
+---
+import MasterLayout from "../layouts/MasterLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { CERTIFICATIONS_DISPLAY, QUOTES } from "../consts";
+
+// Combine the display data with descriptions
+const certificatesData = CERTIFICATIONS_DISPLAY.map(cert => {
+  let description = "";
+  switch(cert.name) {
+    case "ISO 22000": description = "Comprehensive food safety management system ensuring hazard control from raw material to finished product."; break;
+    case "FSSAI": description = "India's highest food safety compliance, mandatory for all food manufacturing and processing units."; break;
+    case "HACCP": description = "Systematic preventive approach to food safety, identifying and controlling hazards."; break;
+    case "HALAL": description = "Certified to meet Islamic dietary guidelines, ensuring food purity and permissible preparation."; break;
+    case "KOSHER": description = "Certified to comply with Jewish dietary regulations for food preparation and processing."; break;
+    case "GMP": description = "Certification confirming adherence to quality management systems and manufacturing hygiene standards."; break;
+    case "USFDA": description = "Registered with the U.S. Food and Drug Administration, ensuring compliance for the American market."; break;
+    case "BRC": description = "Internationally recognized food safety certification accepted by major global retailers."; break;
+    case "APEDA": description = "Registered exporter of agricultural products under the Ministry of Commerce."; break;
+    default: description = "Recognized certification for quality and food safety.";
+  }
+  return { ...cert, description };
+});
+---
+
+<MasterLayout
+  title="Certificates Gallery | Surya Foods"
+  description="Explore the internationally recognized certifications that guarantee Surya Foods' commitment to quality, safety, and excellence."
+  transparentNav={true}
+>
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="relative min-h-[70vh] flex items-center pt-24">
+    <!-- Background Image -->
+    <img
+      src="/images/gallery/factory-3.jpg"
+      alt="Quality control laboratory"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-forest-950/95 via-forest-950/80 to-forest-950/40"></div>
+
+    <div class="relative z-10 container-custom py-20">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400 mb-4 animate-fade-in">
+          TRUST & COMPLIANCE
+        </p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-[1.1] mb-6">
+          Our Certifications
+        </h1>
+        <p class="text-base md:text-lg text-forest-100/90 leading-relaxed mb-8 max-w-xl">
+          At Surya Foods, quality is more than a promise—it's our foundation. Discover the globally recognized standards of excellence that govern every grain we process.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ GALLERY ═══════════════════ -->
+  <section class="section-padding bg-cream min-h-screen">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Quality Assurance"
+        title="Standards of Excellence"
+        subtitle="We maintain the strictest food safety protocols and hold certifications required for premium markets worldwide."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12">
+        {certificatesData.map((cert) => (
+          <div class="group bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-gold-200 transition-all duration-300 flex flex-col items-center text-center" data-animate>
+            <div class="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center mb-6 p-4 bg-slate-50 rounded-full group-hover:scale-110 transition-transform duration-500">
+              <img
+                src={cert.image}
+                alt={`${cert.name} certification`}
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <h3 class="text-xl font-heading font-bold text-slate-900 mb-3 group-hover:text-forest-700 transition-colors">{cert.name}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              {cert.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CTA BANNER ═══════════════════ -->
+  <section class="section-padding bg-gradient-to-br from-forest-900 via-forest-800 to-forest-900 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    <div class="relative container-custom text-center max-w-3xl mx-auto" data-animate>
+      <p class="text-lg md:text-xl font-heading italic text-gold-300 mb-4">"{QUOTES[1]}"</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+        Partner with a Certified Export House
+      </h2>
+      <p class="text-base md:text-lg text-forest-200/70 mb-10 max-w-xl mx-auto">
+        Join our network of international distributors and experience unparalleled quality.
+      </p>
+      <a href="/global-exports#inquiry-form" class="btn-gold">
+        Contact Our Export Team
+      </a>
+    </div>
+  </section>
+</MasterLayout>

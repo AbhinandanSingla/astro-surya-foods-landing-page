@@ -9,11 +9,17 @@
 | Page | File | URL | Hero Style |
 |---|---|---|---|
 | Home | `src/pages/index.astro` | `/` | Full-screen, transparent nav |
+| Products Landing | `src/pages/products/index.astro` | `/products` | 70vh hero, transparent nav |
+| Product Detail (dynamic) | `src/pages/products/[slug].astro` | `/products/:slug` | 60vh hero, transparent nav |
 | Global Exports | `src/pages/global-exports.astro` | `/global-exports` | 70vh hero, transparent nav |
+| Private Labeling | `src/pages/private-labeling.astro` | `/private-labeling` | 70vh hero, transparent nav |
+| Certificates Gallery | `src/pages/certificates.astro` | `/certificates` | 70vh hero, transparent nav |
 | 048 Brand | `src/pages/048-brand.astro` | `/048-brand` | 70vh hero, transparent nav |
 | Heritage & Quality | `src/pages/heritage.astro` | `/heritage` | 70vh hero, transparent nav |
 
 All pages use `MasterLayout` with `transparentNav={true}`.
+
+> **Dynamic Routes**: Product detail pages are generated at build time from `RICE_PRODUCTS` data in `consts.ts`. Adding a new product is as simple as adding an entry to that array — no new `.astro` file needed.
 
 ---
 
@@ -511,6 +517,17 @@ See `components.md` → Footer section.
 | Majesty | Rice product packaging / pouring shot | 4:3 | lazy |
 | Platinum | Elevated plated rice dish | 4:3 | lazy |
 
+### Private Labeling
+| Section | Image Description | Aspect | Loading |
+|---|---|---|---|
+| Hero | Rice packaging line (`packaging-1.jpg`) | 16:9 landscape | eager |
+| Quality | Factory/quality control machinery (`factory-2.jpg`) | 4:3 | lazy |
+
+### Certificates Gallery
+| Section | Image Description | Aspect | Loading |
+|---|---|---|---|
+| Hero | Quality control laboratory (`factory-3.jpg`) | 16:9 landscape | eager |
+
 ### Heritage & Quality
 | Section | Image Description | Aspect | Loading |
 |---|---|---|---|
@@ -524,5 +541,7 @@ See `components.md` → Footer section.
 |---|---|---|---|
 | Home | `Surya Foods — Milling Excellence Since 1999` | `Surya Foods is a internationally certified rice export house, milling premium Basmati rice since 1999. Partner with us for global exports and domestic distribution.` | Hero image |
 | Global Exports | `Global Exports — Surya Foods` | `Export premium Indian Basmati rice worldwide. 1121, 1509, 1718, and Pusa Basmati in Raw, Steam, and Sella forms. Internationally certified export house.` | Shipping image |
+| Private Labeling | `Private Labeling \| Surya Foods` | `Build your own premium rice brand with Surya Foods. We offer end-to-end private labeling solutions from sourcing and processing to custom packaging.` | Packaging line image |
+| Certificates Gallery | `Certificates Gallery \| Surya Foods` | `Explore the internationally recognized certifications that guarantee Surya Foods' commitment to quality, safety, and excellence.` | Factory image |
 | 048 Brand | `048 Premium Rice — Surya Foods` | `Discover 048 by Surya Foods — premium Basmati rice for the Indian household. Majesty and Platinum collections for Pan-India distribution.` | Brand image |
 | Heritage | `Heritage & Quality — Surya Foods` | `Since 1999, Surya Foods has been a pillar of India's rice industry. Explore our journey, certifications, and quality standards.` | Heritage image |

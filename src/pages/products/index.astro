@@ -1,0 +1,160 @@
+---
+import MasterLayout from "../../layouts/MasterLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import RiceInformation from "../../components/RiceInformation.astro";
+import { RICE_PRODUCTS, RICE_CATEGORIES } from "../../consts";
+
+// Group products by category
+const productsByCategory = RICE_CATEGORIES.map(cat => ({
+  ...cat,
+  products: RICE_PRODUCTS.filter(p => p.categorySlug === cat.slug),
+}));
+---
+
+<MasterLayout
+  title="Our Products — Premium Indian Rice | Surya Foods"
+  description="Explore Surya Foods' complete range of premium Indian rice — Basmati, Non-Basmati, and Pesticide Residue Free varieties. Sourced, processed, and exported with excellence."
+  transparentNav={true}
+>
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="relative min-h-[70vh] flex items-center pt-24">
+    <img
+      src="/images/gallery/rice-grains-1.jpg"
+      alt="Premium Indian rice grains"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-forest-950/95 via-forest-950/80 to-forest-950/40"></div>
+
+    <div class="relative z-10 container-custom py-20">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400 mb-4 animate-fade-in">
+          OUR PRODUCT RANGE
+        </p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-[1.1] mb-6">
+          Premium Indian Rice,<br />
+          <span class="text-gradient-gold">For Every Market.</span>
+        </h1>
+        <p class="text-base md:text-lg text-forest-100/90 leading-relaxed mb-8 max-w-xl">
+          From the iconic 1121 Basmati to pesticide-residue-free varieties — discover our comprehensive range of rice products, each processed to the highest international standards.
+        </p>
+        <a href="/global-exports#inquiry-form" class="btn-primary">
+          Request a Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CATEGORY OVERVIEW ═══════════════════ -->
+  <section class="section-padding bg-cream">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Categories"
+        title="Browse by Category"
+        subtitle="We offer a diverse portfolio of rice varieties to meet the demands of global markets."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {RICE_CATEGORIES.map((cat, i) => (
+          <a href={`/products?category=${cat.slug}`} class="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline" data-animate>
+            <img
+              src={`/images/gallery/rice-grains-${i + 1}.jpg`}
+              alt={cat.name}
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/40 to-transparent group-hover:from-forest-950/95 transition-all duration-500"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+              <h3 class="text-2xl font-heading font-bold text-white mb-2">{cat.name}</h3>
+              <p class="text-sm text-white/70 mb-4">{cat.description}</p>
+              <span class="inline-flex items-center text-sm font-semibold text-gold-400 group-hover:gap-3 gap-2 transition-all duration-300">
+                View Products
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ EDUCATIONAL INFO ═══════════════════ -->
+  <RiceInformation />
+
+  <!-- ═══════════════════ ALL PRODUCTS BY CATEGORY ═══════════════════ -->
+  {productsByCategory.map((cat) => (
+    <section id={cat.slug} class="section-padding bg-white even:bg-cream">
+      <div class="container-custom">
+        <SectionHeading
+          overline={cat.slug === "pesticide-residue-free" ? "Clean Label" : cat.slug === "indian-non-basmati-rice" ? "Non-Basmati" : "Basmati"}
+          title={cat.name}
+          subtitle={cat.description}
+        />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {cat.products.map((product) => (
+            <a href={`/products/${product.slug}`} class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-slate-100 no-underline block" data-animate>
+              <div class="relative overflow-hidden aspect-[4/3]">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <span class="absolute top-4 left-4 bg-forest-900/90 backdrop-blur-sm text-gold-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                  {product.grade}
+                </span>
+              </div>
+              <div class="p-5 md:p-6">
+                <h3 class="text-lg md:text-xl font-heading font-bold text-slate-900 mb-2 group-hover:text-forest-700 transition-colors">
+                  {product.name}
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4 line-clamp-2">
+                  {product.description}
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  {product.forms.map((form) => (
+                    <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-forest-700 bg-forest-50 border border-forest-200 px-3 py-1 rounded-full">
+                      {form}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- ═══════════════════ CTA ═══════════════════ -->
+  <section class="section-padding bg-gradient-to-br from-forest-900 via-forest-800 to-forest-900 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    <div class="relative container-custom text-center max-w-3xl mx-auto" data-animate>
+      <p class="text-lg md:text-xl font-heading italic text-gold-300 mb-4">"We Make Every Grain Special"</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+        Ready to Source Premium Rice?
+      </h2>
+      <p class="text-base md:text-lg text-forest-200/70 mb-10 max-w-xl mx-auto">
+        Whether you need Basmati for export or clean-label rice for health-conscious markets, our team is ready to help.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/global-exports#inquiry-form" class="btn-gold">
+          Get a Quote
+        </a>
+        <a href="/private-labeling" class="btn-secondary">
+          Private Label Options
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="h-16 md:hidden"></div>
+</MasterLayout>

@@ -16,7 +16,7 @@
 | **Annual Capacity** | 50,000+ MT |
 | **Export Countries** | 15+ |
 | **Recognition** | Internationally Certified Export House |
-| **Key Certifications** | ISO 22000:2018, FSSAI, APEDA, BRC, GMP, HACCP |
+| **Key Certifications** | ISO 22000:2018, FSSAI, APEDA, HACCP |
 
 ### Contact Information (Placeholders — Replace with real)
 
@@ -266,8 +266,6 @@
 | FSSAI License | Food Safety and Standards Authority of India | India's highest food safety compliance, mandatory for all food manufacturing and processing units. |
 | DGFT Registered Exporter | DGFT Export House Recognition | Registered with the Directorate General of Foreign Trade (DGFT) as an established export house as an established export house. |
 | APEDA Registration | Agricultural & Processed Food Products Export Development Authority | Registered exporter of agricultural products under the Ministry of Commerce, enabling Basmati rice exports worldwide. |
-| BRC Global Standard | British Retail Consortium — Global Food Safety | Internationally recognized food safety certification accepted by major global retailers and importers. |
-| GMP Certified | Good Manufacturing Practices | Certification confirming adherence to quality management systems and manufacturing hygiene standards. |
 | Organic Certification | National/International Organic Standards | Select product lines certified under organic farming standards (applicable product range only). |
 | HACCP Compliant | Hazard Analysis Critical Control Points | Systematic preventive approach to food safety, identifying and controlling biological, chemical, and physical hazards. |
 

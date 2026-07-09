@@ -176,16 +176,6 @@ export const CERTIFICATIONS = [
       "Registered exporter of agricultural products under the Ministry of Commerce.",
   },
   {
-    name: "BRC Global Standard",
-    description:
-      "Internationally recognized food safety certification accepted by major global retailers.",
-  },
-  {
-    name: "GMP Certified",
-    description:
-      "Certification confirming adherence to quality management systems and manufacturing hygiene standards.",
-  },
-  {
     name: "Organic Certification",
     description:
       "Select product lines certified under organic farming standards.",
@@ -270,7 +260,7 @@ export const PRODUCTS = [
       "The king of Basmati. Renowned for its extraordinary grain length (up to 8.4mm after cooking), exquisite aroma, and perfectly fluffy texture.",
     forms: ["Raw", "Steam", "Sella"],
     image:
-      "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&q=80",
+      "/images/gallery/rice-grains-1.jpg",
   },
   {
     name: "1509 Basmati Rice",
@@ -279,7 +269,7 @@ export const PRODUCTS = [
       "A versatile, high-quality Basmati with excellent elongation ratio and rich aromatic profile. Premium quality at a competitive price point.",
     forms: ["Raw", "Steam", "Sella"],
     image:
-      "https://images.unsplash.com/photo-1536304993881-460e32f50232?w=800&q=80",
+      "/images/gallery/rice-grains-2.jpg",
   },
   {
     name: "1718 Basmati Rice",
@@ -288,7 +278,7 @@ export const PRODUCTS = [
       "Traditional long-grain Basmati with authentic aroma and taste. Ideal for biryani and pulao preparations across global markets.",
     forms: ["Raw", "Steam", "Sella"],
     image:
-      "https://images.unsplash.com/photo-1596560548464-f010549b84d7?w=800&q=80",
+      "/images/gallery/rice-grains-3.jpg",
   },
   {
     name: "Traditional Pusa Basmati",
@@ -297,7 +287,7 @@ export const PRODUCTS = [
       "The original Pusa variety — prized for its distinctive aroma, slender grain, and rich heritage dating back generations.",
     forms: ["Raw", "Steam", "Sella"],
     image:
-      "https://images.unsplash.com/photo-1550828520-4cb496926fc9?w=800&q=80",
+      "/images/gallery/rice-grains-1.jpg",
   },
 ] as const;
 
@@ -344,11 +334,6 @@ export const CERTIFICATIONS_DISPLAY = [
   { name: "ISO 22000", image: "/images/certifications/iso.svg" },
   { name: "FSSAI", image: "/images/certifications/fssai.svg" },
   { name: "HACCP", image: "/images/certifications/haccp.svg" },
-  { name: "HALAL", image: "/images/certifications/halal.svg" },
-  { name: "KOSHER", image: "/images/certifications/kosher.svg" },
-  { name: "GMP", image: "/images/certifications/gmp.svg" },
-  { name: "USFDA", image: "/images/certifications/usfda.svg" },
-  { name: "BRC", image: "/images/certifications/brc.svg" },
   { name: "APEDA", image: "/images/certifications/apeda.svg" },
 ] as const;
 

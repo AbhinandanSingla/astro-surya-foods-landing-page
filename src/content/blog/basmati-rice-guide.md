@@ -2,7 +2,7 @@
 title: "The Complete Guide to Basmati Rice Varieties"
 description: "Everything you need to know about 1121, 1509, 1718, and Pusa Basmati rice — grain characteristics, cooking properties, and which variety suits your market."
 pubDate: 2025-01-20
-heroImage: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=1200&q=80"
+heroImage: "/images/gallery/rice-grains-1.jpg"
 author: "Surya Foods Editorial"
 tags: ["basmati", "varieties", "1121", "1509", "1718", "pusa", "guide"]
 category: "Rice Knowledge"

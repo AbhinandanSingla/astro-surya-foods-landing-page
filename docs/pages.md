@@ -13,9 +13,11 @@
 | Product Detail (dynamic) | `src/pages/products/[slug].astro` | `/products/:slug` | 60vh hero, transparent nav |
 | Global Exports | `src/pages/global-exports.astro` | `/global-exports` | 70vh hero, transparent nav |
 | Private Labeling | `src/pages/private-labeling.astro` | `/private-labeling` | 70vh hero, transparent nav |
-| Certificates Gallery | `src/pages/certificates.astro` | `/certificates` | 70vh hero, transparent nav |
+| Certifications | `src/pages/certificates.astro` | `/certificates` | 70vh hero, transparent nav |
 | 048 Brand | `src/pages/048-brand.astro` | `/048-brand` | 70vh hero, transparent nav |
-| Heritage & Quality | `src/pages/heritage.astro` | `/heritage` | 70vh hero, transparent nav |
+| Our Heritage | `src/pages/heritage.astro` | `/heritage` | 70vh hero, transparent nav |
+| Milling & Infrastructure | `src/pages/infrastructure.astro` | `/infrastructure` | 60vh hero, transparent nav |
+| Quality Assurance | `src/pages/quality-control.astro` | `/quality-control` | 60vh hero, transparent nav |
 
 All pages use `MasterLayout` with `transparentNav={true}`.
 
@@ -446,8 +448,6 @@ Uses `LeadForm` component with `formType="distributor"`.
 | `FSSAI License` | Food Safety and Standards Authority of India compliance |
 | `DGFT Registered Exporter` | internationally certified export house under DGFT |
 | `APEDA Registration` | Agricultural and Processed Food Products Export Development Authority |
-| `BRC Global Standard` | British Retail Consortium global food safety standard |
-| `GMP Certified` | Good Manufacturing Practices certification |
 | `Organic Certification` | Select product lines certified organic (if applicable) |
 | `HACCP Compliant` | Hazard Analysis Critical Control Points compliance |
 

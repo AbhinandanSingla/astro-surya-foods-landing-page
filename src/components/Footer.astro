@@ -1,5 +1,5 @@
 ---
-import { FOOTER_LINKS, PHONE_NUMBER, WHATSAPP_NUMBER, EMAIL, MILL_ADDRESS } from "../consts";
+import { FOOTER_LINK_GROUPS, PHONE_NUMBER, WHATSAPP_NUMBER, EMAIL, MILL_ADDRESS } from "../consts";
 const currentYear = new Date().getFullYear();
 const whatsappQRUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/${WHATSAPP_NUMBER}&bgcolor=0a1f0f&color=d4a853`;
 ---
@@ -7,8 +7,8 @@ const whatsappQRUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&
 <footer class="bg-forest-950 text-white pt-16 pb-8 md:pb-8">
   <div class="container-custom">
     <!-- Main Footer Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-12">
-      <!-- Column 1: Company -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-12">
+      <!-- Column 1: Company (spans 2 cols) -->
       <div class="lg:col-span-2">
         <a href="/" class="flex items-center gap-2 mb-4 no-underline group">
           <img src="/images/logo/logo-transparent.png" alt="Surya Foods Logo" class="h-10 md:h-12 w-auto object-contain" />
@@ -52,24 +52,26 @@ const whatsappQRUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&
         </div>
       </div>
 
-      <!-- Column 2: Quick Links -->
-      <div>
-        <h4 class="text-sm font-body font-semibold uppercase tracking-widest text-gold-400 mb-5">
-          Quick Links
-        </h4>
-        <ul class="space-y-3 list-none p-0 m-0">
-          {FOOTER_LINKS.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class="text-sm text-forest-300/70 hover:text-gold-300 transition-colors duration-300 no-underline"
-              >
+      <!-- Link Group Columns -->
+      {FOOTER_LINK_GROUPS.map((group) => (
+        <div>
+          <h4 class="text-sm font-body font-semibold uppercase tracking-widest text-gold-400 mb-5">
+            {group.heading}
+          </h4>
+          <ul class="space-y-3 list-none p-0 m-0">
+            {group.links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-forest-300/70 hover:text-gold-300 transition-colors duration-300 no-underline"
+                >
                 {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
 
       <!-- Column 3: Contact Info -->
       <div>

@@ -2,7 +2,7 @@
 title: "From Paddy to Plate: The Surya Foods Story"
 description: "Discover how Surya Foods grew from a small milling unit in Haryana to one of India's leading Basmati rice exporters, serving 15+ countries over 25 years."
 pubDate: 2024-12-15
-heroImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80"
+heroImage: "/images/gallery/rice-paddy.jpg"
 author: "Surya Foods Editorial"
 tags: ["company", "history", "basmati", "export"]
 category: "Company News"

@@ -2,7 +2,7 @@
 title: "Basmati vs. Non-Basmati: Understanding FSSAI’s New Identity Standards"
 description: "An in-depth look at FSSAI’s new identity standards for Basmati rice, explaining key technical criteria like elongation ratios, grain length, and aging checks."
 pubDate: 2026-07-08
-heroImage: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=1200&q=80"
+heroImage: "/images/gallery/rice-grains-2.jpg"
 author: "Surya Foods Editorial"
 tags: ["FSSAI", "Basmati", "quality standards", "food safety", "rice industry"]
 category: "Industry Insights"

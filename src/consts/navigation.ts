@@ -252,30 +252,39 @@ export const NAV_LINKS = [
     label: "Business",
     items: [
       { label: "Global Exports", href: "/global-exports" },
-      { label: "Products", href: "/products" },
-      { label: "Quality Control", href: "/quality-control" },
       { label: "Private Labeling", href: "/private-labeling" },
-      { label: "Certificates", href: "/certificates" },
     ],
   },
   {
     label: "About Us",
     items: [
-      { label: "Heritage & Quality", href: "/heritage" },
-      { label: "Infrastructure & Cleaning", href: "/infrastructure" },
+      { label: "Our Heritage", href: "/heritage" },
+      { label: "Milling & Infrastructure", href: "/infrastructure" },
+      { label: "Quality Assurance", href: "/quality-control" },
+      { label: "Certifications", href: "/certificates" },
     ],
   },
   { label: "Blog", href: "/blog" },
 ];
 
-export const FOOTER_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Products", href: "/products" },
-  { label: "Global Exports", href: "/global-exports" },
-  { label: "Private Labeling", href: "/private-labeling" },
-  { label: "048 Brand", href: "/048-brand" },
-  { label: "Heritage & Quality", href: "/heritage" },
-  { label: "Infrastructure", href: "/infrastructure" },
-  { label: "Certificates", href: "/certificates" },
-  { label: "Blog", href: "/blog" },
+export const FOOTER_LINK_GROUPS = [
+  {
+    heading: "Business",
+    links: [
+      { label: "Global Exports", href: "/global-exports" },
+      { label: "Private Labeling", href: "/private-labeling" },
+      { label: "048 Brand", href: "/048-brand" },
+      { label: "Products", href: "/products" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "Our Heritage", href: "/heritage" },
+      { label: "Milling & Infrastructure", href: "/infrastructure" },
+      { label: "Quality Assurance", href: "/quality-control" },
+      { label: "Certifications", href: "/certificates" },
+      { label: "Blog", href: "/blog" },
+    ],
+  },
 ];

@@ -2,7 +2,7 @@
 title: "How We Ensure Quality: From ISO 22000 to Your Table"
 description: "An inside look at Surya Foods' quality assurance processes — from ISO 22000 certification to in-house testing labs, and why our partners trust every shipment."
 pubDate: 2025-03-10
-heroImage: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1200&q=80"
+heroImage: "/images/gallery/factory-1.jpg"
 author: "Surya Foods Editorial"
 tags: ["quality", "ISO 22000", "FSSAI", "HACCP", "certifications", "food safety"]
 category: "Industry Insights"
@@ -41,14 +41,6 @@ The Food Safety and Standards Authority of India (FSSAI) license is mandatory fo
 ### HACCP Compliance
 
 HACCP is a systematic preventive approach to food safety. Our HACCP plan identifies biological, chemical, and physical hazards at every stage of production and establishes critical limits for each.
-
-### BRC Global Standard
-
-The BRC (British Retail Consortium) Global Standard is recognized by major retailers worldwide. This certification demonstrates that our manufacturing processes meet the standards expected by global supermarket chains and food service companies.
-
-### GMP Certification
-
-Good Manufacturing Practice (GMP) certification confirms that our facility design, equipment maintenance, personnel hygiene, and production processes meet pharmaceutical-grade manufacturing standards.
 
 ## Inside Our Quality Lab
 

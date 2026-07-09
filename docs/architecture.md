@@ -73,8 +73,15 @@ astro-surya-foods-landing-page/
 │   ├── pages/                       # File-based routing (each = 1 URL)
 │   │   ├── index.astro              # / (Home)
 │   │   ├── global-exports.astro     # /global-exports
+│   │   ├── private-labeling.astro   # /private-labeling
 │   │   ├── 048-brand.astro          # /048-brand
-│   │   └── heritage.astro           # /heritage
+│   │   ├── heritage.astro           # /heritage (Our Heritage)
+│   │   ├── infrastructure.astro     # /infrastructure (Milling & Infrastructure)
+│   │   ├── quality-control.astro    # /quality-control (Quality Assurance)
+│   │   ├── certificates.astro       # /certificates (Certifications)
+│   │   ├── products/index.astro     # /products (Products Landing)
+│   │   ├── products/[slug].astro    # /products/:slug (Product Detail)
+│   │   └── blog/                    # /blog
 │   │
 │   ├── styles/
 │   │   └── global.css               # Tailwind v4 base + @theme + utilities
@@ -105,10 +112,16 @@ Astro uses **file-based routing** — each `.astro` file in `src/pages/` maps to
 
 | File | URL | Page Title |
 |---|---|---|
-| `src/pages/index.astro` | `/` | Surya Foods — Milling Excellence Since 1999 |
+| `src/pages/index.astro` | `/` | Surya Foods — Premium Basmati Rice Manufacturer & Exporter Since 2002 |
 | `src/pages/global-exports.astro` | `/global-exports` | Global Exports — Surya Foods |
+| `src/pages/private-labeling.astro` | `/private-labeling` | Private Labeling — Surya Foods |
 | `src/pages/048-brand.astro` | `/048-brand` | 048 Premium Rice — Surya Foods |
-| `src/pages/heritage.astro` | `/heritage` | Heritage & Quality — Surya Foods |
+| `src/pages/heritage.astro` | `/heritage` | Our Heritage — Surya Foods |
+| `src/pages/infrastructure.astro` | `/infrastructure` | Milling & Infrastructure — Surya Foods |
+| `src/pages/quality-control.astro` | `/quality-control` | Quality Assurance — Surya Foods |
+| `src/pages/certificates.astro` | `/certificates` | Certifications — Surya Foods |
+| `src/pages/products/index.astro` | `/products` | Products — Surya Foods |
+| `src/pages/products/[slug].astro` | `/products/:slug` | (Dynamic product pages) |
 
 > **No dynamic routes.** All pages are statically generated at build time.
 

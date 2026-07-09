@@ -149,4 +149,4 @@ At Surya Foods, every batch undergoes comprehensive testing across all these par
 
 ---
 
-*Looking to source premium Basmati rice for your market? [Contact our export team](/global-exports#inquiry-form) for samples and pricing.*
+*Looking to source premium Basmati rice for your market? [Contact our export team](/contact) for samples and pricing.*

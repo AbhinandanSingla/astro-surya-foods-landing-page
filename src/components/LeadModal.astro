@@ -1,0 +1,249 @@
+---
+// Lead Generation Modal — appears once per session on scroll
+---
+
+<!-- Lead Modal Overlay -->
+<div id="lead-modal-overlay" class="fixed inset-0 z-[9998] hidden items-end sm:items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity duration-300">
+  <div id="lead-modal" class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative transform translate-y-8 opacity-0 transition-all duration-500">
+    <!-- Close Button -->
+    <button id="lead-modal-close" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors" aria-label="Close">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+    </button>
+
+    <!-- Form State -->
+    <div id="lead-modal-form-state">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="/images/logo/logo-transparent.png" alt="Surya Foods" class="h-8" />
+        <div>
+          <h3 class="text-lg font-heading font-bold text-slate-900 leading-tight">Get a Free Quote</h3>
+          <p class="text-xs text-slate-500">Premium Basmati Rice — 25+ Countries Served</p>
+        </div>
+      </div>
+
+      <div class="h-px bg-gradient-to-r from-transparent via-gold-300 to-transparent mb-5"></div>
+
+      <form id="lead-modal-form" novalidate>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <input
+              type="text"
+              name="fullName"
+              required
+              placeholder="Full Name *"
+              class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="companyName"
+              required
+              placeholder="Company Name *"
+              class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Business Email *"
+              class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+            />
+          </div>
+          <div>
+            <input
+              type="tel"
+              name="phone"
+              required
+              placeholder="Phone Number *"
+              class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <input
+              type="text"
+              name="country"
+              required
+              placeholder="Country *"
+              class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <button type="submit" id="lead-modal-submit" class="btn-primary w-full !text-sm !py-2.5">
+              Get a Free Quote
+            </button>
+          </div>
+        </div>
+        <p id="lead-modal-error" class="text-red-600 text-xs mt-2 hidden text-center">Please fill all required fields correctly.</p>
+      </form>
+    </div>
+
+    <!-- Success State (hidden by default) -->
+    <div id="lead-modal-success-state" class="hidden text-center py-4">
+      <div class="w-16 h-16 rounded-full bg-forest-100 flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-forest-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">Thank You!</h3>
+      <p class="text-sm text-slate-600 leading-relaxed mb-4">
+        We've received your inquiry and will get back to you within <strong>24 business hours</strong>.
+      </p>
+      <a href="/products" class="text-sm font-semibold text-forest-700 hover:text-forest-600 no-underline">Explore Our Products →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const MODAL_SESSION_KEY = "sf_lead_modal_shown";
+  const SCROLL_THRESHOLD = 0.5; // 50% of page height
+
+  const overlay = document.getElementById("lead-modal-overlay");
+  const modal = document.getElementById("lead-modal");
+  const closeBtn = document.getElementById("lead-modal-close");
+  const form = document.getElementById("lead-modal-form") as HTMLFormElement | null;
+  const submitBtn = document.getElementById("lead-modal-submit") as HTMLButtonElement | null;
+  const errorMsg = document.getElementById("lead-modal-error");
+  const formState = document.getElementById("lead-modal-form-state");
+  const successState = document.getElementById("lead-modal-success-state");
+
+  // Don't show on contact page (they're already there)
+  const isContactPage = window.location.pathname.startsWith("/contact");
+
+  function showModal() {
+    if (!overlay || !modal) return;
+    overlay.classList.remove("hidden");
+    overlay.classList.add("flex");
+    // Trigger animation
+    requestAnimationFrame(() => {
+      modal.classList.remove("translate-y-8", "opacity-0");
+      modal.classList.add("translate-y-0", "opacity-100");
+    });
+    sessionStorage.setItem(MODAL_SESSION_KEY, "true");
+
+    // Analytics
+    if (typeof gtag === "function") {
+      gtag("event", "lead_modal_opened", { event_category: "Engagement", event_label: window.location.pathname });
+    }
+    if (typeof posthog !== "undefined") {
+      posthog.capture("lead_modal_opened", { source_page: window.location.pathname });
+    }
+  }
+
+  function hideModal() {
+    if (!overlay || !modal) return;
+    modal.classList.add("translate-y-8", "opacity-0");
+    modal.classList.remove("translate-y-0", "opacity-100");
+    setTimeout(() => {
+      overlay.classList.add("hidden");
+      overlay.classList.remove("flex");
+    }, 300);
+  }
+
+  // Close handlers
+  closeBtn?.addEventListener("click", hideModal);
+  overlay?.addEventListener("click", (e) => { if (e.target === overlay) hideModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") hideModal(); });
+
+  // Scroll trigger — show once per session at 50% scroll
+  if (!isContactPage && !sessionStorage.getItem(MODAL_SESSION_KEY)) {
+    let triggered = false;
+    window.addEventListener("scroll", () => {
+      if (triggered) return;
+      const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (scrollPercent >= SCROLL_THRESHOLD) {
+        triggered = true;
+        // Small delay so it doesn't feel jarring
+        setTimeout(showModal, 800);
+      }
+    }, { passive: true });
+  }
+
+  // Form submission
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      // Reset
+      form.querySelectorAll("input").forEach((el) => el.classList.remove("!border-red-500"));
+      errorMsg?.classList.add("hidden");
+
+      // Validate
+      form.querySelectorAll<HTMLInputElement>("[required]").forEach((field) => {
+        let ok = true;
+        if (field.type === "email") ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+        else if (field.type === "tel") ok = /^[\+]?[\d\s\-\(\)]{7,20}$/.test(field.value);
+        else ok = field.value.trim().length >= 2;
+
+        if (!ok) {
+          isValid = false;
+          field.classList.add("!border-red-500");
+        }
+      });
+
+      if (!isValid) {
+        errorMsg?.classList.remove("hidden");
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.textContent = "Submitting...";
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-75");
+      }
+
+      try {
+        const formData = new FormData(form);
+        const payload: Record<string, string> = {};
+        formData.forEach((v, k) => { payload[k] = v.toString(); });
+        payload.source = window.location.pathname;
+        payload.formType = "lead_modal";
+
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await res.json();
+
+        if (result.success) {
+          formState?.classList.add("hidden");
+          successState?.classList.remove("hidden");
+
+          if (typeof gtag === "function") {
+            gtag("event", "form_submission", {
+              event_category: "Lead",
+              event_label: window.location.pathname,
+              form_type: "lead_modal",
+            });
+          }
+          if (typeof posthog !== "undefined") {
+            posthog.capture("lead_form_submitted", {
+              source_page: window.location.pathname,
+              form_type: "lead_modal",
+              country: payload.country,
+            });
+          }
+
+          // Auto close after 5 seconds
+          setTimeout(hideModal, 5000);
+        } else {
+          errorMsg!.textContent = result.error || "Something went wrong. Please try again.";
+          errorMsg?.classList.remove("hidden");
+        }
+      } catch {
+        errorMsg!.textContent = "Network error. Please try again.";
+        errorMsg?.classList.remove("hidden");
+      } finally {
+        if (submitBtn) {
+          submitBtn.textContent = "Get a Free Quote";
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("opacity-75");
+        }
+      }
+    });
+  }
+</script>

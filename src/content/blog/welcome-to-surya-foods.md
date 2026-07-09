@@ -69,4 +69,4 @@ Whether you're an international broker looking for a reliable supply partner, or
 
 ---
 
-*Interested in partnering with Surya Foods? [Get in touch](/global-exports#inquiry-form) — we'd love to hear from you.*
+*Interested in partnering with Surya Foods? [Get in touch](/contact) — we'd love to hear from you.*

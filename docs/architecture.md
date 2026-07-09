@@ -122,8 +122,10 @@ Astro uses **file-based routing** — each `.astro` file in `src/pages/` maps to
 | `src/pages/certificates.astro` | `/certificates` | Certifications — Surya Foods |
 | `src/pages/products/index.astro` | `/products` | Products — Surya Foods |
 | `src/pages/products/[slug].astro` | `/products/:slug` | (Dynamic product pages) |
+| `src/pages/contact.astro` | `/contact` | Contact Us — Surya Foods |
+| `src/pages/api/contact.ts` | `/api/contact` | (Server-side API — POST) |
 
-> **No dynamic routes.** All pages are statically generated at build time.
+> **Server-side routes:** `/api/contact` runs as a Cloudflare Worker and sends emails via AWS SES. All other pages are statically prerendered.
 
 ---
 

@@ -265,6 +265,7 @@ export const NAV_LINKS = [
     ],
   },
   { label: "Blog", href: "/blog" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export const FOOTER_LINK_GROUPS = [
@@ -285,6 +286,7 @@ export const FOOTER_LINK_GROUPS = [
       { label: "Quality Assurance", href: "/quality-control" },
       { label: "Certifications", href: "/certificates" },
       { label: "Blog", href: "/blog" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
 ];

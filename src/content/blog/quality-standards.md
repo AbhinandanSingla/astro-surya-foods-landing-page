@@ -114,4 +114,4 @@ Quality isn't a department at Surya Foods — it's a culture that permeates ever
 
 ---
 
-*Want to see our quality standards in action? [Request a facility tour or product samples](/global-exports#inquiry-form) — we'd be happy to show you around.*
+*Want to see our quality standards in action? [Request a facility tour or product samples](/contact) — we'd be happy to show you around.*

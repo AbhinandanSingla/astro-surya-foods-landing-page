@@ -18,6 +18,8 @@
 | Our Heritage | `src/pages/heritage.astro` | `/heritage` | 70vh hero, transparent nav |
 | Milling & Infrastructure | `src/pages/infrastructure.astro` | `/infrastructure` | 60vh hero, transparent nav |
 | Quality Assurance | `src/pages/quality-control.astro` | `/quality-control` | 60vh hero, transparent nav |
+| Contact Us | `src/pages/contact.astro` | `/contact` | 50vh hero, transparent nav |
+| Contact API | `src/pages/api/contact.ts` | `/api/contact` | Server-side API (POST) |
 
 All pages use `MasterLayout` with `transparentNav={true}`.
 

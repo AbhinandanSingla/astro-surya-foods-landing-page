@@ -1,0 +1,406 @@
+---
+import MasterLayout from "../layouts/MasterLayout.astro";
+import { EMAIL, PHONE_NUMBER, WHATSAPP_NUMBER, MILL_ADDRESS, MILL_MAP_QUERY } from "../consts";
+---
+
+<MasterLayout
+  title="Contact Us — Surya Foods"
+  description="Get in touch with Surya Foods for export inquiries, private labeling, and partnership opportunities. Premium Basmati rice manufacturer and exporter since 2002."
+  transparentNav={true}
+>
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="relative min-h-[50vh] flex items-center pt-24">
+    <img
+      src="/images/gallery/factory-1.jpg"
+      alt="Surya Foods manufacturing facility"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-forest-950/95 via-forest-950/85 to-forest-950/50"></div>
+
+    <div class="relative z-10 container-custom py-20">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400 mb-4">
+          Let's Connect
+        </p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-[1.1] mb-6">
+          Contact<br />
+          <span class="text-gradient-gold">Surya Foods.</span>
+        </h1>
+        <p class="text-base md:text-lg text-forest-100/90 leading-relaxed max-w-xl">
+          Have a question, need a quote, or want to explore partnership opportunities? We'd love to hear from you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT SECTION ═══════════════════ -->
+  <section class="section-padding bg-cream">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+
+        <!-- Left Column: Contact Info -->
+        <div class="lg:col-span-2" data-animate>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">
+            Reach Out to Us
+          </p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4 leading-tight">
+            We're Here to Help
+          </h2>
+          <div class="gold-line mb-6"></div>
+          <p class="text-base text-slate-600 leading-relaxed mb-8">
+            Whether you're looking for premium Basmati rice for your international market, interested in private labeling, or want to become a distribution partner — our team is ready to assist.
+          </p>
+
+          <!-- Contact Details -->
+          <ul class="space-y-5 list-none p-0 m-0 mb-8">
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-forest-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-forest-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-800 mb-0.5">Email</p>
+                <a href={`mailto:${EMAIL}`} class="text-sm text-forest-700 hover:text-gold-600 transition-colors no-underline">{EMAIL}</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-forest-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-forest-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-800 mb-0.5">Phone</p>
+                <a href={`tel:${PHONE_NUMBER}`} class="text-sm text-forest-700 hover:text-gold-600 transition-colors no-underline">+91-9779204835</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-green-700" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-800 mb-0.5">WhatsApp</p>
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" class="text-sm text-green-700 hover:text-green-600 transition-colors no-underline">Chat with us on WhatsApp</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-forest-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-forest-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-800 mb-0.5">Address</p>
+                <span class="text-sm text-slate-600">{MILL_ADDRESS}</span>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Google Maps Embed -->
+          <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200">
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${MILL_MAP_QUERY}`}
+              width="100%"
+              height="240"
+              style="border:0;"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Surya Foods mill location"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Right Column: Inquiry Form -->
+        <div class="lg:col-span-3" data-animate>
+          <form
+            id="contact-form"
+            class="bg-white rounded-2xl p-6 md:p-8 shadow-2xl border border-slate-100"
+            novalidate
+          >
+            <h3 class="text-xl font-heading font-bold text-slate-900 mb-1">Send Us an Inquiry</h3>
+            <p class="text-sm text-slate-500 mb-6">Fields marked with <span class="text-red-500">*</span> are required.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+              <!-- Full Name -->
+              <div>
+                <label for="contact-fullName" class="block text-sm font-medium text-slate-700 mb-1.5">
+                  Full Name <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contact-fullName"
+                  name="fullName"
+                  required
+                  placeholder="e.g., John Smith"
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+                />
+                <span class="text-red-600 text-xs mt-1 hidden" data-error="fullName">This field is required.</span>
+              </div>
+
+              <!-- Company Name -->
+              <div>
+                <label for="contact-companyName" class="block text-sm font-medium text-slate-700 mb-1.5">
+                  Company Name <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contact-companyName"
+                  name="companyName"
+                  required
+                  placeholder="e.g., Global Rice Trading Co."
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+                />
+                <span class="text-red-600 text-xs mt-1 hidden" data-error="companyName">This field is required.</span>
+              </div>
+
+              <!-- Country -->
+              <div>
+                <label for="contact-country" class="block text-sm font-medium text-slate-700 mb-1.5">
+                  Country <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contact-country"
+                  name="country"
+                  required
+                  placeholder="e.g., United Arab Emirates"
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+                />
+                <span class="text-red-600 text-xs mt-1 hidden" data-error="country">This field is required.</span>
+              </div>
+
+              <!-- Business Email -->
+              <div>
+                <label for="contact-email" class="block text-sm font-medium text-slate-700 mb-1.5">
+                  Business Email <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  required
+                  placeholder="e.g., name@company.com"
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+                />
+                <span class="text-red-600 text-xs mt-1 hidden" data-error="email">Please enter a valid email address.</span>
+              </div>
+
+              <!-- Phone Number -->
+              <div>
+                <label for="contact-phone" class="block text-sm font-medium text-slate-700 mb-1.5">
+                  Phone Number <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="phone"
+                  required
+                  placeholder="e.g., +971-50-1234567"
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+                />
+                <span class="text-red-600 text-xs mt-1 hidden" data-error="phone">Please enter a valid phone number.</span>
+              </div>
+
+              <!-- Annual Volume Requirements -->
+              <div>
+                <label for="contact-volume" class="block text-sm font-medium text-slate-700 mb-1.5">
+                  Annual Volume Requirements
+                </label>
+                <input
+                  type="text"
+                  id="contact-volume"
+                  name="volume"
+                  placeholder="e.g., 500 MT per year"
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200"
+                />
+              </div>
+
+              <!-- Additional Message -->
+              <div class="md:col-span-2">
+                <label for="contact-message" class="block text-sm font-medium text-slate-700 mb-1.5">
+                  Additional Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="4"
+                  placeholder="Tell us about your requirements, preferred Incoterms, packaging needs..."
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-forest-500/30 focus:border-forest-500 focus:bg-white transition-all duration-200 resize-vertical"
+                ></textarea>
+              </div>
+
+              <!-- Submit -->
+              <div class="md:col-span-2">
+                <button type="submit" id="contact-submit-btn" class="btn-primary w-full !text-sm">
+                  Submit Inquiry
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SUCCESS DIALOG OVERLAY ═══════════════════ -->
+  <div id="contact-success-dialog" class="fixed inset-0 z-[9999] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl p-8 md:p-10 max-w-md w-full text-center shadow-2xl animate-fade-in relative">
+      <!-- Close Button -->
+      <button id="contact-dialog-close" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors" aria-label="Close">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+
+      <!-- Success Animation -->
+      <div class="w-20 h-20 rounded-full bg-forest-100 flex items-center justify-center mx-auto mb-6">
+        <svg class="w-10 h-10 text-forest-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="animation:checkDraw 0.5s ease-in-out forwards;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      <img src="/images/logo/logo-transparent.png" alt="Surya Foods" class="h-10 mx-auto mb-4" />
+
+      <h3 class="text-2xl font-heading font-bold text-slate-900 mb-3">
+        Thank You for Reaching Out!
+      </h3>
+      <p class="text-sm text-slate-600 leading-relaxed mb-6">
+        We've received your inquiry and sent a confirmation to your email. Our export team will get back to you within <strong>24 business hours</strong>.
+      </p>
+
+      <a href="/products" class="btn-primary inline-block !text-sm">
+        Explore Our Products
+      </a>
+    </div>
+  </div>
+</MasterLayout>
+
+<style>
+  @keyframes checkDraw {
+    0% { stroke-dasharray: 0 100; opacity: 0; }
+    100% { stroke-dasharray: 100 0; opacity: 1; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const submitBtn = document.getElementById("contact-submit-btn") as HTMLButtonElement | null;
+  const successDialog = document.getElementById("contact-success-dialog");
+  const dialogCloseBtn = document.getElementById("contact-dialog-close");
+
+  function closeDialog() {
+    if (successDialog) {
+      successDialog.classList.add("hidden");
+      successDialog.classList.remove("flex");
+    }
+  }
+
+  dialogCloseBtn?.addEventListener("click", closeDialog);
+  successDialog?.addEventListener("click", (e) => {
+    if (e.target === successDialog) closeDialog();
+  });
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      // Reset errors
+      form.querySelectorAll("[data-error]").forEach((el) => el.classList.add("hidden"));
+      form.querySelectorAll("input, textarea").forEach((el) => el.classList.remove("!border-red-500"));
+
+      // Validate required fields
+      form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("[required]").forEach((field) => {
+        let fieldValid = true;
+
+        if (field.type === "email") {
+          fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+        } else if (field.type === "tel") {
+          fieldValid = /^[\+]?[\d\s\-\(\)]{7,20}$/.test(field.value);
+        } else {
+          fieldValid = field.value.trim().length >= 2;
+        }
+
+        if (!fieldValid) {
+          isValid = false;
+          field.classList.add("!border-red-500");
+          const errorEl = field.parentElement?.querySelector("[data-error]");
+          if (errorEl) errorEl.classList.remove("hidden");
+        }
+      });
+
+      if (!isValid) return;
+
+      // Disable button
+      if (submitBtn) {
+        submitBtn.textContent = "Submitting...";
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-75", "cursor-not-allowed");
+      }
+
+      try {
+        const formData = new FormData(form);
+        const payload: Record<string, string> = {};
+        formData.forEach((value, key) => { payload[key] = value.toString(); });
+        payload.source = window.location.pathname;
+        payload.formType = "contact";
+
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Show success dialog
+          if (successDialog) {
+            successDialog.classList.remove("hidden");
+            successDialog.classList.add("flex");
+          }
+          form.reset();
+
+          // Analytics
+          if (typeof gtag === "function") {
+            gtag("event", "form_submission", {
+              event_category: "Lead",
+              event_label: window.location.pathname,
+              form_type: "contact",
+            });
+          }
+          if (typeof posthog !== "undefined") {
+            posthog.capture("lead_form_submitted", {
+              source_page: window.location.pathname,
+              form_type: "contact",
+              country: payload.country,
+            });
+          }
+        } else {
+          alert(result.error || "Something went wrong. Please try again.");
+        }
+      } catch {
+        alert("Network error. Please check your connection and try again.");
+      } finally {
+        if (submitBtn) {
+          submitBtn.textContent = "Submit Inquiry";
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("opacity-75", "cursor-not-allowed");
+        }
+      }
+    });
+
+    // Clear errors on input
+    form.querySelectorAll("input, textarea").forEach((field) => {
+      field.addEventListener("input", () => {
+        field.classList.remove("!border-red-500");
+        const errorEl = field.parentElement?.querySelector("[data-error]");
+        if (errorEl) errorEl.classList.add("hidden");
+      });
+    });
+  }
+</script>

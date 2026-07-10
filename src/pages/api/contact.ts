@@ -36,16 +36,26 @@ export const POST: APIRoute = async ({ request, locals }) => {
       );
     }
 
-    // Get env vars from Cloudflare Worker runtime
-    const env = locals.runtime.env;
+    // Get env vars from Cloudflare Worker runtime (or fallback to import.meta.env for local dev)
+    const env = locals.runtime?.env ?? import.meta.env;
     const sesConfig = {
       accessKeyId: env.AWS_ACCESS_KEY_ID,
       secretAccessKey: env.AWS_SECRET_ACCESS_KEY,
       region: env.AWS_REGION,
     };
 
-    const senderEmail = env.NOTIFICATION_EMAIL;
+    const senderEmail = env.NOTIFICATION_EMAIL || "test@example.com";
     const leadData = { fullName, companyName, country, email, phone, message, volume, source, formType };
+
+    // If running locally without secrets, simulate a successful response
+    if (!sesConfig.accessKeyId || !sesConfig.region) {
+      console.warn("⚠️ AWS SES credentials not found. Simulating successful email send for local development.");
+      console.log("Mock Lead Data:", leadData);
+      return new Response(
+        JSON.stringify({ success: true, message: "Thank you! Your inquiry has been received (Simulated)." }),
+        { status: 200, headers }
+      );
+    }
 
     // 1. Send admin notification email
     const adminEmail = buildAdminNotificationEmail(leadData);

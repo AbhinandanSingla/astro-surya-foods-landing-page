@@ -51,7 +51,7 @@
 ```
 astro-surya-foods-landing-page/
 ├── public/                          # Static assets (served as-is)
-│   ├── favicon.svg                  # SF monogram favicon
+│   ├── images/logo/logo-transparent.png # Logo used as favicon/icon
 │   └── .assetsignore                # Cloudflare asset ignore rules
 │
 ├── src/

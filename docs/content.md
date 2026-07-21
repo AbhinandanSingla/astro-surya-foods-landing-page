@@ -22,11 +22,11 @@
 
 | Type | Value |
 |---|---|
-| **Export Email** | exports@suryafoods.com |
-| **General Email** | info@suryafoods.com |
-| **Phone** | +91-XXXXXXXXXX |
-| **Address** | [Full address], Haryana, India |
-| **Website** | https://suryafoods.com |
+| **Export Email** | contact@suryafoodspatran.com |
+| **General Email** | contact@suryafoodspatran.com |
+| **Phone** | +919779204835 |
+| **Address** | Bishanpur Alias Banwala, Punjab, India |
+| **Website** | https://suryafoodspatran.com |
 
 ### Social Links (Placeholders)
 
@@ -168,7 +168,7 @@
 ### Lead Form Section
 - **Headline**: `Start Your Export Partnership`
 - **Body**: `Fill out the form below and our export team will get back to you within 24 business hours with a detailed quote and product catalog.`
-- **Contact**: exports@suryafoods.com | +91-XXXXXXXXXX | Haryana, India
+- **Contact**: contact@suryafoodspatran.com | +919779204835 | Bishanpur Alias Banwala, Punjab, India
 
 ---
 
@@ -234,6 +234,16 @@
 - **Headline**: `A Legacy Built on Quality`
 - **Subtitle**: `For over two decades, Surya Foods has been synonymous with trust, quality, and excellence in India's rice industry.`
 
+### Leadership Section
+- **Overline**: `OUR LEADERSHIP`
+- **Headline**: `The Partners Behind Surya Foods`
+- **Subtitle**: `Two generations of the Singla family, united by a shared vision of excellence in every grain.`
+
+| Name | Designation | Role Tag | Bio |
+|---|---|---|---|
+| Mr. Kidarnath | Managing Director | Founder & Visionary | The patriarch who laid the foundation of the Singla family's rice legacy. His vision and decades of industry experience continue to guide Surya Foods' commitment to uncompromising quality. |
+| Mr. Raj Kumar Singla | Managing Director | Partner & Operations Head | Carrying forward the family legacy with modern expertise, Mr. Raj Kumar Singla drives Surya Foods' operations, export growth, and strategic partnerships across 25+ countries. |
+
 ### Timeline
 
 | Year | Title | Description |
@@ -290,9 +300,9 @@
 - Heritage & Quality
 
 ### Column 3: Export Inquiries
-- **Email**: exports@suryafoods.com
-- **Phone**: +91-XXXXXXXXXX
-- **Address**: [Full Address], Haryana, India
+- **Email**: contact@suryafoodspatran.com
+- **Phone**: +919779204835
+- **Address**: Bishanpur Alias Banwala, Punjab, India
 
 ### Column 4: Certifications
 - ISO 22000:2018
@@ -328,13 +338,13 @@
 > [!IMPORTANT]
 > The following values are placeholders and MUST be replaced with real data before going live:
 
-| Placeholder | Where Used | Replace With |
+| Placeholder | Where Used | Replaced With |
 |---|---|---|
-| `+91-XXXXXXXXXX` | Footer, form sections | Real phone number |
-| `exports@suryafoods.com` | Footer, exports page | Real export email |
-| `info@suryafoods.com` | Footer | Real general email |
-| `[Full Address], Haryana, India` | Footer, exports page | Real full address |
-| `https://suryafoods.com` | BaseHead, SEO | Real domain |
+| `+91-XXXXXXXXXX` | Footer, form sections | `+919779204835` |
+| `exports@suryafoods.com` | Footer, exports page | `contact@suryafoodspatran.com` |
+| `info@suryafoods.com` | Footer | `contact@suryafoodspatran.com` |
+| `[Full Address], Haryana, India` | Footer, exports page | `Bishanpur Alias Banwala, Punjab, India` |
+| `https://suryafoods.com` | BaseHead, SEO | `https://suryafoodspatran.com` |
 | Social media URLs | Footer | Real social profiles |
 | Unsplash image URLs | All pages | Real product/company photography |
 | `500+` B2B Partners | Home stats | Real number |

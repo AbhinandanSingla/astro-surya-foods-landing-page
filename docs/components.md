@@ -20,6 +20,7 @@
 | `CertificationBadge` | `src/components/CertificationBadge.astro` | Certification display card | Heritage |
 | `BlogCard` | `src/components/BlogCard.astro` | Blog post preview card | Blog, Home |
 | `FloatingContact` | `src/components/FloatingContact.astro` | Fixed sidebar/bottom contact buttons (WhatsApp, Call, Inquiry, Location) | All pages (via MasterLayout) |
+| `HeroChimes` | `src/components/HeroChimes.astro` | Interactive wind chime overlay with canvas particle system | Home (hero section) |
 | `MasterLayout` | `src/layouts/MasterLayout.astro` | Global page wrapper | All pages |
 
 ---

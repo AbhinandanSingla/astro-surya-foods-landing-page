@@ -41,13 +41,21 @@ All pages use `MasterLayout` with `transparentNav={true}`.
 | **Background** | Rice paddy field / golden harvest image |
 | **Overlay** | Gradient from forest-950/90 left to forest-950/40 right |
 | **Content position** | Left-aligned, vertically centered |
+| **Interactive overlay** | `HeroChimes` component (z-index 3, between overlay and text) |
 
 **Content:**
-- Overline: `INTERNATIONALLY CERTIFIED EXPORT HOUSE`
-- H1: `Milling Excellence Since 1999.`
-- Subtitle: `From the fertile fields of India to tables across the globe — Surya Foods delivers premium Basmati rice with uncompromising quality and trust.`
+- Overline: `MANUFACTURER, PROCESSOR & EXPORTER OF INDIAN BASMATI RICE`
+- H1: `Premium Basmati Rice Excellence Since 2002.`
+- Subtitle: `From the fertile fields of India to tables across the globe — Surya Foods delivers the finest Basmati rice with uncompromising quality and trust.`
 - CTA 1 (Primary): `Explore Global Exports` → `/global-exports`
 - CTA 2 (Secondary/Outline): `Discover 048 Brand` → `/048-brand`
+
+**Interactive Particles Overlay:**
+- Component: `src/components/HeroChimes.astro`
+- Canvas-based interactive particle system: golden rice grains fall and **scatter on mouse/touch**
+- Gentle wind drift for organic movement
+- Click passthrough ensures CTAs remain fully functional
+- `aria-hidden="true"` for accessibility
 
 ### Section 2: Trust Metrics Bar
 
@@ -232,9 +240,9 @@ Uses `ProductCard` component for each.
 - H2: `Start Your Export Partnership`
 - Body: "Fill out the form below and our export team will get back to you within 24 business hours with a detailed quote and product catalog."
 - Contact details:
-  - Email: exports@suryafoods.com (placeholder)
-  - Phone: +91-XXXXXXXXXX (placeholder)
-  - Location: Haryana, India
+  - Email: contact@suryafoodspatran.com
+  - Phone: +919779204835
+  - Location: Bishanpur Alias Banwala, Punjab, India
 
 **Right Column:**
 Uses `LeadForm` component with `formType="export"`.
@@ -375,6 +383,29 @@ Uses `LeadForm` component with `formType="distributor"`.
 - Overline: `ABOUT US`
 - H2: `The Story of the Singla Family`
 - Narrative paragraphs covering: 2002 Luv Khush Pvt founding → KRBL partnership → 2007 Sangam Pvt → 2013 Surya Foods establishment → 25+ countries today
+
+### Section 2b: Our Leadership
+
+| Property | Value |
+|---|---|
+| **Background** | `bg-cream` |
+| **Layout** | 2-column grid of leader cards (stacked on mobile) |
+
+**Content:**
+- Overline: `OUR LEADERSHIP`
+- H2: `The Partners Behind Surya Foods`
+- Subtitle: `Two generations of the Singla family, united by a shared vision of excellence in every grain.`
+
+**Leaders:**
+
+| Name | Designation | Role | Bio |
+|---|---|---|---|
+| `Mr. Kidarnath` | Managing Director | Founder & Visionary | The patriarch who laid the foundation of the Singla family's rice legacy. |
+| `Mr. Raj Kumar Singla` | Managing Director | Partner & Operations Head | Drives Surya Foods' operations, export growth, and strategic partnerships across 25+ countries. |
+
+**Notes:**
+- Currently uses monogram placeholders (KN, RS) — replace with real photos at `/images/gallery/kidarnath.jpg` and `/images/gallery/raj-kumar-singla.jpg`
+- Cards feature gold-accent borders, hover lift effects, and a forest-green to gold gradient portrait background
 
 ### Section 3: Trusted By
 

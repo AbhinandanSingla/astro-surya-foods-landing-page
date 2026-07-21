@@ -3,6 +3,7 @@ import MasterLayout from "../layouts/MasterLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import StatsCounter from "../components/StatsCounter.astro";
 import BlogCard from "../components/BlogCard.astro";
+import HeroChimes from "../components/HeroChimes.astro";
 import { STATS, CERTIFICATIONS_DISPLAY, GALLERY_IMAGES, KEY_TO_SUCCESS, QUOTES, MILL_MAP_QUERY } from "../consts";
 import { getCollection } from "astro:content";
 
@@ -28,6 +29,9 @@ const allPosts = (await getCollection("blog"))
     />
     <!-- Gradient Overlay — lightened -->
     <div class="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-950/70 to-forest-950/40"></div>
+
+    <!-- ✨ Interactive Wind Chimes Overlay ✨ -->
+    <HeroChimes />
 
     <div class="relative z-10 container-custom py-32 md:py-40">
       <div class="max-w-3xl">

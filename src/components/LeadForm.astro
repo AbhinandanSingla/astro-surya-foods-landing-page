@@ -2,21 +2,29 @@
 import { INDIAN_STATES, EMAIL, PHONE_NUMBER, MILL_ADDRESS } from "../consts";
 
 interface Props {
-  formId: string;
+  formId?: string;
   formType: "export" | "distributor";
-  heading: string;
+  heading?: string;
   subtitle?: string;
+  variant?: "full" | "bare";
 }
 
-const { formId, formType, heading, subtitle } = Astro.props;
+const { 
+  formId = "lead", 
+  formType, 
+  heading = "", 
+  subtitle,
+  variant = "full"
+} = Astro.props;
 ---
 
-<div id={formId} class="scroll-mt-32">
-  <div class="bg-forest-900 section-padding">
-    <div class="container-custom">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+<div id={formId} class={variant === "full" ? "scroll-mt-32" : ""}>
+  <div class={variant === "full" ? "bg-forest-900 section-padding" : ""}>
+    <div class={variant === "full" ? "container-custom" : ""}>
+      <div class={variant === "full" ? "grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start" : ""}>
         <!-- Left Column: Info -->
-        <div class="lg:col-span-2" data-animate>
+        {variant === "full" && (
+          <div class="lg:col-span-2" data-animate>
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-300 mb-4">
             {formType === "export" ? "International Trade" : "Distribution"}
           </p>
@@ -69,10 +77,11 @@ const { formId, formType, heading, subtitle } = Astro.props;
               ))}
             </ul>
           )}
-        </div>
+          </div>
+        )}
 
         <!-- Right Column: Form -->
-        <div class="lg:col-span-3" data-animate>
+        <div class={variant === "full" ? "lg:col-span-3" : ""} data-animate>
           <form
             id={`${formId}-form`}
             class="bg-white rounded-2xl p-6 md:p-8 shadow-2xl"

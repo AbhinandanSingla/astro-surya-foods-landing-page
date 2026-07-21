@@ -1,0 +1,723 @@
+---
+import MasterLayout from "../layouts/MasterLayout.astro";
+
+/**
+ * Wind Chime Test Page
+ * ---
+ * A mesmerising rice-themed wind chime scene inspired by Japanese
+ * temple fūrin and Indian doorway toran hangings.
+ *
+ * Each strand configuration:
+ *   x        – horizontal position (%)
+ *   grains   – number of rice grains on the thread
+ *   duration – pendulum period (seconds)
+ *   delay    – animation phase offset (seconds)
+ *   angle    – max swing amplitude (degrees)
+ *   length   – visual length of the strand (vh units)
+ */
+const strands = [
+  { x: 6,  grains: 5, duration: 4.2, delay: 0.0, angle: 6,  length: 38 },
+  { x: 15, grains: 7, duration: 5.0, delay: 0.5, angle: 4,  length: 52 },
+  { x: 24, grains: 4, duration: 3.6, delay: 1.0, angle: 8,  length: 32 },
+  { x: 33, grains: 6, duration: 4.8, delay: 0.3, angle: 5,  length: 46 },
+  { x: 42, grains: 8, duration: 5.4, delay: 0.8, angle: 3,  length: 58 },
+  { x: 50, grains: 9, duration: 6.0, delay: 0.2, angle: 4,  length: 65 },
+  { x: 58, grains: 7, duration: 4.4, delay: 0.6, angle: 5,  length: 54 },
+  { x: 67, grains: 5, duration: 5.2, delay: 1.1, angle: 6,  length: 40 },
+  { x: 76, grains: 6, duration: 3.8, delay: 0.4, angle: 7,  length: 48 },
+  { x: 85, grains: 8, duration: 4.6, delay: 0.9, angle: 4,  length: 56 },
+  { x: 94, grains: 4, duration: 4.0, delay: 0.7, angle: 8,  length: 34 },
+];
+---
+
+<MasterLayout
+  title="Rice Wind Chimes — Surya Foods"
+  description="An immersive wind chime experience celebrating the beauty of rice — inspired by Japanese temple fūrin and Indian doorway traditions."
+  transparentNav={true}
+>
+  <!-- ═══════════════════ WIND CHIME SCENE ═══════════════════ -->
+  <section class="chime-scene" id="chime-scene">
+    <!-- Atmospheric background layers -->
+    <div class="chime-bg-gradient"></div>
+    <div class="chime-bg-pattern"></div>
+    <div class="chime-bg-glow"></div>
+    <div class="chime-bg-mist"></div>
+
+    <!-- Floating particle container (JS-populated) -->
+    <div class="chime-particles" id="chime-particles"></div>
+
+    <!-- ── The beam ── -->
+    <div class="chime-beam-wrapper">
+      <div class="chime-beam">
+        <!-- Decorative rope ties -->
+        <div class="beam-rope beam-rope--left"></div>
+        <div class="beam-rope beam-rope--right"></div>
+        <!-- Beam knots -->
+        <div class="beam-knot" style="left: 10%;"></div>
+        <div class="beam-knot" style="left: 30%;"></div>
+        <div class="beam-knot" style="left: 50%;"></div>
+        <div class="beam-knot" style="left: 70%;"></div>
+        <div class="beam-knot" style="left: 90%;"></div>
+      </div>
+    </div>
+
+    <!-- ── The strands ── -->
+    <div class="chime-strands-container">
+      {strands.map((s, si) => (
+        <div
+          class="chime-strand"
+          data-strand={si}
+          style={`
+            left: ${s.x}%;
+            --swing-dur: ${s.duration}s;
+            --swing-delay: ${s.delay}s;
+            --swing-angle: ${s.angle}deg;
+            height: ${s.length}vh;
+          `}
+        >
+          {/* Golden thread */}
+          <div class="strand-thread"></div>
+
+          {/* Rice grains along the thread */}
+          {Array.from({ length: s.grains }).map((_, gi) => (
+            <div
+              class="grain-node"
+              style={`
+                top: ${((gi + 1) / (s.grains + 1)) * 100}%;
+                --wobble-delay: ${(gi * 0.12).toFixed(2)}s;
+              `}
+            >
+              <div class="rice-grain" />
+              {/* Add a tiny husk leaf on every 3rd grain */}
+              {gi % 3 === 1 && <div class="grain-husk" />}
+            </div>
+          ))}
+
+          {/* Bottom tassel — paddy cluster */}
+          <div class="strand-tassel">
+            <div class="tassel-grain tg-1" />
+            <div class="tassel-grain tg-2" />
+            <div class="tassel-grain tg-3" />
+            <div class="tassel-leaf tl-left" />
+            <div class="tassel-leaf tl-right" />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- ── Overlay text ── -->
+    <div class="chime-text-overlay">
+      <p class="chime-overline">स u r y a&nbsp;&nbsp;f o o d s</p>
+      <h1 class="chime-title">
+        Golden Harvest<br />
+        <span class="chime-title-accent">Chimes</span>
+      </h1>
+      <p class="chime-subtitle">Where every grain dances with the wind</p>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="chime-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ INFO SECTION ═══════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container-custom text-center" data-animate>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">
+        Wind Chime Effect — Test Page
+      </p>
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 leading-tight mb-4">
+        Like what you see?
+      </h2>
+      <div class="gold-line mx-auto mb-6"></div>
+      <p class="text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
+        This is a prototype of the rice wind chime effect. If you love it, we can
+        integrate it into the home page hero section for a truly memorable first
+        impression.
+      </p>
+    </div>
+  </section>
+</MasterLayout>
+
+<!-- ═══════════════════════════════════════════════════════════
+     STYLES
+     ═══════════════════════════════════════════════════════════ -->
+<style>
+  /* ── Scene container ── */
+  .chime-scene {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+
+  /* ── Background layers ── */
+  .chime-bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      175deg,
+      #06100a 0%,
+      #0a1f0f 25%,
+      #0f2e17 50%,
+      #0d2414 75%,
+      #060e09 100%
+    );
+    z-index: 0;
+  }
+
+  .chime-bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: radial-gradient(circle at 1px 1px, #d4a853 1px, transparent 0);
+    background-size: 32px 32px;
+    z-index: 1;
+  }
+
+  .chime-bg-glow {
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 60vh;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(212, 168, 83, 0.12) 0%,
+      rgba(212, 168, 83, 0.05) 30%,
+      transparent 70%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .chime-bg-mist {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30vh;
+    background: linear-gradient(
+      to top,
+      rgba(6, 16, 10, 0.9) 0%,
+      rgba(6, 16, 10, 0.4) 40%,
+      transparent 100%
+    );
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* ── Floating particles ── */
+  .chime-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .chime-particles :global(.particle) {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particle-fall linear infinite;
+  }
+
+  @keyframes particle-fall {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px) translateX(0) rotate(0deg);
+    }
+    10% {
+      opacity: 0.7;
+    }
+    90% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100vh) translateX(var(--drift)) rotate(360deg);
+    }
+  }
+
+  /* ── Beam ── */
+  .chime-beam-wrapper {
+    position: absolute;
+    top: 12vh;
+    left: 5%;
+    right: 5%;
+    z-index: 10;
+  }
+
+  .chime-beam {
+    position: relative;
+    width: 100%;
+    height: 14px;
+    background: linear-gradient(
+      180deg,
+      #5a3e0a 0%,
+      #7a5a1a 15%,
+      #9a7a2f 30%,
+      #b8923a 50%,
+      #9a7a2f 70%,
+      #7a5a1a 85%,
+      #5a3e0a 100%
+    );
+    border-radius: 7px;
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.6),
+      0 2px 6px rgba(0, 0, 0, 0.4),
+      inset 0 1px 1px rgba(255, 255, 255, 0.15),
+      inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (min-width: 768px) {
+    .chime-beam {
+      height: 18px;
+      border-radius: 9px;
+    }
+  }
+
+  /* Beam knots */
+  .beam-knot {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 40% 40%,
+      #b8923a 0%,
+      #7a5a1a 60%,
+      #5a3e0a 100%
+    );
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (min-width: 768px) {
+    .beam-knot {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  /* Beam rope ties */
+  .beam-rope {
+    position: absolute;
+    top: -18px;
+    width: 28px;
+    height: 24px;
+    border: 3px solid #9a7a2f;
+    border-bottom: none;
+    border-radius: 14px 14px 0 0;
+    opacity: 0.7;
+  }
+
+  .beam-rope--left { left: 4%; }
+  .beam-rope--right { right: 4%; }
+
+  /* ── Strands container ── */
+  .chime-strands-container {
+    position: absolute;
+    top: 12vh;
+    left: 5%;
+    right: 5%;
+    height: 80vh;
+    z-index: 8;
+    pointer-events: none;
+  }
+
+  /* ── Individual strand ── */
+  .chime-strand {
+    position: absolute;
+    top: 14px;
+    width: 2px;
+    transform-origin: top center;
+    animation: pendulum-swing var(--swing-dur, 4s) ease-in-out infinite;
+    animation-delay: var(--swing-delay, 0s);
+  }
+
+  @media (min-width: 768px) {
+    .chime-strand {
+      top: 18px;
+    }
+  }
+
+  @keyframes pendulum-swing {
+    0%   { transform: rotate(var(--swing-angle, 5deg)); }
+    50%  { transform: rotate(calc(var(--swing-angle, 5deg) * -1)); }
+    100% { transform: rotate(var(--swing-angle, 5deg)); }
+  }
+
+  /* ── Thread ── */
+  .strand-thread {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(212, 168, 83, 0.8) 0%,
+      rgba(212, 168, 83, 0.5) 50%,
+      rgba(212, 168, 83, 0.3) 100%
+    );
+  }
+
+  /* ── Rice grains ── */
+  .grain-node {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rice-grain {
+    width: 5px;
+    height: 16px;
+    background: linear-gradient(
+      160deg,
+      rgba(255, 252, 240, 0.95) 0%,
+      rgba(248, 239, 211, 1) 30%,
+      rgba(240, 222, 166, 1) 60%,
+      rgba(226, 196, 121, 0.9) 100%
+    );
+    border-radius: 45%;
+    box-shadow:
+      0 0 6px rgba(212, 168, 83, 0.35),
+      0 0 12px rgba(212, 168, 83, 0.15);
+    animation: grain-wobble calc(var(--swing-dur, 4s) * 0.6) ease-in-out infinite;
+    animation-delay: calc(var(--swing-delay, 0s) + var(--wobble-delay, 0s));
+  }
+
+  @media (min-width: 768px) {
+    .rice-grain {
+      width: 6px;
+      height: 20px;
+    }
+  }
+
+  @keyframes grain-wobble {
+    0%, 100% { transform: rotate(8deg) scale(1); }
+    25%      { transform: rotate(-2deg) scale(1.02); }
+    50%      { transform: rotate(-8deg) scale(1); }
+    75%      { transform: rotate(2deg) scale(0.98); }
+  }
+
+  /* ── Husk leaf on select grains ── */
+  .grain-husk {
+    position: absolute;
+    top: -2px;
+    left: 8px;
+    width: 4px;
+    height: 10px;
+    background: linear-gradient(to bottom, #85d196, #3d9a52);
+    border-radius: 1px 3px 1px 3px;
+    transform: rotate(20deg);
+    opacity: 0.8;
+  }
+
+  /* ── Bottom tassel (paddy cluster) ── */
+  .strand-tassel {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 28px;
+  }
+
+  .tassel-grain {
+    position: absolute;
+    width: 5px;
+    height: 14px;
+    background: linear-gradient(
+      160deg,
+      rgba(255, 252, 240, 0.9) 0%,
+      rgba(240, 222, 166, 1) 50%,
+      rgba(226, 196, 121, 0.85) 100%
+    );
+    border-radius: 45%;
+    box-shadow: 0 0 4px rgba(212, 168, 83, 0.25);
+  }
+
+  .tg-1 { top: 0; left: 50%; transform: translateX(-50%); }
+  .tg-2 { top: 2px; left: 2px; transform: rotate(-18deg); }
+  .tg-3 { top: 2px; right: 2px; transform: rotate(18deg); }
+
+  .tassel-leaf {
+    position: absolute;
+    bottom: -4px;
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(to bottom, #5bb870, #265c34);
+    border-radius: 2px 2px 50% 50%;
+    opacity: 0.85;
+  }
+
+  .tl-left  { left: 3px; transform: rotate(-14deg); transform-origin: top center; }
+  .tl-right { right: 3px; transform: rotate(14deg); transform-origin: top center; }
+
+  @media (min-width: 768px) {
+    .strand-tassel {
+      width: 30px;
+      height: 34px;
+    }
+    .tassel-grain {
+      width: 6px;
+      height: 16px;
+    }
+    .tassel-leaf {
+      height: 20px;
+    }
+  }
+
+  /* ── Overlay text ── */
+  .chime-text-overlay {
+    position: relative;
+    z-index: 15;
+    text-align: center;
+    padding: 1rem;
+    pointer-events: none;
+    margin-top: 8vh;
+  }
+
+  .chime-overline {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(212, 168, 83, 0.5);
+    margin: 0 0 1rem;
+  }
+
+  .chime-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: rgba(255, 255, 255, 0.08);
+    margin: 0 0 1rem;
+    text-shadow: 0 0 40px rgba(212, 168, 83, 0.08);
+  }
+
+  .chime-title-accent {
+    background: linear-gradient(
+      90deg,
+      rgba(212, 168, 83, 0.15),
+      rgba(226, 196, 121, 0.2),
+      rgba(212, 168, 83, 0.15)
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer-slow 6s ease-in-out infinite;
+    font-style: italic;
+  }
+
+  @keyframes shimmer-slow {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .chime-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.12);
+    letter-spacing: 0.15em;
+    margin: 0;
+  }
+
+  /* ── Scroll hint ── */
+  .chime-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(212, 168, 83, 0.3);
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: scroll-bob 2s ease-in-out infinite;
+  }
+
+  .scroll-arrow {
+    animation: scroll-bob 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-bob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(6px); }
+  }
+
+  /* ── Wind gust effect (added via JS) ── */
+  .chime-strand.gust {
+    animation-name: pendulum-gust !important;
+    animation-duration: 1.2s !important;
+    animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    animation-iteration-count: 1 !important;
+    animation-fill-mode: forwards !important;
+  }
+
+  @keyframes pendulum-gust {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(calc(var(--swing-angle, 5deg) * 2.5)); }
+    40%  { transform: rotate(calc(var(--swing-angle, 5deg) * -1.8)); }
+    60%  { transform: rotate(calc(var(--swing-angle, 5deg) * 1.2)); }
+    80%  { transform: rotate(calc(var(--swing-angle, 5deg) * -0.6)); }
+    100% { transform: rotate(var(--swing-angle, 5deg)); }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 639px) {
+    .chime-beam-wrapper {
+      left: 2%;
+      right: 2%;
+    }
+    .chime-strands-container {
+      left: 2%;
+      right: 2%;
+    }
+    .beam-rope { display: none; }
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .chime-strand,
+    .rice-grain,
+    .scroll-arrow,
+    .chime-scroll-hint {
+      animation: none !important;
+    }
+    .chime-particles :global(.particle) {
+      animation: none !important;
+    }
+  }
+</style>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════════════ -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ── 1. Floating rice-grain particles ──
+    const container = document.getElementById("chime-particles");
+    if (!container) return;
+
+    const PARTICLE_COUNT = 35;
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const p = document.createElement("div");
+      p.classList.add("particle");
+
+      // Random size (rice grain shaped)
+      const w = 2 + Math.random() * 4;
+      const h = w * (2.5 + Math.random());
+      p.style.width = `${w}px`;
+      p.style.height = `${h}px`;
+
+      // Random horizontal position
+      p.style.left = `${Math.random() * 100}%`;
+
+      // Random drift direction
+      const drift = (Math.random() - 0.5) * 80;
+      p.style.setProperty("--drift", `${drift}px`);
+
+      // Random timing
+      const duration = 8 + Math.random() * 14;
+      const delay = Math.random() * duration;
+      p.style.animationDuration = `${duration}s`;
+      p.style.animationDelay = `-${delay}s`;
+
+      // Soft cream/gold color
+      const hue = 38 + Math.random() * 12;
+      const sat = 60 + Math.random() * 30;
+      const light = 80 + Math.random() * 15;
+      p.style.background = `hsl(${hue}, ${sat}%, ${light}%)`;
+      p.style.boxShadow = `0 0 ${3 + Math.random() * 4}px hsla(${hue}, ${sat}%, ${light}%, 0.3)`;
+
+      container.appendChild(p);
+    }
+
+    // ── 2. Mouse interaction — gentle push ──
+    const scene = document.getElementById("chime-scene");
+    const strandsContainer = document.querySelector(".chime-strands-container");
+    if (!scene || !strandsContainer) return;
+
+    let lastMoveTime = 0;
+
+    scene.addEventListener("mousemove", (e) => {
+      const now = Date.now();
+      if (now - lastMoveTime < 100) return; // throttle
+      lastMoveTime = now;
+
+      const rect = strandsContainer.getBoundingClientRect();
+      const mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+
+      const allStrands = strandsContainer.querySelectorAll(".chime-strand") as NodeListOf<HTMLElement>;
+
+      allStrands.forEach((strand) => {
+        const strandX = parseFloat(strand.style.left);
+        const dist = Math.abs(mouseX - strandX);
+
+        if (dist < 12) {
+          // Close enough — trigger a gust on this strand
+          strand.classList.add("gust");
+          strand.addEventListener(
+            "animationend",
+            () => {
+              strand.classList.remove("gust");
+            },
+            { once: true }
+          );
+        }
+      });
+    });
+
+    // ── 3. Periodic wind gusts ──
+    setInterval(() => {
+      const allStrands = strandsContainer.querySelectorAll(".chime-strand") as NodeListOf<HTMLElement>;
+      // Pick 2-3 random strands to gust
+      const count = 2 + Math.floor(Math.random() * 2);
+      const indices = new Set<number>();
+      while (indices.size < count) {
+        indices.add(Math.floor(Math.random() * allStrands.length));
+      }
+      indices.forEach((idx) => {
+        const strand = allStrands[idx];
+        if (!strand.classList.contains("gust")) {
+          strand.classList.add("gust");
+          strand.addEventListener(
+            "animationend",
+            () => strand.classList.remove("gust"),
+            { once: true }
+          );
+        }
+      });
+    }, 5000 + Math.random() * 4000);
+  });
+</script>

@@ -1,0 +1,22 @@
+{
+  "name": "Surya Foods",
+  "short_name": "Surya Foods",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "theme_color": "#1a3a2a",
+  "background_color": "#1a3a2a",
+  "display": "standalone",
+  "start_url": "/"
+}

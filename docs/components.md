@@ -88,7 +88,9 @@ interface Props {
 
 ### Renders
 - Character set, viewport meta
-- Favicon link
+- Favicon links (`/favicon.svg`, `/favicon-96x96.png`, `/favicon.ico`)
+- Apple Touch Icon (`/apple-touch-icon.png`)
+- Web App Metadata & Manifest (`apple-mobile-web-app-title`, `/site.webmanifest`)
 - Google Fonts preconnect + stylesheet
 - Canonical URL
 - Primary meta tags (title, description)

@@ -51,6 +51,13 @@
 ```
 astro-surya-foods-landing-page/
 ├── public/                          # Static assets (served as-is)
+│   ├── favicon.svg                  # SVG favicon
+│   ├── favicon-96x96.png            # 96x96 desktop PNG favicon
+│   ├── favicon.ico                  # Multi-size ICO favicon (16x16, 32x32, 48x48)
+│   ├── apple-touch-icon.png         # 180x180 Apple Touch Icon
+│   ├── site.webmanifest             # Web App Manifest
+│   ├── web-app-manifest-192x192.png # PWA 192x192 icon
+│   ├── web-app-manifest-512x512.png # PWA 512x512 icon
 │   ├── images/logo/                 # Logo assets (logo-transparent.png, variants)
 │   └── .assetsignore                # Cloudflare asset ignore rules
 │

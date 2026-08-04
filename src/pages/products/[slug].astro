@@ -1,0 +1,226 @@
+---
+import MasterLayout from "../../layouts/MasterLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import { RICE_PRODUCTS, GALLERY_IMAGES } from "../../consts";
+
+export function getStaticPaths() {
+  return RICE_PRODUCTS.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+
+// Related products from the same category (excluding current)
+const relatedProducts = RICE_PRODUCTS
+  .filter(p => p.categorySlug === product.categorySlug && p.slug !== product.slug)
+  .slice(0, 3);
+
+// Product gallery — use existing gallery images for variety
+const galleryImages = [
+  { src: product.image, alt: product.name },
+  ...GALLERY_IMAGES.filter(img => img.category === "Rice").slice(0, 2).map(img => ({ src: img.src, alt: img.alt })),
+  ...GALLERY_IMAGES.filter(img => img.category === "Factory").slice(0, 1).map(img => ({ src: img.src, alt: img.alt })),
+];
+
+const specLabels: Record<string, string> = {
+  grainLength: "Grain Length (Avg)",
+  moisture: "Moisture Content",
+  brokenGrain: "Broken Grain",
+  color: "Color",
+  aroma: "Aroma Profile",
+  pesticideResidue: "Pesticide Residue",
+};
+---
+
+<MasterLayout
+  title={`${product.name} | Surya Foods`}
+  description={product.description.slice(0, 160)}
+  transparentNav={true}
+>
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="relative min-h-[60vh] flex items-center pt-24">
+    <img
+      src={product.image}
+      alt={product.name}
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-forest-950/95 via-forest-950/80 to-forest-950/40"></div>
+
+    <div class="relative z-10 container-custom py-16 md:py-20">
+      <div class="max-w-3xl">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-xs text-forest-200/60 mb-6" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-gold-400 transition-colors no-underline">Home</a>
+          <span>/</span>
+          <a href="/products" class="hover:text-gold-400 transition-colors no-underline">Products</a>
+          <span>/</span>
+          <a href={`/products?category=${product.categorySlug}`} class="hover:text-gold-400 transition-colors no-underline">{product.category}</a>
+          <span>/</span>
+          <span class="text-gold-400">{product.shortName}</span>
+        </nav>
+
+        <span class="inline-block py-1 px-3 rounded-full bg-gold-500/20 text-gold-400 text-[10px] font-bold uppercase tracking-widest mb-4">
+          {product.grade}
+        </span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-[1.1] mb-4">
+          {product.name}
+        </h1>
+        <p class="text-sm md:text-base text-forest-200/70 uppercase tracking-wider">
+          {product.category}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PRODUCT DETAILS ═══════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <!-- Left: Image Gallery -->
+        <div data-animate>
+          <div class="grid grid-cols-2 gap-3">
+            {galleryImages.map((img, i) => (
+              <div class:list={[
+                "rounded-xl overflow-hidden shadow-lg",
+                i === 0 ? "col-span-2 aspect-[16/10]" : "aspect-square",
+              ]}>
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Right: Product Info -->
+        <div data-animate>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-3">
+            {product.category}
+          </p>
+          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">
+            {product.name}
+          </h2>
+          <div class="gold-line mb-6"></div>
+          <p class="text-base text-slate-600 leading-relaxed mb-8">
+            {product.description}
+          </p>
+
+          <!-- Features -->
+          <h3 class="text-lg font-heading font-bold text-slate-800 mb-4">Key Features</h3>
+          <ul class="space-y-3 mb-8">
+            {product.features.map((feature: string) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-forest-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-sm text-slate-700">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Available Forms -->
+          <h3 class="text-lg font-heading font-bold text-slate-800 mb-4">Available Forms</h3>
+          <div class="flex flex-wrap gap-2 mb-8">
+            {product.forms.map((form: string) => (
+              <span class="inline-block text-sm font-semibold text-forest-700 bg-forest-50 border border-forest-200 px-4 py-2 rounded-full">
+                {form}
+              </span>
+            ))}
+          </div>
+
+          <!-- CTA -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#product-inquiry" class="btn-primary text-center">
+              Request a Quote
+            </a>
+            <a href="/contact" class="btn-secondary text-center">
+              Export Inquiry
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SPECIFICATIONS ═══════════════════ -->
+  <section class="section-padding bg-cream">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Technical Details"
+        title="Product Specifications"
+        subtitle={`Detailed specifications for ${product.name}.`}
+      />
+
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden" data-animate>
+          {Object.entries(product.specifications).map(([key, value], i) => (
+            <div class:list={[
+              "flex items-center justify-between px-6 py-4",
+              i % 2 === 0 ? "bg-white" : "bg-slate-50/50",
+            ]}>
+              <span class="text-sm font-semibold text-slate-700">{specLabels[key] || key}</span>
+              <span class="text-sm text-slate-900 font-medium">{value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ RELATED PRODUCTS ═══════════════════ -->
+  {relatedProducts.length > 0 && (
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <SectionHeading
+          overline="More from this Category"
+          title={`Other ${product.category} Varieties`}
+          subtitle="Explore more premium rice varieties from the same category."
+        />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {relatedProducts.map((related) => (
+            <a href={`/products/${related.slug}`} class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-slate-100 no-underline block" data-animate>
+              <div class="relative overflow-hidden aspect-[4/3]">
+                <img
+                  src={related.image}
+                  alt={related.name}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <span class="absolute top-4 left-4 bg-forest-900/90 backdrop-blur-sm text-gold-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                  {related.grade}
+                </span>
+              </div>
+              <div class="p-5 md:p-6">
+                <h3 class="text-lg font-heading font-bold text-slate-900 mb-2 group-hover:text-forest-700 transition-colors">
+                  {related.name}
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed line-clamp-2">{related.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ═══════════════════ LEAD FORM ═══════════════════ -->
+  <LeadForm
+    formId="product-inquiry"
+    formType="export"
+    heading={`Interested in ${product.name}?`}
+    subtitle={`Tell us about your requirements for ${product.name} and our team will respond within 24 hours with pricing, samples, and export documentation.`}
+  />
+
+  <div class="h-16 md:hidden"></div>
+</MasterLayout>

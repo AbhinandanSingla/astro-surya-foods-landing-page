@@ -1,50 +1,437 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import MasterLayout from "../layouts/MasterLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import StatsCounter from "../components/StatsCounter.astro";
+import BlogCard from "../components/BlogCard.astro";
+import HeroChimes from "../components/HeroChimes.astro";
+import { STATS, CERTIFICATIONS_DISPLAY, GALLERY_IMAGES, KEY_TO_SUCCESS, QUOTES, MILL_MAP_QUERY } from "../consts";
+import { getCollection } from "astro:content";
+
+const allPosts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<MasterLayout
+  title="Surya Foods Premium Basmati Rice Exporter"
+  description="Surya Foods is a trusted rice manufacturer and exporter, milling premium Basmati rice since 2002. Partner with us for global exports and domestic distribution."
+  transparentNav={true}
+>
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="relative min-h-screen flex items-center">
+    <!-- Background Image -->
+    <img
+      src="/images/hero-rice-paddy.png"
+      alt="Golden rice paddy field at sunset"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <!-- Gradient Overlay — lightened -->
+    <div class="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-950/70 to-forest-950/40"></div>
+
+    <!-- ✨ Interactive Wind Chimes Overlay ✨ -->
+    <HeroChimes />
+
+    <div class="relative z-10 container-custom py-32 md:py-40">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400 mb-6 animate-fade-in leading-relaxed">
+          MANUFACTURER, PROCESSOR<br />
+          & EXPORTER OF INDIAN<br />
+          BASMATI RICE
+        </p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-[1.1] mb-6">
+          Premium Basmati Rice<br />
+          <span class="text-gradient-gold">Excellence Since 2002.</span>
+        </h1>
+        <p class="text-base md:text-lg text-forest-100/80 leading-relaxed mb-10 max-w-xl">
+          From the fertile fields of India to tables across the globe — Surya Foods delivers the finest Basmati rice with uncompromising quality and trust.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/global-exports" class="btn-primary">
+            Explore Global Exports
+          </a>
+          <a href="/048-brand" class="btn-secondary">
+            Discover 048 Brand
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 text-white/40">
+      <span class="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-white/40 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ STATS BAR ═══════════════════ -->
+  <section class="bg-forest-900 py-12 md:py-16">
+    <div class="container-custom">
+      <StatsCounter stats={STATS} />
+    </div>
+  </section>
+
+  <!-- ═══════════════════ QUOTE BANNER 1 ═══════════════════ -->
+  <section class="py-12 md:py-16 bg-gradient-to-r from-gold-50 via-white to-gold-50">
+    <div class="container-custom text-center" data-animate>
+      <p class="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-forest-800 italic leading-relaxed">
+        "{QUOTES[0]}"
+      </p>
+      <div class="gold-line mx-auto mt-6"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WHY CHOOSE US ═══════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Why Choose Us"
+        title="Uncompromising Quality & Trust"
+        subtitle="We bring decades of expertise and modern infrastructure to deliver the finest rice to your table."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 md:mt-12">
+        {[
+          "Committed to quality & on-time delivery.",
+          "All equipped modern testing laboratory at the mill.",
+          "Exceptional quality standards and quality assurance.",
+          "Expertise in matching strictest customer requirements.",
+          "Complete solutions due to advanced rice milling machines.",
+          "Export experience to worldwide, reliable & consistent quality supply.",
+          "In depth understanding of milling, procuring, storing & exporting rice.",
+          "Skillful & competent workforce with 24x7 monitoring of the production.",
+          "Extensive range of indian Basmati & Non-Basmati Rice at competitive prices.",
+          "ISO, HACCP & FSSAI Certified in production & supply."
+        ].map((point) => (
+          <div class="flex items-start gap-4 p-5 md:p-6 bg-cream rounded-xl border border-gold-100 hover:shadow-lg hover:border-gold-300 transition-all duration-300" data-animate>
+            <div class="shrink-0 w-8 h-8 rounded-full bg-forest-500/10 flex items-center justify-center text-forest-600 mt-0.5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p class="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
+              {point}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ OUR LEGACY ═══════════════════ -->
+  <section class="section-padding bg-cream">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Text -->
+        <div data-animate>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">
+            Our Legacy
+          </p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 leading-tight mb-4">
+            The Backbone of India's Rice Industry
+          </h2>
+          <div class="gold-line mb-6"></div>
+          <p class="text-base text-slate-600 leading-relaxed mb-6">
+            For over two decades, Surya Foods has been the silent powerhouse behind some of India's most recognized rice brands. Our state-of-the-art milling and processing infrastructure enables us to deliver consistently superior quality at scale.
+          </p>
+          <p class="text-base text-slate-600 leading-relaxed mb-8">
+            We've built our reputation not on marketing, but on the quality of every grain that leaves our facility. Our clients trust us because we deliver — every shipment, every time, without compromise.
+          </p>
+          <ul class="space-y-3 list-none p-0 m-0">
+            {[
+              "State-of-the-art milling and sortex facilities",
+              "Capacity to process 50,000+ MT annually",
+              "Trusted supplier to India's largest FMCG brands",
+              "Trusted star export house",
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-forest-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-sm text-slate-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Image -->
+        <div data-animate>
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/gallery/factory-1.jpg"
+              alt="Modern rice processing facility"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-[400px] md:h-[500px] object-cover"
+            />
+            <!-- Decorative Accent -->
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gold-400/20 rounded-2xl -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ KEY TO OUR SUCCESS ═══════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Our Strength"
+        title="The Key To Our Success"
+        subtitle="What sets Surya Foods apart from the competition — our three pillars of excellence."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {KEY_TO_SUCCESS.map((item) => (
+          <div class="group text-center p-8 md:p-10 bg-cream rounded-2xl border border-gold-100 hover:shadow-xl hover:border-gold-300 hover:-translate-y-1 transition-all duration-500" data-animate>
+            <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-forest-500/10 flex items-center justify-center text-forest-600 group-hover:bg-forest-500 group-hover:text-white transition-all duration-500">
+              {item.icon === "quality" && (
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              )}
+              {item.icon === "automation" && (
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              )}
+              {item.icon === "labelling" && (
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" /></svg>
+              )}
+            </div>
+            <h3 class="text-xl font-heading font-bold text-slate-900 mb-3">{item.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ QUOTE BANNER 2 ═══════════════════ -->
+  <section class="py-16 md:py-20 bg-forest-800 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    <div class="relative container-custom text-center" data-animate>
+      <p class="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white italic leading-relaxed">
+        "{QUOTES[2]}"
+      </p>
+      <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-6"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ OUR CERTIFICATIONS ═══════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Quality Assurance"
+        title="Our Certifications"
+        subtitle="Internationally recognized certifications that guarantee our commitment to quality, safety, and excellence."
+      />
+
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+        {CERTIFICATIONS_DISPLAY.map((cert) => (
+          <a href="/certificates" class="group flex flex-col items-center gap-3 p-4 rounded-xl hover:shadow-lg hover:bg-gold-50 transition-all duration-300 no-underline w-28 sm:w-32 md:w-36" data-animate>
+            <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
+              <img
+                src={cert.image}
+                alt={`${cert.name} certification`}
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <p class="text-[10px] md:text-xs font-semibold text-slate-600 text-center uppercase tracking-wider group-hover:text-forest-700 transition-colors">
+              {cert.name}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ BUSINESS PATHWAYS ═══════════════════ -->
+  <section class="section-padding bg-cream">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Partner With Us"
+        title="Two Powerful Avenues"
+        subtitle="Choose the partnership model that fits your business. Whether you operate globally or across India, we have the right program for you."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <!-- Card 1: Global Exports -->
+        <a href="/global-exports" class="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline" data-animate>
+          <img
+            src="/images/hero-global-exports.png"
+            alt="Global shipping and exports"
+            loading="lazy"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/40 to-transparent group-hover:from-forest-950/95 transition-all duration-500"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400 mb-2">International Trade</p>
+            <h3 class="text-2xl md:text-3xl font-heading font-bold text-white mb-3">Global Exports</h3>
+            <p class="text-sm text-white/70 mb-4 max-w-sm">
+              Premium Basmati rice for international markets. 1121, 1509, 1718, and Pusa varieties in Raw, Steam, and Sella forms.
+            </p>
+            <span class="inline-flex items-center text-sm font-semibold text-gold-400 group-hover:gap-3 gap-2 transition-all duration-300">
+              Explore Export Program
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Card 2: 048 Brand -->
+        <a href="/048-brand" class="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline" data-animate>
+          <img
+            src="/images/gallery/rice-grains-2.jpg"
+            alt="Premium rice brand 048"
+            loading="lazy"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/40 to-transparent group-hover:from-forest-950/95 transition-all duration-500"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400 mb-2">Domestic Retail</p>
+            <h3 class="text-2xl md:text-3xl font-heading font-bold text-white mb-3">048 Premium Rice</h3>
+            <p class="text-sm text-white/70 mb-4 max-w-sm">
+              Our flagship D2C brand. Majesty and Platinum collections for the discerning Indian household.
+            </p>
+            <span class="inline-flex items-center text-sm font-semibold text-gold-400 group-hover:gap-3 gap-2 transition-all duration-300">
+              Discover 048 Brand
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ OUR GALLERY ═══════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Inside Surya Foods"
+        title="Our Gallery"
+        subtitle="A glimpse into our world — from golden paddy fields to precision milling and premium packaging."
+      />
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+        {GALLERY_IMAGES.map((img, i) => (
+          <div
+            class:list={[
+              "group relative overflow-hidden rounded-xl cursor-pointer",
+              i === 0 || i === 5 ? "md:col-span-2 md:row-span-2" : "",
+            ]}
+            data-animate
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              decoding="async"
+              class:list={[
+                "w-full object-cover group-hover:scale-110 transition-transform duration-700",
+                i === 0 || i === 5 ? "h-[250px] md:h-full" : "h-[180px] md:h-[220px]",
+              ]}
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+              <p class="text-xs font-semibold text-gold-400 uppercase tracking-wider mb-1">{img.category}</p>
+              <p class="text-sm text-white font-medium">{img.alt}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ QUOTE BANNER 3 ═══════════════════ -->
+  <section class="py-12 md:py-16 bg-gradient-to-r from-forest-50 via-gold-50 to-forest-50">
+    <div class="container-custom text-center" data-animate>
+      <p class="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-forest-800 italic leading-relaxed">
+        "{QUOTES[1]}"
+      </p>
+      <div class="gold-line mx-auto mt-6"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FROM OUR BLOG ═══════════════════ -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <SectionHeading
+        overline="Knowledge Hub"
+        title="From Our Blog"
+        subtitle="Expert insights on Basmati rice, industry trends, and global trade."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {allPosts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            heroImage={post.data.heroImage}
+            category={post.data.category}
+            slug={post.id}
+          />
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/blog" class="btn-primary">
+          View All Articles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ GOOGLE MAP ═══════════════════ -->
+  <section id="map-section" class="bg-forest-900 relative">
+    <div class="container-custom py-12 md:py-16">
+      <div class="text-center mb-8" data-animate>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400 mb-3">Our Location</p>
+        <h2 class="text-2xl md:text-3xl font-heading font-bold text-white mb-2">Visit Our Rice Mill</h2>
+        <p class="text-sm text-forest-200/60">Bishanpur Alias Banwala, Punjab, India</p>
+      </div>
+    </div>
+    <div class="w-full h-[350px] md:h-[450px]">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.6395766727624!2d76.08296397571034!3d29.961044174965725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3911b92f5487b297%3A0xd464206e72dbef30!2sSurya%20foods!5e0!3m2!1sen!2sin!4v1783427565449!5m2!1sen!2sin"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="Surya Foods Rice Mill Location"
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CTA BANNER ═══════════════════ -->
+  <section class="section-padding bg-gradient-to-br from-forest-900 via-forest-800 to-forest-900 relative overflow-hidden">
+    <!-- Subtle pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    <div class="relative container-custom text-center max-w-3xl mx-auto" data-animate>
+      <p class="text-lg md:text-xl font-heading italic text-gold-300 mb-4">"{QUOTES[3]}"</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+        Ready to Build a<br />Lasting Partnership?
+      </h2>
+      <p class="text-base md:text-lg text-forest-200/70 mb-10 max-w-xl mx-auto">
+        Whether you're an international broker or a domestic distributor, we'd love to hear from you.
+      </p>
+      <a href="/contact" class="btn-gold">
+        Get In Touch
+      </a>
+    </div>
+  </section>
+
+  <!-- Mobile bottom bar spacer -->
+  <div class="h-16 md:hidden"></div>
+</MasterLayout>

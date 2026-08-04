@@ -1,0 +1,175 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section class="section-padding bg-white relative overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute top-0 right-0 w-1/3 h-full bg-forest-50/50 -skew-x-12 transform origin-top-right hidden lg:block"></div>
+  
+  <div class="container-custom relative z-10">
+    <SectionHeading
+      overline="Education"
+      title="The Art & Science of Rice"
+      subtitle="Understanding the different types, forms, and milling processes that result in our premium rice varieties."
+    />
+
+    <!-- TYPE OF RICE -->
+    <div class="mb-20" data-animate>
+      <h3 class="text-2xl font-heading font-bold text-forest-900 mb-8 flex items-center gap-4">
+        <span class="w-8 h-[2px] bg-gold-400"></span>
+        Types of Rice
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Long Grain */}
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:border-gold-300 transition-colors group">
+          <div class="w-16 h-16 bg-forest-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-forest-900 transition-colors">
+            <svg class="w-8 h-8 text-forest-700 group-hover:text-gold-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19V6m0 0l-3 3m3-3l3 3m-9 9h12" />
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-slate-900 mb-4">Long Grain Rice</h4>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            Slim and elongated grains usually measuring 6mm or more. When cooked, they remain separate, light, and fluffy, making them ideal for biryanis, pilafs, and other aromatic preparations.
+          </p>
+        </div>
+        
+        {/* Medium Grain */}
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:border-gold-300 transition-colors group">
+          <div class="w-16 h-16 bg-forest-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-forest-900 transition-colors">
+            <svg class="w-8 h-8 text-forest-700 group-hover:text-gold-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-slate-900 mb-4">Medium Grain Rice</h4>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            Shorter and slightly wider grains (4mm to 6mm). When cooked, they are tender with a moist, creamy texture that holds some stickiness without clumping completely. Perfect for risottos.
+          </p>
+        </div>
+
+        {/* Short Grain */}
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:border-gold-300 transition-colors group">
+          <div class="w-16 h-16 bg-forest-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-forest-900 transition-colors">
+            <svg class="w-8 h-8 text-forest-700 group-hover:text-gold-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 12H4" />
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-slate-900 mb-4">Short Grain Rice</h4>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            Round, plump grains less than 4mm in length. They absorb more water and become soft, sticky, and cohesive. Commonly used in sushi, puddings, and sticky rice dishes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMS OF RICE -->
+    <div class="mb-20" data-animate>
+      <h3 class="text-2xl font-heading font-bold text-forest-900 mb-8 flex items-center gap-4">
+        <span class="w-8 h-[2px] bg-gold-400"></span>
+        Forms of Rice
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Brown */}
+        <div class="bg-cream rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="p-6">
+            <h4 class="text-lg font-bold text-forest-900 mb-2">Brown Rice</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Minimally processed, retaining its bran and germ layers. Preserves natural nutrients, has a nutty flavor, firmer texture, and requires longer cooking.
+            </p>
+          </div>
+        </div>
+        {/* Raw */}
+        <div class="bg-cream rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="p-6">
+            <h4 class="text-lg font-bold text-forest-900 mb-2">Raw Rice</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Basic polished white rice with husk, bran, and germ removed. Versatile, cooks quickly, and widely used for everyday boiling, steaming, and frying.
+            </p>
+          </div>
+        </div>
+        {/* Steam */}
+        <div class="bg-cream rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="p-6">
+            <h4 class="text-lg font-bold text-forest-900 mb-2">Steam Rice</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Partially precooked through steaming before milling. Retains more nutrients, cooks faster than raw rice, and tends to remain separate and fluffy.
+            </p>
+          </div>
+        </div>
+        {/* Parboiled */}
+        <div class="bg-cream rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="p-6">
+            <h4 class="text-lg font-bold text-forest-900 mb-2">Parboiled (Sella)</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Soaked, steamed, and dried before milling. Features a firmer texture after cooking, resists overcooking, and is ideal for biryanis and pulaos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MILLING PROCESS -->
+    <div data-animate>
+      <h3 class="text-2xl font-heading font-bold text-forest-900 mb-8 flex items-center gap-4">
+        <span class="w-8 h-[2px] bg-gold-400"></span>
+        Milling Process Comparison
+      </h3>
+      <div class="overflow-x-auto custom-scrollbar pb-4">
+        <table class="w-full text-left border-collapse min-w-[800px]">
+          <thead>
+            <tr>
+              <th class="py-4 px-6 bg-forest-900 text-gold-400 font-bold uppercase tracking-wider text-sm rounded-tl-xl">Process Step</th>
+              <th class="py-4 px-6 bg-forest-900 text-white font-bold uppercase tracking-wider text-sm">Raw</th>
+              <th class="py-4 px-6 bg-forest-900 text-white font-bold uppercase tracking-wider text-sm">Steam</th>
+              <th class="py-4 px-6 bg-forest-900 text-white font-bold uppercase tracking-wider text-sm">White Sella</th>
+              <th class="py-4 px-6 bg-forest-900 text-white font-bold uppercase tracking-wider text-sm rounded-tr-xl">Golden Sella</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-slate-100 border border-slate-100 rounded-b-xl">
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-6 text-sm font-semibold text-slate-800 border-l border-slate-100">Pre Cleaning</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Yes</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Yes</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Yes</td>
+              <td class="py-3 px-6 text-sm text-slate-600 border-r border-slate-100">Yes</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-6 text-sm font-semibold text-slate-800 border-l border-slate-100">Initial Steaming</td>
+              <td class="py-3 px-6 text-sm text-slate-400 text-center">-</td>
+              <td class="py-3 px-6 text-sm text-slate-600">1.5 mins</td>
+              <td class="py-3 px-6 text-sm text-slate-600">1.5 mins</td>
+              <td class="py-3 px-6 text-sm text-slate-600 border-r border-slate-100">1.5 mins</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-6 text-sm font-semibold text-slate-800 border-l border-slate-100">Soaking</td>
+              <td class="py-3 px-6 text-sm text-slate-400 text-center">-</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Cold (6 hrs)</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Cold (6 hrs)</td>
+              <td class="py-3 px-6 text-sm text-slate-600 border-r border-slate-100">Warm/Cold (6 hrs)</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-6 text-sm font-semibold text-slate-800 border-l border-slate-100">Secondary Steaming</td>
+              <td class="py-3 px-6 text-sm text-slate-400 text-center">-</td>
+              <td class="py-3 px-6 text-sm text-slate-400 text-center">-</td>
+              <td class="py-3 px-6 text-sm text-slate-600">1.5 mins</td>
+              <td class="py-3 px-6 text-sm text-slate-600 border-r border-slate-100">Longer Steaming</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-6 text-sm font-semibold text-slate-800 border-l border-slate-100">Drying</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Yes</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Yes</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Yes</td>
+              <td class="py-3 px-6 text-sm text-slate-600 border-r border-slate-100">Yes</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-6 text-sm font-semibold text-slate-800 border-l border-slate-100">Milling (Husking & Polish)</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Standard Polish</td>
+              <td class="py-3 px-6 text-sm text-slate-600">Standard Polish</td>
+              <td class="py-3 px-6 text-sm text-slate-600">High Polish</td>
+              <td class="py-3 px-6 text-sm text-slate-600 border-r border-slate-100">Standard Polish</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

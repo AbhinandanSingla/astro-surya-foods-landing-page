@@ -2,7 +2,7 @@
 import MasterLayout from "../../layouts/MasterLayout.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
 import LeadForm from "../../components/LeadForm.astro";
-import { RICE_PRODUCTS, GALLERY_IMAGES } from "../../consts";
+import { RICE_PRODUCTS, RICE_CATEGORIES } from "../../consts";
 
 export function getStaticPaths() {
   return RICE_PRODUCTS.map((product) => ({
@@ -18,12 +18,12 @@ const relatedProducts = RICE_PRODUCTS
   .filter(p => p.categorySlug === product.categorySlug && p.slug !== product.slug)
   .slice(0, 3);
 
-// Product gallery — use existing gallery images for variety
-const galleryImages = [
-  { src: product.image, alt: product.name },
-  ...GALLERY_IMAGES.filter(img => img.category === "Rice").slice(0, 2).map(img => ({ src: img.src, alt: img.alt })),
-  ...GALLERY_IMAGES.filter(img => img.category === "Factory").slice(0, 1).map(img => ({ src: img.src, alt: img.alt })),
-];
+// Product gallery — use product-specific gallery images
+const productGallery = (product as any).galleryImages || [product.image];
+const galleryImages = productGallery.map((src: string, i: number) => ({
+  src,
+  alt: `${product.name} - Image ${i + 1}`,
+}));
 
 const specLabels: Record<string, string> = {
   grainLength: "Grain Length (Avg)",
@@ -33,6 +33,47 @@ const specLabels: Record<string, string> = {
   aroma: "Aroma Profile",
   pesticideResidue: "Pesticide Residue",
 };
+
+const getBaseVariety = (name: string) => {
+  if (name.includes("1121")) return "1121";
+  if (name.includes("1718")) return "1718";
+  if (name.includes("1509")) return "1509";
+  if (name.includes("1401")) return "1401";
+  if (name.includes("Pusa")) return "Pusa";
+  if (name.includes("Traditional")) return "Traditional";
+  if (name.includes("Sugandha")) return "Sugandha";
+  if (name.includes("Sharbati")) return "Sharbati";
+  if (name.includes("PR") && name.includes("11")) return "PR 11";
+  if (name.includes("PR") && name.includes("14")) return "PR 14";
+  if (name.includes("Parmal")) return "Parmal";
+  if (name.includes("Sona")) return "Sona Masoori";
+  if (name.includes("PRF")) return "PRF";
+  if (name.includes("White Sella")) return "White Sella";
+  return "Other";
+};
+
+const categoriesMap: Record<string, string> = {
+  "Indian Basmati Rice": "Basmati",
+  "Indian Non-Basmati Rice": "Non Basmati",
+  "Pesticide Residue Free": "Pesticide Residue Free"
+};
+
+const groupedProducts = RICE_CATEGORIES.map(cat => {
+  const categoryProducts = RICE_PRODUCTS.filter(p => p.category === cat.name);
+  const displayCatName = categoriesMap[cat.name] || cat.name;
+  
+  const varieties = Array.from(new Set(categoryProducts.map(p => getBaseVariety(p.name))));
+  
+  return {
+    name: displayCatName,
+    varieties: varieties.map(v => {
+      return {
+        name: v,
+        products: categoryProducts.filter(p => getBaseVariety(p.name) === v)
+      };
+    })
+  };
+});
 ---
 
 <MasterLayout
@@ -77,142 +118,188 @@ const specLabels: Record<string, string> = {
     </div>
   </section>
 
-  <!-- ═══════════════════ PRODUCT DETAILS ═══════════════════ -->
-  <section class="section-padding bg-white">
+  <!-- ═══════════════════ CONTENT + SIDEBAR ═══════════════════ -->
+  <div class="bg-slate-50/50 py-12 lg:py-16">
     <div class="container-custom">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-        <!-- Left: Image Gallery -->
-        <div data-animate>
-          <div class="grid grid-cols-2 gap-3">
-            {galleryImages.map((img, i) => (
-              <div class:list={[
-                "rounded-xl overflow-hidden shadow-lg",
-                i === 0 ? "col-span-2 aspect-[16/10]" : "aspect-square",
-              ]}>
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading={i === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+        
+        <!-- MAIN CONTENT COLUMN -->
+        <div class="flex-1 w-full min-w-0 flex flex-col gap-8 md:gap-12">
+          
+          <!-- Product Details Card -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-10" data-animate>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+              <!-- Left: Image Gallery -->
+              <div>
+                <div class="grid grid-cols-2 gap-3">
+                  {galleryImages.map((img, i) => (
+                    <div class:list={[
+                      "rounded-xl overflow-hidden bg-slate-100",
+                      i === 0 ? "col-span-2 aspect-[4/3]" : "aspect-square",
+                    ]}>
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        loading={i === 0 ? "eager" : "lazy"}
+                        decoding="async"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
 
-        <!-- Right: Product Info -->
-        <div data-animate>
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-3">
-            {product.category}
-          </p>
-          <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">
-            {product.name}
-          </h2>
-          <div class="gold-line mb-6"></div>
-          <p class="text-base text-slate-600 leading-relaxed mb-8">
-            {product.description}
-          </p>
+              <!-- Right: Product Info -->
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-3">
+                  {product.category}
+                </p>
+                <h2 class="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">
+                  {product.name}
+                </h2>
+                <div class="gold-line mb-6"></div>
+                <p class="text-base text-slate-600 leading-relaxed mb-8">
+                  {product.description}
+                </p>
 
-          <!-- Features -->
-          <h3 class="text-lg font-heading font-bold text-slate-800 mb-4">Key Features</h3>
-          <ul class="space-y-3 mb-8">
-            {product.features.map((feature: string) => (
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-forest-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-sm text-slate-700">{feature}</span>
-              </li>
-            ))}
-          </ul>
+                <!-- Features -->
+                <h3 class="text-lg font-heading font-bold text-slate-800 mb-4">Key Features</h3>
+                <ul class="space-y-3 mb-8">
+                  {product.features.map((feature: string) => (
+                    <li class="flex items-start gap-3">
+                      <svg class="w-5 h-5 text-forest-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span class="text-sm text-slate-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
 
-          <!-- Available Forms -->
-          <h3 class="text-lg font-heading font-bold text-slate-800 mb-4">Available Forms</h3>
-          <div class="flex flex-wrap gap-2 mb-8">
-            {product.forms.map((form: string) => (
-              <span class="inline-block text-sm font-semibold text-forest-700 bg-forest-50 border border-forest-200 px-4 py-2 rounded-full">
-                {form}
-              </span>
-            ))}
-          </div>
+                <!-- Available Forms -->
+                <h3 class="text-lg font-heading font-bold text-slate-800 mb-4">Available Forms</h3>
+                <div class="flex flex-wrap gap-2 mb-8">
+                  {product.forms.map((form: string) => (
+                    <span class="inline-block text-xs font-semibold text-forest-700 bg-forest-50 border border-forest-200 px-3 py-1.5 rounded-full">
+                      {form}
+                    </span>
+                  ))}
+                </div>
 
-          <!-- CTA -->
-          <div class="flex flex-col sm:flex-row gap-3">
-            <a href="#product-inquiry" class="btn-primary text-center">
-              Request a Quote
-            </a>
-            <a href="/contact" class="btn-secondary text-center">
-              Export Inquiry
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ SPECIFICATIONS ═══════════════════ -->
-  <section class="section-padding bg-cream">
-    <div class="container-custom">
-      <SectionHeading
-        overline="Technical Details"
-        title="Product Specifications"
-        subtitle={`Detailed specifications for ${product.name}.`}
-      />
-
-      <div class="max-w-3xl mx-auto">
-        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden" data-animate>
-          {Object.entries(product.specifications).map(([key, value], i) => (
-            <div class:list={[
-              "flex items-center justify-between px-6 py-4",
-              i % 2 === 0 ? "bg-white" : "bg-slate-50/50",
-            ]}>
-              <span class="text-sm font-semibold text-slate-700">{specLabels[key] || key}</span>
-              <span class="text-sm text-slate-900 font-medium">{value}</span>
+                <!-- CTA -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <a href="#product-inquiry" class="btn-primary text-center text-sm py-2.5">
+                    Request a Quote
+                  </a>
+                  <a href="/contact" class="btn-secondary text-center text-sm py-2.5">
+                    Export Inquiry
+                  </a>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+
+          <!-- Specifications Card -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-10" data-animate>
+            <h2 class="text-2xl font-heading font-bold text-slate-900 mb-6">Product Specifications</h2>
+            <div class="bg-white rounded-xl border border-slate-100 overflow-hidden">
+              {Object.entries(product.specifications).map(([key, value], i) => (
+                <div class:list={[
+                  "flex items-center justify-between px-5 py-3 md:px-6 md:py-4",
+                  i % 2 === 0 ? "bg-white" : "bg-slate-50/50",
+                ]}>
+                  <span class="text-sm font-semibold text-slate-700">{specLabels[key] || key}</span>
+                  <span class="text-sm text-slate-900 font-medium">{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Related Products Card -->
+          {relatedProducts.length > 0 && (
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-10" data-animate>
+              <h2 class="text-2xl font-heading font-bold text-slate-900 mb-6">Other {product.category} Varieties</h2>
+              <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
+                {relatedProducts.map((related) => (
+                  <a href={`/products/${related.slug}`} class="group bg-white rounded-xl overflow-hidden border border-slate-100 hover:border-forest-200 shadow-sm hover:shadow-md transition-all duration-300 no-underline block flex flex-col">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-slate-100">
+                      <img
+                        src={related.image}
+                        alt={related.name}
+                        loading="lazy"
+                        decoding="async"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <span class="absolute top-3 left-3 bg-forest-900/90 backdrop-blur-sm text-gold-400 text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
+                        {related.grade}
+                      </span>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col">
+                      <h3 class="text-base font-heading font-bold text-slate-900 mb-1.5 group-hover:text-forest-700 transition-colors line-clamp-1">
+                        {related.name}
+                      </h3>
+                      <p class="text-xs text-slate-500 leading-relaxed line-clamp-2 mt-auto">{related.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
+
+        <!-- SIDEBAR COLUMN -->
+        <aside class="w-full lg:w-80 shrink-0 sticky top-28">
+          <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 overflow-hidden">
+            <h3 class="text-lg font-heading font-bold text-slate-900 mb-4 pb-4 border-b border-slate-100">
+              All Products
+            </h3>
+            
+            <div class="max-h-[calc(100vh-20rem)] overflow-y-auto pr-2 -mr-2 space-y-6 custom-scrollbar">
+              {groupedProducts.map((cat) => (
+                <div>
+                  <h4 class="text-sm font-bold uppercase tracking-widest text-slate-800 mb-3">{cat.name}</h4>
+                  <div class="space-y-4">
+                    {cat.varieties.map(v => (
+                      <div class="pl-3 border-l-2 border-slate-100">
+                        <h5 class="text-xs font-semibold text-slate-500 mb-2">{v.name}</h5>
+                        <ul class="space-y-1">
+                          {v.products.map(p => {
+                             const formName = p.forms[0] || p.shortName.split(" ").pop();
+                             return (
+                               <li>
+                                 <a 
+                                   href={`/products/${p.slug}`}
+                                   class={`block px-3 py-1.5 text-sm rounded-lg transition-colors no-underline ${p.slug === product.slug ? 'bg-forest-50 text-forest-700 font-semibold pointer-events-none' : 'text-slate-600 hover:bg-slate-50 hover:text-forest-600'}`}
+                                 >
+                                   {formName}
+                                 </a>
+                               </li>
+                             )
+                          })}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-slate-100">
+              <a
+                href="/products"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-forest-600 hover:text-forest-800 transition-colors no-underline"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                </svg>
+                View Product Catalog
+              </a>
+            </div>
+          </div>
+        </aside>
+
       </div>
     </div>
-  </section>
-
-  <!-- ═══════════════════ RELATED PRODUCTS ═══════════════════ -->
-  {relatedProducts.length > 0 && (
-    <section class="section-padding bg-white">
-      <div class="container-custom">
-        <SectionHeading
-          overline="More from this Category"
-          title={`Other ${product.category} Varieties`}
-          subtitle="Explore more premium rice varieties from the same category."
-        />
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {relatedProducts.map((related) => (
-            <a href={`/products/${related.slug}`} class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-slate-100 no-underline block" data-animate>
-              <div class="relative overflow-hidden aspect-[4/3]">
-                <img
-                  src={related.image}
-                  alt={related.name}
-                  loading="lazy"
-                  decoding="async"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <span class="absolute top-4 left-4 bg-forest-900/90 backdrop-blur-sm text-gold-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
-                  {related.grade}
-                </span>
-              </div>
-              <div class="p-5 md:p-6">
-                <h3 class="text-lg font-heading font-bold text-slate-900 mb-2 group-hover:text-forest-700 transition-colors">
-                  {related.name}
-                </h3>
-                <p class="text-sm text-slate-600 leading-relaxed line-clamp-2">{related.description}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
+  </div>
 
   <!-- ═══════════════════ LEAD FORM ═══════════════════ -->
   <LeadForm

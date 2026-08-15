@@ -28,7 +28,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1401-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-1.png", "/images/rice-images/1401-steam-rice-2.png", "/images/rice-images/1401-steam-rice-3.png"]
   },
   {
     "slug": "1121-steam-basmati-rice",
@@ -53,7 +54,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1401-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-2.png", "/images/rice-images/1401-steam-rice-3.png", "/images/rice-images/1401-steam-rice-4.png"]
   },
   {
     "slug": "1121-sella-basmati-rice",
@@ -78,7 +80,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1401-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-3.png", "/images/rice-images/1401-steam-rice-4.png", "/images/rice-images/1401-steam-rice-5.png"]
   },
   {
     "slug": "1121-golden-sella-basmati-rice",
@@ -103,7 +106,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Golden Sella"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1401-steam-rice-4.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-4.png", "/images/rice-images/1401-steam-rice-5.png", "/images/rice-images/1401-steam-rice-1.png"]
   },
   {
     "slug": "1718-raw-basmati-rice",
@@ -128,7 +132,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/1718-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1718-steam-rice-1.png", "/images/rice-images/1718-steam-rice-2.png", "/images/rice-images/1718-steam-rice-3.png"]
   },
   {
     "slug": "1718-steam-basmati-rice",
@@ -153,7 +158,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/1718-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/1718-steam-rice-2.png", "/images/rice-images/1718-steam-rice-3.png", "/images/rice-images/1718-steam-rice-1.png"]
   },
   {
     "slug": "1718-sella-basmati-rice",
@@ -178,7 +184,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/1718-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/1718-steam-rice-3.png", "/images/rice-images/1718-steam-rice-1.png", "/images/rice-images/1718-steam-rice-2.png"]
   },
   {
     "slug": "1509-raw-basmati-rice",
@@ -203,7 +210,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/1509-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-1.png", "/images/rice-images/1509-steam-rice-2.png", "/images/rice-images/1509-steam-rice-3.png"]
   },
   {
     "slug": "1509-steam-basmati-rice",
@@ -228,7 +236,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/1509-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-2.png", "/images/rice-images/1509-steam-rice-3.png", "/images/rice-images/1509-steam-rice-1.png"]
   },
   {
     "slug": "1509-sella-basmati-rice",
@@ -253,7 +262,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/1509-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-3.png", "/images/rice-images/1509-steam-rice-1.png", "/images/rice-images/1509-steam-rice-2.png"]
   },
   {
     "slug": "1401-raw-basmati-rice",
@@ -278,7 +288,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1401-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-1.png", "/images/rice-images/1401-steam-rice-2.png", "/images/rice-images/1401-steam-rice-3.png"]
   },
   {
     "slug": "1401-steam-basmati-rice",
@@ -303,7 +314,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1401-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-2.png", "/images/rice-images/1401-steam-rice-3.png", "/images/rice-images/1401-steam-rice-4.png"]
   },
   {
     "slug": "1401-sella-basmati-rice",
@@ -328,7 +340,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1401-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-3.png", "/images/rice-images/1401-steam-rice-4.png", "/images/rice-images/1401-steam-rice-5.png"]
   },
   {
     "slug": "pusa-raw-basmati-rice",
@@ -353,7 +366,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/pusa-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/pusa-steam-rice-1.png", "/images/rice-images/pusa-steam-rice-2.png", "/images/rice-images/pusa-steam-rice-3.png"]
   },
   {
     "slug": "pusa-steam-basmati-rice",
@@ -378,7 +392,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/pusa-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/pusa-steam-rice-2.png", "/images/rice-images/pusa-steam-rice-3.png", "/images/rice-images/pusa-steam-rice-1.png"]
   },
   {
     "slug": "pusa-sella-basmati-rice",
@@ -403,7 +418,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/pusa-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/pusa-steam-rice-3.png", "/images/rice-images/pusa-steam-rice-1.png", "/images/rice-images/pusa-steam-rice-2.png"]
   },
   {
     "slug": "traditional-raw-basmati-rice",
@@ -428,7 +444,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/pusa-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/pusa-steam-rice-1.png", "/images/rice-images/pusa-steam-rice-3.png", "/images/rice-images/pusa-steam-rice-2.png"]
   },
   {
     "slug": "traditional-steam-basmati-rice",
@@ -453,7 +470,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/pusa-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/pusa-steam-rice-2.png", "/images/rice-images/pusa-steam-rice-1.png", "/images/rice-images/pusa-steam-rice-3.png"]
   },
   {
     "slug": "traditional-sella-basmati-rice",
@@ -478,7 +496,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/pusa-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/pusa-steam-rice-3.png", "/images/rice-images/pusa-steam-rice-2.png", "/images/rice-images/pusa-steam-rice-1.png"]
   },
   {
     "slug": "sugandha-raw-rice",
@@ -503,7 +522,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1509-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-1.png", "/images/rice-images/1509-steam-rice-2.png", "/images/rice-images/1509-steam-rice-3.png"]
   },
   {
     "slug": "sugandha-steam-rice",
@@ -528,7 +548,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1509-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-2.png", "/images/rice-images/1509-steam-rice-3.png", "/images/rice-images/1509-steam-rice-1.png"]
   },
   {
     "slug": "sugandha-sella-rice",
@@ -553,7 +574,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1509-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-3.png", "/images/rice-images/1509-steam-rice-1.png", "/images/rice-images/1509-steam-rice-2.png"]
   },
   {
     "slug": "sharbati-raw-rice",
@@ -578,7 +600,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/1718-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1718-steam-rice-1.png", "/images/rice-images/1718-steam-rice-2.png", "/images/rice-images/1718-steam-rice-3.png"]
   },
   {
     "slug": "sharbati-steam-rice",
@@ -603,7 +626,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/1718-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/1718-steam-rice-2.png", "/images/rice-images/1718-steam-rice-3.png", "/images/rice-images/1718-steam-rice-1.png"]
   },
   {
     "slug": "pr-11-raw-rice",
@@ -628,7 +652,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/1401-steam-rice-4.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-4.png", "/images/rice-images/1401-steam-rice-5.png", "/images/rice-images/1401-steam-rice-1.png"]
   },
   {
     "slug": "pr-11-steam-rice",
@@ -653,7 +678,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/1401-steam-rice-5.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-5.png", "/images/rice-images/1401-steam-rice-1.png", "/images/rice-images/1401-steam-rice-2.png"]
   },
   {
     "slug": "pr-11-sella-rice",
@@ -678,7 +704,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/1401-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-1.png", "/images/rice-images/1401-steam-rice-3.png", "/images/rice-images/1401-steam-rice-5.png"]
   },
   {
     "slug": "pr-14-raw-rice",
@@ -703,7 +730,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1509-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-1.png", "/images/rice-images/1509-steam-rice-3.png", "/images/rice-images/1509-steam-rice-2.png"]
   },
   {
     "slug": "pr-14-steam-rice",
@@ -728,7 +756,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1509-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-2.png", "/images/rice-images/1509-steam-rice-1.png", "/images/rice-images/1509-steam-rice-3.png"]
   },
   {
     "slug": "pr-14-sella-rice",
@@ -753,7 +782,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1509-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-3.png", "/images/rice-images/1509-steam-rice-2.png", "/images/rice-images/1509-steam-rice-1.png"]
   },
   {
     "slug": "parmal-raw-rice",
@@ -778,7 +808,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/1718-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/1718-steam-rice-3.png", "/images/rice-images/1718-steam-rice-1.png", "/images/rice-images/1718-steam-rice-2.png"]
   },
   {
     "slug": "parmal-steam-rice",
@@ -803,7 +834,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/1718-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1718-steam-rice-1.png", "/images/rice-images/1718-steam-rice-3.png", "/images/rice-images/1718-steam-rice-2.png"]
   },
   {
     "slug": "sona-masoori-raw-rice",
@@ -828,7 +860,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/pusa-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/pusa-steam-rice-1.png", "/images/rice-images/pusa-steam-rice-2.png", "/images/rice-images/pusa-steam-rice-3.png"]
   },
   {
     "slug": "sona-masoori-steam-rice",
@@ -853,7 +886,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/pusa-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/pusa-steam-rice-2.png", "/images/rice-images/pusa-steam-rice-3.png", "/images/rice-images/pusa-steam-rice-1.png"]
   },
   {
     "slug": "pesticide-residue-free-raw-rice",
@@ -879,7 +913,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Raw"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/1401-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-1.png", "/images/rice-images/1401-steam-rice-3.png", "/images/rice-images/1401-steam-rice-5.png"]
   },
   {
     "slug": "pesticide-residue-free-steam-rice",
@@ -905,7 +940,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Steam"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/1509-steam-rice-1.png",
+    "galleryImages": ["/images/rice-images/1509-steam-rice-1.png", "/images/rice-images/1509-steam-rice-2.png", "/images/rice-images/1509-steam-rice-3.png"]
   },
   {
     "slug": "pesticide-residue-free-sella-rice",
@@ -931,7 +967,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Sella"
     ],
-    "image": "/images/gallery/rice-grains-3.jpg"
+    "image": "/images/rice-images/1718-steam-rice-2.png",
+    "galleryImages": ["/images/rice-images/1718-steam-rice-2.png", "/images/rice-images/1718-steam-rice-3.png", "/images/rice-images/1718-steam-rice-1.png"]
   },
   {
     "slug": "pesticide-residue-free-golden-sella-rice",
@@ -957,7 +994,8 @@ export const RICE_PRODUCTS = [
     "forms": [
       "Golden Sella"
     ],
-    "image": "/images/gallery/rice-grains-1.jpg"
+    "image": "/images/rice-images/pusa-steam-rice-3.png",
+    "galleryImages": ["/images/rice-images/pusa-steam-rice-3.png", "/images/rice-images/pusa-steam-rice-1.png", "/images/rice-images/pusa-steam-rice-2.png"]
   },
   {
     "slug": "white-sella-rice",
@@ -983,6 +1021,7 @@ export const RICE_PRODUCTS = [
     "forms": [
       "White Sella"
     ],
-    "image": "/images/gallery/rice-grains-2.jpg"
+    "image": "/images/rice-images/1401-steam-rice-4.png",
+    "galleryImages": ["/images/rice-images/1401-steam-rice-4.png", "/images/rice-images/1401-steam-rice-2.png", "/images/rice-images/1401-steam-rice-5.png"]
   }
 ];

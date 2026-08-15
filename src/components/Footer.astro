@@ -1,5 +1,5 @@
 ---
-import { FOOTER_LINK_GROUPS, PHONE_NUMBER, WHATSAPP_NUMBER, EMAIL, MILL_ADDRESS } from "../consts";
+import { FOOTER_LINK_GROUPS, PHONE_NUMBER, WHATSAPP_NUMBER, EMAIL, MILL_ADDRESS, LINKEDIN_URL } from "../consts";
 const currentYear = new Date().getFullYear();
 const whatsappQRUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/${WHATSAPP_NUMBER}&bgcolor=0a1f0f&color=d4a853`;
 ---
@@ -23,7 +23,7 @@ const whatsappQRUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&
         <!-- Social Links -->
         <div class="flex gap-4">
           <a
-            href="https://linkedin.com/company/suryafoods"
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
             class="w-9 h-9 rounded-full bg-forest-800/60 flex items-center justify-center text-forest-300 hover:bg-gold-400 hover:text-white transition-all duration-300"

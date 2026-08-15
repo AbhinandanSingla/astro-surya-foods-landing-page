@@ -8,6 +8,7 @@ export const SITE_DESCRIPTION =
 export const PHONE_NUMBER = "+919779204835";
 export const WHATSAPP_NUMBER = "919779204835";
 export const EMAIL = "contact@suryafoodspatran.com";
+export const LINKEDIN_URL = "https://www.linkedin.com/company/surya-foods-patran/";
 export const MILL_ADDRESS = "Bishanpur Alias Banwala, Punjab, India";
 export const MILL_MAP_QUERY = "Bishanpur+Alias+Banwala+Punjab+India";
 
@@ -260,7 +261,7 @@ export const PRODUCTS = [
       "The king of Basmati. Renowned for its extraordinary grain length (up to 8.4mm after cooking), exquisite aroma, and perfectly fluffy texture.",
     forms: ["Raw", "Steam", "Sella"],
     image:
-      "/images/gallery/rice-grains-1.jpg",
+      "/images/rice-images/1401-steam-rice-1.png",
   },
   {
     name: "1509 Basmati Rice",
@@ -269,7 +270,7 @@ export const PRODUCTS = [
       "A versatile, high-quality Basmati with excellent elongation ratio and rich aromatic profile. Premium quality at a competitive price point.",
     forms: ["Raw", "Steam", "Sella"],
     image:
-      "/images/gallery/rice-grains-2.jpg",
+      "/images/rice-images/1509-steam-rice-1.png",
   },
   {
     name: "1718 Basmati Rice",
@@ -278,7 +279,7 @@ export const PRODUCTS = [
       "Traditional long-grain Basmati with authentic aroma and taste. Ideal for biryani and pulao preparations across global markets.",
     forms: ["Raw", "Steam", "Sella"],
     image:
-      "/images/gallery/rice-grains-3.jpg",
+      "/images/rice-images/1718-steam-rice-1.png",
   },
   {
     name: "Traditional Pusa Basmati",
@@ -287,7 +288,7 @@ export const PRODUCTS = [
       "The original Pusa variety — prized for its distinctive aroma, slender grain, and rich heritage dating back generations.",
     forms: ["Raw", "Steam", "Sella"],
     image:
-      "/images/gallery/rice-grains-1.jpg",
+      "/images/rice-images/pusa-steam-rice-1.png",
   },
 ] as const;
 
@@ -338,9 +339,14 @@ export const CERTIFICATIONS_DISPLAY = [
 ] as const;
 
 export const GALLERY_IMAGES = [
-  { src: "/images/gallery/rice-grains-1.jpg", alt: "Premium 1121 Basmati Rice grains", category: "Rice" },
-  { src: "/images/gallery/rice-grains-2.jpg", alt: "Golden Sella Basmati Rice", category: "Rice" },
-  { src: "/images/gallery/rice-grains-3.jpg", alt: "Traditional Pusa Basmati Rice", category: "Rice" },
+  { src: "/images/rice-images/1401-steam-rice-1.png", alt: "Premium 1401 Basmati Rice grains", category: "Rice" },
+  { src: "/images/rice-images/1509-steam-rice-1.png", alt: "1509 Steam Basmati Rice", category: "Rice" },
+  { src: "/images/rice-images/1718-steam-rice-1.png", alt: "1718 Steam Basmati Rice", category: "Rice" },
+  { src: "/images/rice-images/pusa-steam-rice-1.png", alt: "Pusa Steam Basmati Rice", category: "Rice" },
+  { src: "/images/rice-images/1401-steam-rice-2.png", alt: "1401 Basmati Rice close-up", category: "Rice" },
+  { src: "/images/rice-images/1509-steam-rice-2.png", alt: "1509 Basmati Rice top view", category: "Rice" },
+  { src: "/images/rice-images/1718-steam-rice-2.png", alt: "1718 Basmati Rice bowl", category: "Rice" },
+  { src: "/images/rice-images/pusa-steam-rice-2.png", alt: "Pusa Basmati Rice close-up", category: "Rice" },
   { src: "/images/gallery/factory-1.jpg", alt: "Surya Foods milling facility", category: "Factory" },
   { src: "/images/gallery/factory-2.jpg", alt: "Rice sortex machines in operation", category: "Factory" },
   { src: "/images/gallery/factory-3.jpg", alt: "Quality control laboratory", category: "Factory" },

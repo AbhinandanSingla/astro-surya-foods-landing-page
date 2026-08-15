@@ -32,7 +32,7 @@
 
 | Platform | URL |
 |---|---|
-| LinkedIn | https://linkedin.com/company/suryafoods |
+| LinkedIn | https://www.linkedin.com/company/surya-foods-patran/ |
 | Instagram | https://instagram.com/suryafoods |
 | Facebook | https://facebook.com/suryafoods |
 
@@ -346,7 +346,29 @@
 | `[Full Address], Haryana, India` | Footer, exports page | `Bishanpur Alias Banwala, Punjab, India` |
 | `https://suryafoods.com` | BaseHead, SEO | `https://suryafoodspatran.com` |
 | Social media URLs | Footer | Real social profiles |
-| Unsplash image URLs | All pages | Real product/company photography |
+| ~~Unsplash image URLs~~ | ~~All pages~~ | ✅ Replaced with real Surya Foods rice photography in `/images/rice-images/` |
 | `500+` B2B Partners | Home stats | Real number |
 | `15+` Countries | Home stats, exports page | Real number |
 | `50,000+` MT | Home stats, multiple pages | Real capacity number |
+
+---
+
+## 10. Rice Product Images
+
+> **Location**: `public/images/rice-images/`
+
+Real product photography added for the following varieties:
+
+| Variety | Images | Used For |
+|---|---|---|
+| **1401 Steam Rice** | `1401-steam-rice-1.png` through `1401-steam-rice-5.png` | 1121 products, 1401 products, PR 11 products, PRF products, White Sella |
+| **1509 Steam Rice** | `1509-steam-rice-1.png` through `1509-steam-rice-3.png` | 1509 products, Sugandha products, PR 14 products, PRF Steam |
+| **1718 Steam Rice** | `1718-steam-rice-1.png` through `1718-steam-rice-3.png` | 1718 products, Sharbati products, Parmal products, PRF Sella |
+| **Pusa Steam Rice** | `pusa-steam-rice-1.png` through `pusa-steam-rice-3.png` | Pusa products, Traditional products, Sona Masoori products, PRF Golden Sella |
+
+Each product in `RICE_PRODUCTS` now has:
+- `image` — Primary product image for cards and hero sections
+- `galleryImages` — Array of 3 images for the product detail page gallery
+
+The homepage gallery (`GALLERY_IMAGES` in `site.ts`) now uses 8 real rice images + factory/farm images.
+

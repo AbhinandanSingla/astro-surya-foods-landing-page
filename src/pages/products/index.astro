@@ -19,7 +19,7 @@ const productsByCategory = RICE_CATEGORIES.map(cat => ({
   <!-- ═══════════════════ HERO ═══════════════════ -->
   <section class="relative min-h-[70vh] flex items-center pt-24">
     <img
-      src="/images/gallery/rice-grains-1.jpg"
+      src="/images/rice-images/1401-steam-rice-1.png"
       alt="Premium Indian rice grains"
       class="absolute inset-0 w-full h-full object-cover"
       loading="eager"
@@ -56,10 +56,16 @@ const productsByCategory = RICE_CATEGORIES.map(cat => ({
       />
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        {RICE_CATEGORIES.map((cat, i) => (
+        {RICE_CATEGORIES.map((cat, i) => {
+          const categoryImages = [
+            "/images/rice-images/1401-steam-rice-1.png",
+            "/images/rice-images/1509-steam-rice-1.png",
+            "/images/rice-images/1718-steam-rice-1.png",
+          ];
+          return (
           <a href={`/products?category=${cat.slug}`} class="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline" data-animate>
             <img
-              src={`/images/gallery/rice-grains-${i + 1}.jpg`}
+              src={categoryImages[i] || categoryImages[0]}
               alt={cat.name}
               loading="lazy"
               decoding="async"
@@ -77,7 +83,7 @@ const productsByCategory = RICE_CATEGORIES.map(cat => ({
               </span>
             </div>
           </a>
-        ))}
+        )})}
       </div>
     </div>
   </section>

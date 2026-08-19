@@ -6,7 +6,7 @@ const BRAND_COLOR = "#1a4024"; // forest-800
 const GOLD_COLOR = "#d4a853"; // gold-400
 const EMAIL_ADDRESS = "contact@suryafoodspatran.com";
 const PHONE = "+91-9779204835";
-const ADDRESS = "Bishanpur Alias Banwala, Punjab, India";
+const ADDRESS = "Village Banwala, Patran Road, Nial Bye Pass Patran, Patiala, Punjab 147105";
 
 interface LeadData {
   fullName: string;

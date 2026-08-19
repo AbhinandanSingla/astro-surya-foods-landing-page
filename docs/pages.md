@@ -242,7 +242,7 @@ Uses `ProductCard` component for each.
 - Contact details:
   - Email: contact@suryafoodspatran.com
   - Phone: +919779204835
-  - Location: Bishanpur Alias Banwala, Punjab, India
+  - Location: Village Banwala, Patran Road, Nial Bye Pass Patran, Patiala, Punjab 147105
 
 **Right Column:**
 Uses `LeadForm` component with `formType="export"`.

@@ -4,7 +4,7 @@ import SectionHeading from "../components/SectionHeading.astro";
 import StatsCounter from "../components/StatsCounter.astro";
 import BlogCard from "../components/BlogCard.astro";
 import HeroChimes from "../components/HeroChimes.astro";
-import { STATS, CERTIFICATIONS_DISPLAY, GALLERY_IMAGES, KEY_TO_SUCCESS, QUOTES, MILL_MAP_QUERY } from "../consts";
+import { STATS, CERTIFICATIONS_DISPLAY, GALLERY_IMAGES, KEY_TO_SUCCESS, QUOTES, MILL_MAP_QUERY, MILL_ADDRESS } from "../consts";
 import { getCollection } from "astro:content";
 
 const allPosts = (await getCollection("blog"))
@@ -395,7 +395,7 @@ const allPosts = (await getCollection("blog"))
       <div class="text-center mb-8" data-animate>
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400 mb-3">Our Location</p>
         <h2 class="text-2xl md:text-3xl font-heading font-bold text-white mb-2">Visit Our Rice Mill</h2>
-        <p class="text-sm text-forest-200/60">Bishanpur Alias Banwala, Punjab, India</p>
+        <p class="text-sm text-forest-200/60">{MILL_ADDRESS}</p>
       </div>
     </div>
     <div class="w-full h-[350px] md:h-[450px]">

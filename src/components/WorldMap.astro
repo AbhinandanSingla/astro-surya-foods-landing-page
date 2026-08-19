@@ -1,0 +1,419 @@
+---
+/**
+ * WorldMap.astro — Aceternity-inspired dotted world map with animated trade routes
+ *
+ * Renders a dot-grid world map (equirectangular projection) with animated gold arcs
+ * connecting Patran, India to 12 key export destinations. All dots are pre-computed
+ * at build time; arcs animate on scroll via IntersectionObserver.
+ */
+import SectionHeading from "./SectionHeading.astro";
+
+/* ── Geography: Simplified land-mass ranges per grid row ──────────── */
+/* 100 cols × 50 rows  ·  equirectangular  ·  180°W → 180°E, 90°N → 90°S */
+const MAP: number[][][] = [
+  [],[], // 0-1: arctic water
+  [[54,56],[57,59]], // 2: Svalbard, Novaya Zemlya
+  [[14,24],[38,42],[54,55],[58,75]], // 3
+  [[12,28],[37,43],[46,47],[53,90]], // 4
+  [[3,5],[10,30],[37,44],[46,47],[53,95]], // 5
+  [[3,7],[10,32],[38,44],[46,47],[53,97]], // 6
+  [[3,8],[12,33],[39,44],[48,50],[53,98]], // 7
+  [[4,8],[13,34],[40,43],[48,98]], // 8
+  [[5,8],[15,34],[48,96]], // 9
+  [[15,35],[49,92]], // 10
+  [[15,35],[49,90],[92,95]], // 11
+  [[15,34],[49,89]], // 12
+  [[16,34],[49,86],[88,90]], // 13
+  [[17,33],[48,85],[88,90]], // 14
+  [[17,32],[48,84],[86,90]], // 15
+  [[18,31],[48,59],[60,84],[86,90]], // 16
+  [[19,30],[48,59],[60,83],[85,85],[89,89]], // 17
+  [[20,29],[48,59],[60,82],[85,85]], // 18
+  [[21,28],[48,59],[60,79],[85,87]], // 19
+  [[22,27],[48,72],[74,79],[85,87]], // 20
+  [[23,26],[47,63],[69,72],[74,79],[85,87]], // 21
+  [[23,25],[46,64],[70,72],[75,79],[86,86]], // 22
+  [[24,27],[30,33],[45,64],[72,72],[77,78],[80,82],[85,86]], // 23
+  [[25,36],[45,63],[78,79],[80,84]], // 24
+  [[24,24],[28,38],[45,63],[78,83],[89,92]], // 25 (equator)
+  [[27,39],[48,62],[79,82],[89,93]], // 26
+  [[28,40],[53,62],[80,80],[84,84],[89,93]], // 27
+  [[29,41],[53,62],[63,64]], // 28
+  [[30,41],[53,62],[63,64],[82,93]], // 29
+  [[30,40],[54,62],[63,65],[81,93]], // 30
+  [[30,39],[55,62],[63,65],[81,94]], // 31
+  [[30,38],[54,62],[64,64],[81,94]], // 32
+  [[31,37],[55,61],[82,94]], // 33
+  [[32,37],[55,60],[83,93]], // 34
+  [[32,36],[55,59],[84,92]], // 35
+  [[32,35],[93,94]], // 36
+  [[32,34],[93,94]], // 37
+  [[32,34],[93,93]], // 38
+  [[32,33]], // 39
+  [[33,33]], // 40
+  [],[],[],[], // 41–44: southern ocean
+  [], // 45
+  [[10,90]], // 46: Antarctica
+  [[5,95]], // 47
+  [[5,95]], // 48
+  [[10,90]], // 49
+];
+
+const GRID_COLS = 100;
+const GRID_ROWS = 50;
+const SVG_W = 800;
+const SVG_H = 400;
+
+/* ── Build dot grid at compile time ──────────────────────────────── */
+interface Dot { x: number; y: number }
+const landDots: Dot[] = [];
+
+for (let r = 0; r < GRID_ROWS; r++) {
+  const ranges = MAP[r] ?? [];
+  for (let c = 0; c < GRID_COLS; c++) {
+    const isLand = ranges.some(([s, e]) => c >= s && c <= e);
+    if (isLand) {
+      landDots.push({
+        x: (c / GRID_COLS) * SVG_W + (SVG_W / GRID_COLS / 2),
+        y: (r / GRID_ROWS) * SVG_H + (SVG_H / GRID_ROWS / 2),
+      });
+    }
+  }
+}
+
+/* ── Origin & Destinations ───────────────────────────────────────── */
+function toSVG(lat: number, lng: number): [number, number] {
+  return [
+    ((lng + 180) / 360) * SVG_W,
+    ((90 - lat) / 180) * SVG_H,
+  ];
+}
+
+const origin = { name: "Patran, India", lat: 30.35, lng: 76.22 };
+const [ox, oy] = toSVG(origin.lat, origin.lng);
+
+const destinations = [
+  { name: "Dubai",          flag: "🇦🇪", lat: 25.20, lng:  55.30 },
+  { name: "Riyadh",         flag: "🇸🇦", lat: 24.70, lng:  46.70 },
+  { name: "Baghdad",        flag: "🇮🇶", lat: 33.30, lng:  44.40 },
+  { name: "Tehran",         flag: "🇮🇷", lat: 35.70, lng:  51.40 },
+  { name: "New York",       flag: "🇺🇸", lat: 40.70, lng: -74.00 },
+  { name: "London",         flag: "🇬🇧", lat: 51.50, lng:  -0.10 },
+  { name: "Hamburg",         flag: "🇩🇪", lat: 53.55, lng:  10.00 },
+  { name: "Paris",          flag: "🇫🇷", lat: 48.86, lng:   2.35 },
+  { name: "Sydney",         flag: "🇦🇺", lat:-33.87, lng: 151.21 },
+  { name: "Johannesburg",   flag: "🇿🇦", lat:-26.20, lng:  28.05 },
+  { name: "Nairobi",        flag: "🇰🇪", lat: -1.29, lng:  36.82 },
+  { name: "Singapore",      flag: "🇸🇬", lat:  1.35, lng: 103.82 },
+];
+
+const routes = destinations.map((dest, i) => {
+  const [dx, dy] = toSVG(dest.lat, dest.lng);
+  const midX = (ox + dx) / 2;
+  const midY = (oy + dy) / 2;
+  const dist = Math.sqrt((dx - ox) ** 2 + (dy - oy) ** 2);
+  const lift = dist * 0.25;
+  return {
+    ...dest,
+    x: dx,
+    y: dy,
+    path: `M${ox.toFixed(1)},${oy.toFixed(1)} Q${midX.toFixed(1)},${(midY - lift).toFixed(1)} ${dx.toFixed(1)},${dy.toFixed(1)}`,
+    delay: i * 0.18,
+  };
+});
+---
+
+<!-- ═══════════════════ WORLD MAP SECTION ═══════════════════ -->
+<section id="world-map-section" class="relative overflow-hidden bg-forest-950 py-20 md:py-28">
+  <!-- Subtle radial glow behind India -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/4 w-[600px] h-[400px] bg-gold-500/[0.04] rounded-full blur-[120px]"></div>
+  </div>
+
+  <!-- Heading -->
+  <div class="container-custom relative z-10">
+    <SectionHeading
+      overline="Our Export Network"
+      title="Connecting India to the World"
+      subtitle="From our mills in Punjab, we export premium Basmati rice to buyers across 25+ countries on 6 continents."
+      light={true}
+    />
+  </div>
+
+  <!-- ── SVG World Map ── -->
+  <div class="relative z-10 max-w-6xl mx-auto px-4">
+    <div id="world-map-wrapper" class="world-map-wrapper relative">
+      <svg
+        viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-full h-auto"
+        aria-label="World map showing Surya Foods export routes from India"
+        role="img"
+      >
+        <defs>
+          <!-- Background dot grid pattern -->
+          <pattern id="bgDotGrid" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+            <circle cx="4" cy="4" r="0.6" fill="rgba(148,163,184,0.07)" />
+          </pattern>
+
+          <!-- Gold arc gradient -->
+          <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d4a853" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#b8860b" stop-opacity="0.7" />
+          </linearGradient>
+
+          <!-- Glow filter for origin dot -->
+          <filter id="originGlow" x="-200%" y="-200%" width="500%" height="500%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          <!-- Subtle glow for destination dots -->
+          <filter id="destGlow" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- Layer 1: Background dot grid -->
+        <rect width={SVG_W} height={SVG_H} fill="url(#bgDotGrid)" />
+
+        <!-- Layer 2: Land dots -->
+        <g class="land-dots">
+          {landDots.map((d) => (
+            <circle
+              cx={d.x.toFixed(1)}
+              cy={d.y.toFixed(1)}
+              r="1.2"
+              fill="rgba(110,231,183,0.18)"
+            />
+          ))}
+        </g>
+
+        <!-- Layer 3: Trade route arcs -->
+        <g class="trade-arcs">
+          {routes.map((r) => (
+            <path
+              d={r.path}
+              fill="none"
+              stroke="url(#arcGrad)"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              class="arc-path"
+              style={`--arc-delay: ${r.delay}s`}
+            />
+          ))}
+        </g>
+
+        <!-- Layer 4: Destination dots + labels -->
+        <g class="dest-markers">
+          {routes.map((r) => (
+            <g class="dest-group" style={`--arc-delay: ${r.delay}s`}>
+              {/* Outer pulse ring */}
+              <circle
+                cx={r.x.toFixed(1)}
+                cy={r.y.toFixed(1)}
+                r="5"
+                fill="none"
+                stroke="#d4a853"
+                stroke-width="0.5"
+                class="dest-pulse-ring"
+                opacity="0"
+              />
+              {/* Glow dot */}
+              <circle
+                cx={r.x.toFixed(1)}
+                cy={r.y.toFixed(1)}
+                r="3"
+                fill="#d4a853"
+                opacity="0"
+                filter="url(#destGlow)"
+                class="dest-glow"
+              />
+              {/* Core dot */}
+              <circle
+                cx={r.x.toFixed(1)}
+                cy={r.y.toFixed(1)}
+                r="2"
+                fill="#d4a853"
+                class="dest-dot"
+                opacity="0"
+              />
+              {/* Label */}
+              <text
+                x={r.x.toFixed(1)}
+                y={(r.y + 12).toFixed(1)}
+                text-anchor="middle"
+                class="dest-label"
+                fill="rgba(212,168,83,0.7)"
+                font-size="6"
+                font-family="Inter, system-ui, sans-serif"
+                font-weight="500"
+                opacity="0"
+              >
+                {r.name}
+              </text>
+            </g>
+          ))}
+        </g>
+
+        <!-- Layer 5: Origin dot (India) -->
+        <g class="origin-marker">
+          {/* Large pulse ring */}
+          <circle
+            cx={ox.toFixed(1)}
+            cy={oy.toFixed(1)}
+            r="10"
+            fill="none"
+            stroke="#d4a853"
+            stroke-width="0.8"
+            class="origin-pulse-ring"
+          />
+          {/* Glow */}
+          <circle
+            cx={ox.toFixed(1)}
+            cy={oy.toFixed(1)}
+            r="5"
+            fill="#d4a853"
+            filter="url(#originGlow)"
+            opacity="0.6"
+            class="origin-glow"
+          />
+          {/* Core dot */}
+          <circle
+            cx={ox.toFixed(1)}
+            cy={oy.toFixed(1)}
+            r="3.5"
+            fill="#d4a853"
+          />
+          {/* Label */}
+          <text
+            x={ox.toFixed(1)}
+            y={(oy - 14).toFixed(1)}
+            text-anchor="middle"
+            fill="#d4a853"
+            font-size="7"
+            font-family="Inter, system-ui, sans-serif"
+            font-weight="600"
+            letter-spacing="0.05em"
+          >
+            INDIA
+          </text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="container-custom relative z-10 mt-12 md:mt-16">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-center">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl md:text-3xl font-heading font-bold text-gradient-gold">25+</span>
+        <span class="text-sm text-forest-200/60 font-medium uppercase tracking-wider">Countries</span>
+      </div>
+      <div class="hidden sm:block w-px h-8 bg-forest-700/40"></div>
+      <div class="flex items-center gap-3">
+        <span class="text-2xl md:text-3xl font-heading font-bold text-gradient-gold">6</span>
+        <span class="text-sm text-forest-200/60 font-medium uppercase tracking-wider">Continents</span>
+      </div>
+      <div class="hidden sm:block w-px h-8 bg-forest-700/40"></div>
+      <div class="flex items-center gap-3">
+        <span class="text-2xl md:text-3xl font-heading font-bold text-gradient-gold">50,000+</span>
+        <span class="text-sm text-forest-200/60 font-medium uppercase tracking-wider">MT Exported</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ STYLES ═══════════════════ -->
+<style>
+  /* ── Arc draw animation ── */
+  .arc-path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    opacity: 0;
+  }
+  .world-map-wrapper.is-visible .arc-path {
+    opacity: 1;
+    animation: drawArc 1.8s ease-out forwards;
+    animation-delay: var(--arc-delay, 0s);
+  }
+  @keyframes drawArc {
+    0%   { stroke-dashoffset: 2000; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  /* ── Destination dots — fade in after arc arrives ── */
+  .dest-dot, .dest-glow, .dest-label {
+    opacity: 0;
+  }
+  .world-map-wrapper.is-visible .dest-dot,
+  .world-map-wrapper.is-visible .dest-glow,
+  .world-map-wrapper.is-visible .dest-label {
+    animation: fadeIn 0.4s ease-out forwards;
+    animation-delay: calc(var(--arc-delay, 0s) + 1.6s);
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  /* ── Destination pulse ring ── */
+  .dest-pulse-ring { opacity: 0; }
+  .world-map-wrapper.is-visible .dest-pulse-ring {
+    animation: destPulse 3s ease-out infinite;
+    animation-delay: calc(var(--arc-delay, 0s) + 1.6s);
+  }
+  @keyframes destPulse {
+    0%   { r: 2; opacity: 0.6; }
+    100% { r: 10; opacity: 0; }
+  }
+
+  /* ── Origin pulse ring ── */
+  .origin-pulse-ring {
+    animation: originPulse 2.5s ease-out infinite;
+  }
+  @keyframes originPulse {
+    0%   { r: 3.5; opacity: 0.7; stroke-width: 1.2; }
+    100% { r: 16; opacity: 0; stroke-width: 0.3; }
+  }
+
+  /* ── Origin glow gentle breathe ── */
+  .origin-glow {
+    animation: breathe 3s ease-in-out infinite;
+  }
+  @keyframes breathe {
+    0%, 100% { opacity: 0.4; }
+    50%      { opacity: 0.7; }
+  }
+
+  /* ── Responsive label hiding ── */
+  @media (max-width: 640px) {
+    .dest-label { display: none; }
+  }
+</style>
+
+<!-- ═══════════════════ CLIENT SCRIPT ═══════════════════ -->
+<script>
+  // Trigger arc animations when section scrolls into view
+  const wrapper = document.getElementById("world-map-wrapper");
+  if (wrapper) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            wrapper.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(wrapper);
+  }
+</script>

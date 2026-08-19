@@ -9,8 +9,8 @@ export const PHONE_NUMBER = "+919779204835";
 export const WHATSAPP_NUMBER = "919779204835";
 export const EMAIL = "contact@suryafoodspatran.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/company/surya-foods-patran/";
-export const MILL_ADDRESS = "Bishanpur Alias Banwala, Punjab, India";
-export const MILL_MAP_QUERY = "Bishanpur+Alias+Banwala+Punjab+India";
+export const MILL_ADDRESS = "Village Banwala, Patran Road, Nial Bye Pass Patran, Patiala, Punjab 147105";
+export const MILL_MAP_QUERY = "Village+Banwala+Patran+Road+Nial+Bye+Pass+Patran+Patiala+Punjab+147105";
 
 export const LANGUAGES = [
   { code: "af", label: "Afrikaans" },

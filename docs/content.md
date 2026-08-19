@@ -25,7 +25,7 @@
 | **Export Email** | contact@suryafoodspatran.com |
 | **General Email** | contact@suryafoodspatran.com |
 | **Phone** | +919779204835 |
-| **Address** | Bishanpur Alias Banwala, Punjab, India |
+| **Address** | Village Banwala, Patran Road, Nial Bye Pass Patran, Patiala, Punjab 147105 |
 | **Website** | https://suryafoodspatran.com |
 
 ### Social Links (Placeholders)
@@ -168,7 +168,7 @@
 ### Lead Form Section
 - **Headline**: `Start Your Export Partnership`
 - **Body**: `Fill out the form below and our export team will get back to you within 24 business hours with a detailed quote and product catalog.`
-- **Contact**: contact@suryafoodspatran.com | +919779204835 | Bishanpur Alias Banwala, Punjab, India
+- **Contact**: contact@suryafoodspatran.com | +919779204835 | Village Banwala, Patran Road, Nial Bye Pass Patran, Patiala, Punjab 147105
 
 ---
 
@@ -302,7 +302,7 @@
 ### Column 3: Export Inquiries
 - **Email**: contact@suryafoodspatran.com
 - **Phone**: +919779204835
-- **Address**: Bishanpur Alias Banwala, Punjab, India
+- **Address**: Village Banwala, Patran Road, Nial Bye Pass Patran, Patiala, Punjab 147105
 
 ### Column 4: Certifications
 - ISO 22000:2018
@@ -343,7 +343,7 @@
 | `+91-XXXXXXXXXX` | Footer, form sections | `+919779204835` |
 | `exports@suryafoods.com` | Footer, exports page | `contact@suryafoodspatran.com` |
 | `info@suryafoods.com` | Footer | `contact@suryafoodspatran.com` |
-| `[Full Address], Haryana, India` | Footer, exports page | `Bishanpur Alias Banwala, Punjab, India` |
+| `[Full Address], Haryana, India` | Footer, exports page | `Village Banwala, Patran Road, Nial Bye Pass Patran, Patiala, Punjab 147105` |
 | `https://suryafoods.com` | BaseHead, SEO | `https://suryafoodspatran.com` |
 | Social media URLs | Footer | Real social profiles |
 | ~~Unsplash image URLs~~ | ~~All pages~~ | ✅ Replaced with real Surya Foods rice photography in `/images/rice-images/` |

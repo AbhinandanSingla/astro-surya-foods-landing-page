@@ -10,16 +10,17 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  keywords?: string;
   transparentNav?: boolean;
 }
 
-const { title, description, image, transparentNav = false } = Astro.props;
+const { title, description, image, keywords, transparentNav = false } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={image} />
+    <BaseHead title={title} description={description} image={image} keywords={keywords} />
   </head>
   <body class="min-h-screen flex flex-col">
     <!-- Skip to main content -->

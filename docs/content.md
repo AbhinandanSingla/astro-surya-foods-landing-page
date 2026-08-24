@@ -175,55 +175,30 @@
 ## 5. 048 Brand Page Content
 
 ### Hero Section
-- **Overline**: `INTRODUCING`
-- **Headline (Gold Gradient)**: `048`
-- **Sub-headline**: `The Pinnacle of Everyday Luxury`
-- **Subtitle**: `Crafted from the finest Basmati grains, 048 brings restaurant-quality rice to your home. Two exceptional collections for every occasion.`
+- **Overline**: `PREMIUM INDIAN BASMATI RICE BRAND`
+- **Headline**: `One brand. Six distinct choices.`
+- **Subtitle**: `048 brings together a retail-ready range of premium Basmati rice for international importers, distributors, wholesale buyers and Indian trade partners.`
+- **CTAs**: `Explore the range` and `Request catalogue`
 
-### Brand Story
-- **Overline**: `OUR PHILOSOPHY`
-- **Headline**: `Why 048?`
-- **Body**:
-> 048 was born from a simple belief — that everyday meals deserve extraordinary ingredients. The name "048" represents the 48-hour quality assurance cycle that every batch of our rice undergoes before it earns the 048 seal.
->
-> From the moment a grain is harvested to the moment it reaches your kitchen, it passes through multiple stages of sorting, testing, aging, and quality validation. This meticulous attention to detail is what sets 048 apart from every other rice brand on the shelf.
->
-> When you choose 048, you're not just buying rice — you're investing in a promise of consistent, premium quality that transforms your everyday cooking into something truly special.
+### Six-Product Range
+| Product | Premium Descriptor | Pack Color |
+|---|---|---|
+| XXXL SUPREME | EXTRA LONG BASMATI | Deep Maroon / Burgundy `#5E1A23` |
+| SIGNATURE XXL | LONG GRAIN BASMATI | Deep Royal Blue `#253468` |
+| ROZANA | EVERYDAY BASMATI | Emerald Green `#155A38` |
+| TIBAR CLASSIC | TRADITIONAL BASMATI | Medium Purple `#5B2C63` |
+| DUBAR DELIGHT | AUTHENTIC BASMATI | Cocoa Brown `#5C351B` |
+| MINI DUBAR EXPRESS | QUICK COOK BASMATI | Ocean Teal `#205C66` |
 
-### Majesty Collection
-- **Overline**: `COLLECTION`
-- **Headline**: `048 Majesty`
-- **Body**: `Premium tier Basmati rice. Perfect for daily cooking that demands extraordinary quality. Every grain is extra-long, naturally aged, and double-sortex cleaned to deliver consistent excellence in every meal.`
-- **Features**:
-  - Extra-long grain Basmati (1121 variety)
-  - Naturally aged for enhanced aroma and elongation
-  - Double sortex cleaned for purity
-  - Ideal for daily cooking, biryani, and pulao
-  - Available in 1kg, 5kg, 10kg, and 25kg packs
-
-### Platinum Collection
-- **Overline**: `COLLECTION`
-- **Headline**: `048 Platinum`
-- **Body**: `The ultra-premium tier. Reserved for special occasions and the most discerning palates. Handpicked grains, extended aging, and a triple quality assurance process deliver an unparalleled rice experience.`
-- **Features**:
-  - Handpicked select grains (top 5% of harvest)
-  - Extended 2-year aging process for supreme aroma
-  - Triple sortex + color sorting for flawless appearance
-  - Premium packaging with tamper-proof seal
-  - Available in 1kg, 5kg, and 10kg packs
-
-### Distribution CTA
-- **Headline**: `Pan-India Presence, Growing Every Day`
-- **Subtitle**: `048 is rapidly expanding across India. Join our network of premium rice distributors and bring the finest Basmati to your region.`
+### Trade Positioning
+- Global focus: importers, overseas distributors, wholesalers, supermarket buyers and HoReCa partners.
+- India focus: state distributors, modern trade, general trade and institutional buyers.
+- Named target markets are partnership interests only and do not claim current availability or exclusivity.
 
 ### Lead Form Section
-- **Headline**: `Become a 048 Distributor`
-- **Body**: `Join India's fastest-growing premium rice brand. We offer attractive margins, marketing support, and a product that sells itself.`
-- **Benefits**:
-  - Attractive distributor margins
-  - Marketing and POS material support
-  - Dedicated account manager
-  - Flexible MOQ for new partners
+- **Headline**: `Bring 048 to Your Market`
+- **Form Type**: `brand`
+- **Audience**: International importers and distributors, Indian distributors, wholesale buyers and retail/HoReCa buyers.
 
 ---
 
@@ -371,4 +346,3 @@ Each product in `RICE_PRODUCTS` now has:
 - `galleryImages` — Array of 3 images for the product detail page gallery
 
 The homepage gallery (`GALLERY_IMAGES` in `site.ts`) now uses 8 real rice images + factory/farm images.
-

@@ -252,104 +252,24 @@ Uses `LeadForm` component with `formType="export"`.
 ## 4. 048 Brand Page (`/048-brand`)
 
 **File**: `src/pages/048-brand.astro`  
-**Title**: `048 Premium Rice — Surya Foods`  
-**Description**: `Discover 048 by Surya Foods — premium Basmati rice for the discerning Indian household. Majesty and Platinum collections now available for Pan-India distribution.`
+**Title**: `048 Premium Basmati Rice Brand | Exporters & Distributors — Surya Foods`
+**Description**: `Explore 048 premium Basmati rice from India: six retail-ready variants for global importers, rice distributors, wholesale buyers and Pan-India distribution partners.`
 
-### Section 1: Hero (70vh)
+### Page Structure
 
-| Property | Value |
-|---|---|
-| **Height** | `min-h-[70vh]` |
-| **Background** | Premium lifestyle / elegant dining / rice being served |
-| **Overlay** | Dark gradient, slightly warmer tone |
+1. **Hero (88vh)** — Export-led headline, dual product-pack composition and catalogue/range CTAs.
+2. **Brand introduction** — Positions 048 for both global trade and Indian distribution.
+3. **Six-product range** — Responsive cards for XXXL Supreme, Signature XXL, Rozana, Tibar Classic, Dubar Delight and Mini Dubar Express, using exact pack color tokens.
+4. **Campaign banners** — Four supplied campaign assets displayed in a responsive gallery.
+5. **Partner value** — Explains product segmentation, shelf identity, trade support and India/export reach.
+6. **Target markets** — Names priority countries and regions as partnership interests without claiming availability or exclusivity.
+7. **Brand partnership form** — Uses `LeadForm` with `formType="brand"` and anchor `#brand-inquiry` for global and domestic buyers.
 
-**Content:**
-- Overline: `INTRODUCING`
-- H1 (with gold gradient): `048`
-- Sub H1: `The Pinnacle of Everyday Luxury`
-- Subtitle: `Crafted from the finest Basmati grains, 048 brings restaurant-quality rice to your home. Two exceptional collections for every occasion.`
+### SEO
 
-### Section 2: Brand Story
-
-| Property | Value |
-|---|---|
-| **Background** | `bg-white` |
-| **Layout** | Centered text, narrow max-width (`max-w-3xl`) |
-
-**Content:**
-- Overline: `OUR PHILOSOPHY`
-- H2: `Why 048?`
-- Body (2-3 paragraphs): The story behind the 048 brand name. Quality philosophy — how every grain is selected, sorted, and packaged to deliver a consistently premium experience. Positioning as the bridge between everyday cooking and luxury dining.
-
-### Section 3: Majesty Collection
-
-| Property | Value |
-|---|---|
-| **Background** | `bg-cream` |
-| **Layout** | 2-column split (image left, text right) |
-
-**Content:**
-- Overline: `COLLECTION`
-- H2: `048 Majesty`
-- Description: Premium tier Basmati rice. Perfect for daily cooking that demands extraordinary quality. Extra-long grain length, aged to perfection, aromatic and fluffy.
-- Features list:
-  - Extra-long grain Basmati
-  - Naturally aged for enhanced aroma
-  - Double sortex cleaned
-  - Available in 1kg, 5kg, 10kg, 25kg packs
-- **Image**: Product packaging mockup or rice pouring shot
-
-### Section 4: Platinum Collection
-
-| Property | Value |
-|---|---|
-| **Background** | `bg-white` |
-| **Layout** | 2-column split (text left, image right) — reversed from Majesty |
-
-**Content:**
-- Overline: `COLLECTION`
-- H2: `048 Platinum`
-- Description: The ultra-premium tier. Reserved for special occasions and discerning palates. Handpicked grains, extended aging, and meticulous quality control at every stage.
-- Features list:
-  - Handpicked select grains
-  - Extended 2-year aging process
-  - Triple sortex + color sorting
-  - Premium packaging with tamper-proof seal
-  - Available in 1kg, 5kg, 10kg packs
-- **Image**: Elevated product shot or plated dish
-
-### Section 5: Distribution CTA
-
-| Property | Value |
-|---|---|
-| **Background** | Subtle map pattern or `bg-slate-50` |
-| **Layout** | Centered text + stats |
-
-**Content:**
-- H2: `Pan-India Presence, Growing Every Day`
-- Subtitle: `048 is rapidly expanding across India. Join our network of premium rice distributors.`
-- Stats row: Available States, Retail Partners, Monthly Volume
-- Map visual (optional, can be a decorative element)
-
-### Section 6: Lead Generation Form
-
-| Property | Value |
-|---|---|
-| **Background** | `bg-forest-900` |
-| **Layout** | 2-column (info left, form right) |
-| **HTML id** | `distributor-form` |
-
-**Left Column:**
-- H2: `Become a 048 Distributor`
-- Body: "Join India's fastest-growing premium rice brand. We offer attractive margins, marketing support, and a product that sells itself."
-- Benefits list:
-  - Attractive distributor margins
-  - Marketing and POS material support
-  - Dedicated account manager
-  - Flexible MOQ for new partners
-
-**Right Column:**
-Uses `LeadForm` component with `formType="distributor"`.
+- Page-specific keyword metadata targets premium Basmati rice exporters, Indian rice suppliers, importers, distributors, wholesale buyers and UAE/India search intent.
+- `ItemList` and `Product` JSON-LD describe all six 048 products.
+- The Tibar Classic banner is the page-specific social preview image.
 
 ---
 

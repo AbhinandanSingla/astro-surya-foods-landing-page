@@ -9,7 +9,7 @@
 | Form | Page | Form ID | Purpose | Anchor |
 |---|---|---|---|---|
 | Export Inquiry | `/global-exports` | `export-inquiry-form` | International broker lead capture | `#inquiry-form` |
-| Distributor Application | `/048-brand` | `distributor-form` | Domestic distributor lead capture | `#distributor-form` |
+| 048 Brand Partnership | `/048-brand` | `brand-inquiry-form` | Export and India partner lead capture | `#brand-inquiry` |
 
 ### Current State
 - **Frontend only** — forms render complete HTML with client-side validation
@@ -101,56 +101,51 @@ form.addEventListener('submit', async (e) => {
 
 ---
 
-## 3. Distributor Application Form
+## 3. 048 Brand Partnership Form
 
 ### Form Metadata
 | Property | Value |
 |---|---|
-| **Form ID** | `distributor-form` |
-| **Form Name** | Distributor Application |
+| **Form ID** | `brand-inquiry-form` |
+| **Form Name** | 048 Brand Partnership |
 | **Method** | POST |
-| **Action** | `""` (empty — no backend yet) |
-| **Submit Button Text** | Apply for Distribution |
-| **Success Message** | Thank you! Your application has been received. Our distribution team will review it and contact you within 3-5 business days. |
+| **Action** | `/api/contact` (JSON POST via client-side handler) |
+| **Submit Button Text** | Request 048 Catalogue |
+| **Success Message** | Thank you! Our business team will review your 048 enquiry and contact you within 24 business hours. |
 
 ### Field Specifications
 
 | Field Name | HTML Name | Type | Label | Placeholder | Required | Validation Rules |
 |---|---|---|---|---|---|---|
 | Full Name | `fullName` | `text` | Full Name | `e.g., Rajesh Kumar` | ✅ | Min 2 chars, max 100 |
-| Business Name | `businessName` | `text` | Business / Company Name | `e.g., Kumar Distributors Pvt. Ltd.` | ✅ | Min 2 chars, max 200 |
-| City / Region | `city` | `text` | City / Region | `e.g., Jaipur, Rajasthan` | ✅ | Min 2 chars |
-| State | `state` | `select` | State | `Select your state` | ✅ | Must select a value |
+| Company / Business Name | `companyName` | `text` | Company / Business Name | `e.g., Gulf Foods Trading LLC` | ✅ | Min 2 chars |
+| Country / State | `country` | `text` | Country / State | `e.g., UAE or Maharashtra, India` | ✅ | Min 2 chars |
+| Partnership Type | `partnerType` | `select` | Partnership Type | `Select partnership type` | ✅ | Must select a value |
 | Business Email | `email` | `email` | Business Email | `e.g., rajesh@company.com` | ✅ | Valid email format |
 | Phone Number | `phone` | `tel` | Phone Number | `e.g., +91-XXXXXXXXXX` | ✅ | Min 10 chars, Indian phone format |
-| Distribution Network | `network` | `textarea` | Describe Your Current Distribution Network | `Tell us about your existing retail/wholesale network, fleet size, coverage area...` | ❌ | Max 2000 chars |
-| Message | `message` | `textarea` | Additional Message | `Any other details you'd like to share...` | ❌ | Max 2000 chars |
+| Expected Order Volume | `volume` | `text` | Expected Order Volume | `e.g., 1 container monthly or 50 MT` | ❌ | Free text |
+| Message | `message` | `textarea` | Additional Message | Product, pack size and destination requirements | ❌ | Free text |
 
-### Indian States Options (for select dropdown)
-```
-Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, 
-Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, 
-Madhya Pradesh, Maharashtra, Manipur, Meghalaya, Mizoram, Nagaland, 
-Odisha, Punjab, Rajasthan, Sikkim, Tamil Nadu, Telangana, Tripura, 
-Uttar Pradesh, Uttarakhand, West Bengal, 
-Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, 
-Delhi, Jammu & Kashmir, Ladakh, Lakshadweep, Puducherry
-```
+### Partnership Type Options
+- International Importer
+- Overseas Distributor
+- India Distributor
+- Wholesale Buyer
+- Retail / HoReCa Buyer
 
 ### Expected JSON Payload (for backend integration)
 ```json
 {
-  "formType": "distributor",
-  "fullName": "Rajesh Kumar",
-  "businessName": "Kumar Distributors Pvt. Ltd.",
-  "city": "Jaipur",
-  "state": "Rajasthan",
-  "email": "rajesh@company.com",
-  "phone": "+91-9876543210",
-  "network": "We operate a fleet of 15 vehicles covering Jaipur, Ajmer, and Udaipur with 200+ retail touchpoints...",
-  "message": "Interested in exclusive distribution rights for Rajasthan.",
-  "submittedAt": "2024-01-15T10:30:00Z",
-  "source": "website-distributor-form"
+  "formType": "brand",
+  "fullName": "John Smith",
+  "companyName": "Gulf Foods Trading LLC",
+  "country": "United Arab Emirates",
+  "partnerType": "International Importer",
+  "email": "john@company.com",
+  "phone": "+971-50-1234567",
+  "volume": "1 container monthly",
+  "message": "Interested in the XXXL Supreme and Signature XXL range.",
+  "source": "/048-brand"
 }
 ```
 

@@ -28,6 +28,14 @@
   /* Semantic */
   --color-cream: #faf8f2;
 
+  /* 048 Product Range */
+  --color-048-burgundy: #5e1a23;
+  --color-048-blue: #253468;
+  --color-048-green: #155a38;
+  --color-048-purple: #5b2c63;
+  --color-048-brown: #5c351b;
+  --color-048-teal: #205c66;
+
   /* Font Families */
   --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -211,6 +219,12 @@
 
 /* ─── Utility Layer ─── */
 @layer utilities {
+  .brand-hero-bg {
+    background:
+      radial-gradient(circle at 78% 34%, rgb(212 168 83 / 20%), transparent 33%),
+      linear-gradient(115deg, var(--color-forest-950) 0%, var(--color-forest-900) 52%, var(--color-forest-800) 100%);
+  }
+
   .text-gradient-gold {
     background: linear-gradient(
       90deg,

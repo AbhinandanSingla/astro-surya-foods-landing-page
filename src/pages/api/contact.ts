@@ -8,10 +8,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
   const headers = { "Content-Type": "application/json" };
 
   try {
-    const body = await request.json();
+    const body = await request.json() as Record<string, string | undefined>;
 
     // Validate required fields
-    const { fullName, companyName, country, email, phone, message, volume, source, formType } = body;
+    const { fullName, companyName, country, email, phone, message, volume, partnerType, source, formType } = body;
 
     if (!fullName || !companyName || !country || !email || !phone) {
       return new Response(
@@ -45,7 +45,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     };
 
     const senderEmail = env.NOTIFICATION_EMAIL || "test@example.com";
-    const leadData = { fullName, companyName, country, email, phone, message, volume, source, formType };
+    const leadData = { fullName, companyName, country, email, phone, message, volume, partnerType, source, formType };
 
     // If running locally without secrets, simulate a successful response
     if (!sesConfig.accessKeyId || !sesConfig.region) {

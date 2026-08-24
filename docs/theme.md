@@ -75,6 +75,17 @@ Standard grays for body text, borders, and subtle UI elements.
 | `--color-success` | `#16a34a` | Form success states |
 | `--color-error` | `#dc2626` | Form validation errors |
 
+### 048 Product Range Colors
+
+| Token | Hex | Product |
+|---|---|---|
+| `--color-048-burgundy` | `#5E1A23` | XXXL Supreme |
+| `--color-048-blue` | `#253468` | Signature XXL |
+| `--color-048-green` | `#155A38` | Rozana |
+| `--color-048-purple` | `#5B2C63` | Tibar Classic |
+| `--color-048-brown` | `#5C351B` | Dubar Delight |
+| `--color-048-teal` | `#205C66` | Mini Dubar Express |
+
 ---
 
 ## 3. Typography

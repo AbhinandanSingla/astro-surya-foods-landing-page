@@ -5,10 +5,16 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  keywords?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image = "/og-default.png" } = Astro.props;
+const {
+  title,
+  description,
+  image = "/og-default.png",
+  keywords = "Basmati rice, rice exporter, rice manufacturer, 1121 Basmati, premium rice, India rice export, Surya Foods, 048 rice",
+} = Astro.props;
 const ogImageURL = new URL(image, Astro.url);
 ---
 
@@ -48,7 +54,7 @@ const ogImageURL = new URL(image, Astro.url);
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="author" content="Surya Foods" />
-<meta name="keywords" content="Basmati rice, rice exporter, rice manufacturer, 1121 Basmati, premium rice, India rice export, Surya Foods, 048 rice" />
+<meta name="keywords" content={keywords} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />

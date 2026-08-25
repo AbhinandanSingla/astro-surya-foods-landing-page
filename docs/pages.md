@@ -114,7 +114,7 @@ Uses `StatsCounter` component.
 - Background image: Premium rice packaging / lifestyle cooking
 - Overlay gradient
 - Title: `048 Premium Rice`
-- Description: `Our flagship D2C brand. Majesty and Platinum collections for the discerning Indian household.`
+- Description: `Our premium Basmati brand with six distinct choices for Indian households, distributors and global trade partners.`
 - CTA link: `Discover 048 Brand →` → `/048-brand`
 
 Both cards use hover effects: overlay darkens, text slides up slightly, subtle scale on image.
@@ -257,19 +257,52 @@ Uses `LeadForm` component with `formType="export"`.
 
 ### Page Structure
 
-1. **Hero (88vh)** — Export-led headline, dual product-pack composition and catalogue/range CTAs.
+1. **Hero (88vh)** — Uses the Tibar Classic campaign banner as a full-bleed background with dark gradient overlay. Export-led headline, dual product-pack composition (Signature XXL + XXXL Supreme tilted cards) and catalogue/range CTAs.
 2. **Brand introduction** — Positions 048 for both global trade and Indian distribution.
-3. **Six-product range** — Responsive cards for XXXL Supreme, Signature XXL, Rozana, Tibar Classic, Dubar Delight and Mini Dubar Express, using exact pack color tokens.
-4. **Campaign banners** — Four supplied campaign assets displayed in a responsive gallery.
-5. **Partner value** — Explains product segmentation, shelf identity, trade support and India/export reach.
-6. **Target markets** — Names priority countries and regions as partnership interests without claiming availability or exclusivity.
-7. **Brand partnership form** — Uses `LeadForm` with `formType="brand"` and anchor `#brand-inquiry` for global and domestic buyers.
+3. **Six-product range** — Responsive 3-column cards for XXXL Supreme, Signature XXL, Rozana, Tibar Classic, Dubar Delight and Mini Dubar Express, using exact pack color tokens. Cards link to individual product detail pages.
+4. **Grain quality showcase** — Real rice grain close-ups using the Tibar and Second Wand images from `/images/rice-images/`, plus quality process highlights.
+5. **Campaign banners** — All six campaign banner assets displayed in a 2-column responsive gallery.
+6. **Partner value** — Explains product segmentation, shelf identity, trade support and India/export reach.
+7. **India distribution map** — A responsive geographic state map powered by `@svg-maps/india`, with raised 3D curved routes and travelling highlights from Patran, Punjab to representative markets across India. Includes CC BY 4.0 attribution, a territory-enquiry CTA and an illustrative-network disclaimer.
+8. **Target markets** — Names priority countries and regions as partnership interests without claiming availability or exclusivity.
+9. **Brand partnership form** — Uses `LeadForm` with `formType="brand"` and anchor `#brand-inquiry` for global and domestic buyers.
 
 ### SEO
 
 - Page-specific keyword metadata targets premium Basmati rice exporters, Indian rice suppliers, importers, distributors, wholesale buyers and UAE/India search intent.
 - `ItemList` and `Product` JSON-LD describe all six 048 products.
 - The Tibar Classic banner is the page-specific social preview image.
+
+### 048 Product Detail Pages (`/048-brand/:slug`)
+
+**File**: `src/pages/048-brand/[slug].astro`
+
+| Product | URL | Public grain profile |
+|---|---|---|
+| XXXL Supreme | `/048-brand/xxxl-supreme` | Extra-long, slender grains |
+| Signature XXL | `/048-brand/signature-xxl` | Long, elegant grains |
+| Rozana | `/048-brand/rozana` | Balanced everyday grain profile |
+| Tibar Classic | `/048-brand/tibar-classic` | Traditional select grain profile |
+| Dubar Delight | `/048-brand/dubar-delight` | Authentic compact grain profile |
+| Mini Dubar Express | `/048-brand/mini-dubar-express` | Compact quick-cook grain profile |
+
+#### Product Detail Page Structure
+
+Each product detail page includes:
+
+1. **Hero** — Campaign banner as full-bleed background (where available), with product bag image, colour-coded badge, tagline, description and CTAs.
+2. **Product profile** — Three info cards (grain profile, cooking result, consumer fit) plus "Best suited for" tags and "Why buyers choose it" highlights.
+3. **Rice grain gallery** — Real grain close-up photos from `/images/rice-images/` with quality process highlights.
+4. **Cooking guide** — Four numbered cooking tips specific to the product variant.
+5. **Pack options** — Consumer Packs and Bulk Packs cards with descriptions and custom packaging mention.
+6. **India trade focus** — India-specific distribution pitch with trade position and buyer channel tags.
+7. **Campaign banner** — Full-width banner display (where available).
+8. **Quality promise** — ISO 22000, FSSAI, lab testing and mill-to-market quality badges.
+9. **FAQ** — Four product-specific questions with accordion UI and FAQPage JSON-LD schema.
+10. **Related products** — Three rotating related 048 products with card links.
+11. **Lead form** — Pre-qualified brand enquiry form with product interest pre-filled.
+
+Exact numerical specifications are intentionally excluded because crop, processing, ageing and batch can affect commercial measurements; buyers are directed to request the current specification sheet.
 
 ---
 
@@ -358,7 +391,7 @@ Uses `LeadForm` component with `formType="export"`.
 | `2013` | `Surya Foods is Born` | State-of-the-art rice milling facility established by the Singla family. |
 | `2016` | `FSSAI & ISO 22000 Certified` | Both certifications earned for food safety and quality management. |
 | `2018` | `Export House Recognition` | Recognized under DGFT and registered with APEDA. |
-| `2021` | `Launch of 048 Brand` | Premium D2C Basmati rice brand with Majesty and Platinum collections. |
+| `2021` | `Launch of 048 Brand` | Premium Basmati rice brand for Indian households and trade partners, now presented as a six-product collection. |
 | `2024` | `25+ Countries & Growing` | Exporting to 25+ countries across the Middle East, Africa, Europe, and SE Asia. |
 
 ### Section 3: Our Process
@@ -467,8 +500,8 @@ See `components.md` → Footer section.
 | Section | Image Description | Aspect | Loading |
 |---|---|---|---|
 | Hero | Premium dining / elegant rice serving | 16:9 landscape | eager |
-| Majesty | Rice product packaging / pouring shot | 4:3 | lazy |
-| Platinum | Elevated plated rice dish | 4:3 | lazy |
+| Six-product collection | Individual 048 bag photography | 1:1 | lazy |
+| Product campaigns | Supplied 048 banner artwork | 705:520 | lazy |
 
 ### Private Labeling
 | Section | Image Description | Aspect | Loading |
@@ -496,5 +529,5 @@ See `components.md` → Footer section.
 | Global Exports | `Global Exports — Surya Foods` | `Export premium Indian Basmati rice worldwide. 1121, 1509, 1718, and Pusa Basmati in Raw, Steam, and Sella forms. Internationally certified export house.` | Shipping image |
 | Private Labeling | `Private Labeling \| Surya Foods` | `Build your own premium rice brand with Surya Foods. We offer end-to-end private labeling solutions from sourcing and processing to custom packaging.` | Packaging line image |
 | Certificates Gallery | `Certificates Gallery \| Surya Foods` | `Explore the internationally recognized certifications that guarantee Surya Foods' commitment to quality, safety, and excellence.` | Factory image |
-| 048 Brand | `048 Premium Rice — Surya Foods` | `Discover 048 by Surya Foods — premium Basmati rice for the Indian household. Majesty and Platinum collections for Pan-India distribution.` | Brand image |
+| 048 Brand | `048 Premium Basmati Rice Brand \| Exporters & Distributors — Surya Foods` | `Explore six retail-ready 048 Basmati variants for Indian households, global importers, distributors and wholesale buyers.` | Brand image |
 | Heritage | `Heritage & Quality — Surya Foods` | `Since 1999, Surya Foods has been a pillar of India's rice industry. Explore our journey, certifications, and quality standards.` | Heritage image |

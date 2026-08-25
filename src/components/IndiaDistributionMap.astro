@@ -1,0 +1,279 @@
+---
+import india from "@svg-maps/india";
+
+const origin = { x: 165, y: 176 };
+
+const markets = [
+  { name: "Delhi NCR", x: 187, y: 210, labelX: 197, labelY: 207, anchor: "start" },
+  { name: "Jaipur", x: 158, y: 244, labelX: 147, labelY: 242, anchor: "end" },
+  { name: "Lucknow", x: 286, y: 247, labelX: 296, labelY: 244, anchor: "start" },
+  { name: "Ahmedabad", x: 82, y: 351, labelX: 70, labelY: 349, anchor: "end" },
+  { name: "Mumbai", x: 112, y: 422, labelX: 101, labelY: 421, anchor: "end" },
+  { name: "Hyderabad", x: 240, y: 466, labelX: 251, labelY: 463, anchor: "start" },
+  { name: "Bengaluru", x: 190, y: 552, labelX: 179, labelY: 551, anchor: "end" },
+  { name: "Chennai", x: 247, y: 588, labelX: 258, labelY: 586, anchor: "start" },
+  { name: "Kochi", x: 162, y: 612, labelX: 150, labelY: 612, anchor: "end" },
+  { name: "Kolkata", x: 410, y: 356, labelX: 421, labelY: 354, anchor: "start" },
+  { name: "Guwahati", x: 515, y: 271, labelX: 526, labelY: 269, anchor: "start" },
+] as const;
+
+const routePath = (x: number, y: number) => {
+  const distance = Math.hypot(x - origin.x, y - origin.y);
+  const lift = Math.min(118, Math.max(25, distance * 0.32));
+  const sideCurve = x > 400 ? -38 : x < 120 ? 24 : -10;
+  const midX = (origin.x + x) / 2 + sideCurve;
+  const midY = (origin.y + y) / 2 - lift;
+  return `M ${origin.x} ${origin.y} Q ${midX} ${midY} ${x} ${y}`;
+};
+---
+
+<section class="section-padding bg-forest-950 overflow-hidden" aria-labelledby="india-distribution-title">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-4" data-animate>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-300 mb-4">All-India Partnership Network</p>
+        <h2 id="india-distribution-title" class="text-3xl md:text-5xl font-heading font-bold text-white leading-tight mb-6">From Punjab to markets across India.</h2>
+        <p class="text-forest-100/70 leading-relaxed mb-8">048 supports pan-India supply partnerships for distribution, wholesale, modern trade, general trade and HoReCa channels. Build your territory with a six-product Basmati portfolio designed for distinct consumer needs.</p>
+
+        <div class="grid grid-cols-2 gap-3 mb-8">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p class="text-2xl font-heading font-bold text-gold-300 mb-1">Pan-India</p>
+            <p class="text-[10px] uppercase tracking-widest text-forest-200/60">Supply partnerships</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p class="text-2xl font-heading font-bold text-gold-300 mb-1">6</p>
+            <p class="text-[10px] uppercase tracking-widest text-forest-200/60">Market-ready products</p>
+          </div>
+        </div>
+
+        <a href="#brand-inquiry" class="btn-gold">Discuss your territory</a>
+      </div>
+
+      <div class="lg:col-span-8" data-animate>
+        <div class="india-network-card">
+          <svg
+            class="india-map"
+            viewBox={india.viewBox}
+            role="img"
+            aria-labelledby="india-map-title india-map-description"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <title id="india-map-title">048 pan-India distribution partnership network</title>
+            <desc id="india-map-description">A geographic state map of India with illustrative routes from Patran, Punjab to representative markets across the country.</desc>
+
+            <defs>
+              <pattern id="india-dot-pattern" width="11" height="11" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.35" fill="#e2c479" fill-opacity="0.76" />
+              </pattern>
+              <filter id="india-map-glow" x="-25%" y="-25%" width="150%" height="150%">
+                <feGaussianBlur stdDeviation="8" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <g class="india-geography" aria-hidden="true">
+              {india.locations.map((location) => (
+                <path class="india-state" d={location.path} data-state={location.name} />
+              ))}
+            </g>
+
+            <g class="distribution-routes" aria-hidden="true">
+              {markets.map((market, index) => (
+                <g style={`--route-delay: -${(index * 0.37).toFixed(2)}s`}>
+                  <path class="route-shadow" d={routePath(market.x, market.y)} pathLength="1" />
+                  <path class="route-rim" d={routePath(market.x, market.y)} pathLength="1" />
+                  <path class="route-core" d={routePath(market.x, market.y)} pathLength="1" />
+                  <path class="route-glint" d={routePath(market.x, market.y)} pathLength="1" />
+                </g>
+              ))}
+            </g>
+
+            <g class="market-nodes" aria-hidden="true">
+              <circle class="origin-pulse" cx={origin.x} cy={origin.y} r="8" />
+              <circle class="origin-ring" cx={origin.x} cy={origin.y} r="7" />
+              <circle class="origin-dot" cx={origin.x} cy={origin.y} r="4.5" />
+              <text class="origin-label" x={origin.x + 11} y={origin.y - 5}>
+                <tspan x={origin.x + 11}>Patran, Punjab</tspan>
+                <tspan class="origin-subline" x={origin.x + 11} dy="12">048 ORIGIN</tspan>
+              </text>
+
+              {markets.map((market) => (
+                <g>
+                  <circle class="market-dot" cx={market.x} cy={market.y} r="3.4" />
+                  <text
+                    class="market-label"
+                    x={market.labelX}
+                    y={market.labelY}
+                    text-anchor={market.anchor}
+                  >{market.name}</text>
+                </g>
+              ))}
+            </g>
+          </svg>
+
+          <div class="india-map-legend" aria-hidden="true">
+            <span><i class="legend-origin"></i>Origin hub</span>
+            <span><i class="legend-market"></i>Representative market</span>
+            <span><i class="legend-route"></i>Distribution enquiry route</span>
+          </div>
+        </div>
+        <p class="mt-4 text-[11px] text-forest-200/45 leading-relaxed">
+          Illustrative network for partnership enquiries; routes do not represent current warehouses, exclusivity or guaranteed coverage. Map geometry by <a class="underline hover:text-gold-300" href="https://www.npmjs.com/package/@svg-maps/india" target="_blank" rel="noreferrer">SVG Maps</a>, licensed CC BY 4.0. Not intended to define political boundaries.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .india-network-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 650px;
+    border: 1px solid rgb(255 255 255 / 10%);
+    border-radius: 2rem;
+    background:
+      linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px),
+      radial-gradient(circle at 49% 46%, rgb(212 168 83 / 10%), transparent 50%),
+      var(--color-forest-950);
+    background-size: 32px 32px, 32px 32px, auto, auto;
+    box-shadow: inset 0 0 80px rgb(0 0 0 / 35%);
+  }
+
+  .india-map {
+    position: absolute;
+    inset: 1rem 1rem 4.5rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 5.5rem);
+    overflow: visible;
+    filter: drop-shadow(0 0 20px rgb(212 168 83 / 10%));
+  }
+
+  .india-state {
+    fill: url(#india-dot-pattern);
+    stroke: rgb(226 196 121 / 28%);
+    stroke-width: 0.75;
+    vector-effect: non-scaling-stroke;
+    transition: fill 180ms ease, stroke 180ms ease;
+  }
+
+  .india-geography:hover .india-state {
+    fill-opacity: 0.88;
+    stroke: rgb(226 196 121 / 45%);
+  }
+
+  .route-shadow,
+  .route-rim,
+  .route-core,
+  .route-glint {
+    fill: none;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .route-shadow {
+    stroke: rgb(0 0 0 / 48%);
+    stroke-width: 3.4;
+    transform: translate(0, 2px);
+    filter: blur(1.5px);
+  }
+
+  .route-rim {
+    stroke: rgb(73 43 12 / 88%);
+    stroke-width: 2.4;
+  }
+
+  .route-core {
+    stroke: rgb(205 153 62 / 90%);
+    stroke-width: 1.35;
+  }
+
+  .route-glint {
+    stroke: rgb(255 239 183 / 96%);
+    stroke-width: 0.7;
+    stroke-dasharray: 0.07 0.93;
+    stroke-dashoffset: 0;
+    filter: drop-shadow(0 0 4px rgb(255 226 139 / 90%));
+    animation: route-glint 3.5s linear infinite;
+    animation-delay: var(--route-delay);
+  }
+
+  @keyframes route-glint {
+    to { stroke-dashoffset: -1; }
+  }
+
+  .origin-pulse {
+    fill: none;
+    stroke: var(--color-gold-300);
+    stroke-width: 1.25;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: origin-pulse 2.2s ease-out infinite;
+  }
+
+  @keyframes origin-pulse {
+    0% { transform: scale(0.6); opacity: 0; }
+    35% { opacity: 0.9; }
+    100% { transform: scale(2.3); opacity: 0; }
+  }
+
+  .origin-ring { fill: var(--color-forest-950); stroke: var(--color-gold-300); stroke-width: 2; }
+  .origin-dot { fill: #fff; filter: url(#india-map-glow); }
+  .market-dot { fill: var(--color-gold-300); stroke: var(--color-forest-950); stroke-width: 1.8; }
+
+  .origin-label,
+  .market-label {
+    fill: rgb(255 255 255 / 78%);
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 650;
+    paint-order: stroke;
+    stroke: var(--color-forest-950);
+    stroke-width: 3px;
+    stroke-linejoin: round;
+  }
+
+  .origin-label { fill: #fff; font-size: 11px; font-weight: 750; }
+  .origin-subline { fill: var(--color-gold-300); font-size: 8px; letter-spacing: 1.2px; }
+
+  .india-map-legend {
+    position: absolute;
+    z-index: 2;
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.4rem;
+    color: rgb(255 255 255 / 45%);
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .india-map-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .india-map-legend i { display: inline-block; flex: none; }
+  .legend-origin { width: 9px; height: 9px; border: 2px solid var(--color-gold-300); border-radius: 50%; background: #fff; }
+  .legend-market { width: 7px; height: 7px; border-radius: 50%; background: var(--color-gold-300); }
+  .legend-route { width: 18px; height: 1px; background: var(--color-gold-400); }
+
+  @media (max-width: 767px) {
+    .india-network-card { min-height: 500px; border-radius: 1.5rem; }
+    .india-map { inset: 0.75rem 0.35rem 4.25rem; width: calc(100% - 0.7rem); height: calc(100% - 5rem); }
+    .origin-label,
+    .market-label { font-size: 8px; stroke-width: 2.5px; }
+    .origin-label { font-size: 9px; }
+    .origin-subline { font-size: 7px; }
+    .india-map-legend { gap: 0.55rem 1rem; font-size: 8px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .route-glint,
+    .origin-pulse { animation: none; }
+  }
+</style>

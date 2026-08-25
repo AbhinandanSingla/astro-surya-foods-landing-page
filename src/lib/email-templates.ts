@@ -17,6 +17,7 @@ interface LeadData {
   message?: string;
   volume?: string;
   partnerType?: string;
+  productInterest?: string;
   source?: string;
   formType?: string;
 }
@@ -71,6 +72,10 @@ export function buildAdminNotificationEmail(lead: LeadData): { subject: string; 
           <td style="padding:12px 16px;font-size:13px;font-weight:600;color:#6b7280;vertical-align:top;">Partnership Type</td>
           <td style="padding:12px 16px;font-size:14px;color:#111827;">${lead.partnerType}</td>
         </tr>` : ""}
+        ${lead.productInterest ? `<tr style="background:#f9fafb;border-bottom:1px solid #e5e7eb;">
+          <td style="padding:12px 16px;font-size:13px;font-weight:600;color:#6b7280;vertical-align:top;">Product Interest</td>
+          <td style="padding:12px 16px;font-size:14px;color:#111827;">${lead.productInterest}</td>
+        </tr>` : ""}
         ${lead.message ? `<tr style="border-bottom:1px solid #e5e7eb;">
           <td style="padding:12px 16px;font-size:13px;font-weight:600;color:#6b7280;vertical-align:top;">Message</td>
           <td style="padding:12px 16px;font-size:14px;color:#111827;">${lead.message}</td>
@@ -98,7 +103,7 @@ export function buildAdminNotificationEmail(lead: LeadData): { subject: string; 
 </body>
 </html>`;
 
-  const text = `New Lead Received\n\nName: ${lead.fullName}\nCompany: ${lead.companyName}\nCountry: ${lead.country}\nEmail: ${lead.email}\nPhone: ${lead.phone}\n${lead.volume ? `Volume: ${lead.volume}\n` : ""}${lead.partnerType ? `Partnership Type: ${lead.partnerType}\n` : ""}${lead.message ? `Message: ${lead.message}\n` : ""}\nSource: ${lead.source || "Direct"}\nType: ${lead.formType || "Contact"}\nTime: ${timestamp} (IST)`;
+  const text = `New Lead Received\n\nName: ${lead.fullName}\nCompany: ${lead.companyName}\nCountry: ${lead.country}\nEmail: ${lead.email}\nPhone: ${lead.phone}\n${lead.volume ? `Volume: ${lead.volume}\n` : ""}${lead.partnerType ? `Partnership Type: ${lead.partnerType}\n` : ""}${lead.productInterest ? `Product Interest: ${lead.productInterest}\n` : ""}${lead.message ? `Message: ${lead.message}\n` : ""}\nSource: ${lead.source || "Direct"}\nType: ${lead.formType || "Contact"}\nTime: ${timestamp} (IST)`;
 
   return { subject, html, text };
 }

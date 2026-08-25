@@ -10,11 +10,12 @@
 |---|---|---|---|---|
 | Export Inquiry | `/global-exports` | `export-inquiry-form` | International broker lead capture | `#inquiry-form` |
 | 048 Brand Partnership | `/048-brand` | `brand-inquiry-form` | Export and India partner lead capture | `#brand-inquiry` |
+| 048 Product Enquiry | `/048-brand/:slug` | `product-inquiry-form` | Product-specific distribution and buyer lead capture | `#product-inquiry` |
 
 ### Current State
-- **Frontend only** — forms render complete HTML with client-side validation
-- **No backend wired** — forms do not submit data anywhere
-- **Planned integration**: n8n webhooks or AWS SES
+- Forms include client-side validation and submit JSON to `/api/contact`.
+- The contact API sends admin and customer emails through AWS SES when credentials are configured and simulates success during local development.
+- Product detail forms include a hidden `productInterest` value so enquiries are routed with the selected 048 product.
 
 ### Future Integration Notes
 ```javascript

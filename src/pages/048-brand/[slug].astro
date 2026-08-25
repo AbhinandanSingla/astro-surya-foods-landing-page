@@ -1,0 +1,373 @@
+---
+import MasterLayout from "../../layouts/MasterLayout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import { BRAND_048_PRODUCTS, type Brand048Product } from "../../consts/brand048";
+
+export function getStaticPaths() {
+  return BRAND_048_PRODUCTS.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+interface Props {
+  product: Brand048Product;
+}
+
+const { product } = Astro.props;
+const currentIndex = BRAND_048_PRODUCTS.findIndex((item) => item.slug === product.slug);
+const relatedProducts = [1, 2, 3].map(
+  (offset) => BRAND_048_PRODUCTS[(currentIndex + offset) % BRAND_048_PRODUCTS.length]
+);
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: `048 ${product.name} Premium ${product.subtext}`,
+  description: product.description,
+  image: `https://suryafoodspatran.com${product.image}`,
+  url: `https://suryafoodspatran.com/048-brand/${product.slug}`,
+  brand: { "@type": "Brand", name: "048 by Surya Foods" },
+  category: "Premium Basmati Rice",
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  audience: [
+    { "@type": "Audience", audienceType: "Indian households" },
+    { "@type": "Audience", audienceType: "Rice distributors, wholesalers and foodservice buyers" },
+  ],
+};
+
+const faqSchema = product.faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: product.faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+} : null;
+---
+
+<MasterLayout
+  title={`048 ${product.name} Premium ${product.subtext} | Surya Foods`}
+  description={`${product.description} Distribution, wholesale and buyer enquiries welcome across India and international markets.`}
+  keywords={`${product.keywords}, 048 rice, Surya Foods`}
+  image={product.banner || product.image}
+  transparentNav={true}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+  <!-- Product Hero -->
+  <section class="relative overflow-hidden bg-forest-950 min-h-[75vh] flex items-center">
+    {product.banner ? (
+      <img src={product.banner} alt={`048 ${product.name} premium rice campaign`} class="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async" />
+      <div class="absolute inset-0 bg-gradient-to-r from-forest-950/92 via-forest-950/70 to-forest-950/40"></div>
+    ) : (
+      <div class="absolute inset-0 brand-hero-bg"></div>
+    )}
+    <div class={`absolute inset-x-0 bottom-0 h-1.5 ${product.colorClass}`}></div>
+    <div class="relative z-10 container-custom pt-36 md:pt-44 pb-20 md:pb-28">
+      <nav aria-label="Breadcrumb" class="mb-10 text-xs font-medium tracking-wide text-forest-200/65">
+        <a href="/" class="hover:text-gold-300 no-underline transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/048-brand" class="hover:text-gold-300 no-underline transition-colors">048 Brand</a>
+        <span class="mx-2">/</span>
+        <span class="text-gold-300">{product.name}</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class={`inline-flex rounded-full ${product.colorClass} px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-lg mb-6`}>
+            048 Premium Rice · {product.color}
+          </div>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-3">{product.name}</h1>
+          <p class="text-sm md:text-base font-semibold uppercase tracking-[0.18em] text-gold-300 mb-6">Premium · {product.subtext}</p>
+          <p class="text-xl md:text-2xl font-heading text-white/90 leading-relaxed mb-5">{product.tagline}</p>
+          <p class="text-base text-forest-100/70 leading-relaxed max-w-xl mb-8">{product.description}</p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#product-inquiry" class="btn-gold">Enquire for distribution</a>
+            <a href="#product-details" class="btn-secondary">View product details</a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2" data-animate>
+          <div class="relative max-w-xl mx-auto">
+            <div class={`absolute -inset-4 md:-inset-8 ${product.colorClass} opacity-20 blur-3xl rounded-full`}></div>
+            <div class="relative rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl">
+              <img src={product.image} alt={`048 ${product.name} Premium ${product.subtext} rice bag`} class="w-full aspect-square object-cover" loading="eager" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grain and Cooking Profile -->
+  <section id="product-details" class="section-padding scroll-mt-28 bg-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mb-12" data-animate>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">Product Profile</p>
+        <h2 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 mb-5">The right grain for the right customer.</h2>
+        <p class="text-slate-600 leading-relaxed">A clearly positioned product for Indian households and trade partners who want an easy-to-understand Basmati choice.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+        {[
+          { label: "Grain profile", value: product.grainProfile },
+          { label: "After cooking", value: product.cookedResult },
+          { label: "Consumer fit", value: product.consumerFit },
+        ].map((item) => (
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-7" data-animate>
+            <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-500 mb-3">{item.label}</p>
+            <p class="font-heading text-xl font-bold text-forest-900 leading-snug">{item.value}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <div class="rounded-3xl bg-cream border border-gold-100 p-7 md:p-9" data-animate>
+          <h3 class="text-2xl font-heading font-bold text-slate-900 mb-6">Best suited for</h3>
+          <div class="grid sm:grid-cols-2 gap-3">
+            {product.bestFor.map((use) => (
+              <div class="flex items-center gap-3 rounded-xl bg-white border border-slate-200 px-4 py-3">
+                <span class={`h-2.5 w-2.5 rounded-full ${product.colorClass}`}></span>
+                <span class="text-sm font-semibold text-slate-700">{use}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="rounded-3xl bg-forest-900 p-7 md:p-9 text-white" data-animate>
+          <h3 class="text-2xl font-heading font-bold text-white mb-6">Why buyers choose it</h3>
+          <ul class="grid sm:grid-cols-2 gap-4 list-none p-0 m-0">
+            {product.highlights.map((highlight) => (
+              <li class="flex items-start gap-3 text-sm text-forest-100/75 leading-relaxed">
+                <span class="text-gold-300 font-bold mt-0.5">✓</span>
+                <span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <p class="mt-6 text-xs text-slate-500 leading-relaxed">Grain dimensions, cooking performance and other commercial specifications may vary by crop, processing, ageing and batch. Buyers should request the current product specification sheet before placing a commercial order.</p>
+    </div>
+  </section>
+
+  <!-- Rice Grain Gallery -->
+  {product.grainImages.length > 0 && (
+    <section class="section-padding bg-cream">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div class="lg:col-span-4" data-animate>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">See the grain</p>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-5">Quality you can see and feel.</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">Every batch of 048 {product.name} is carefully selected and processed for consistent grain quality, uniform appearance and premium texture. These are real grain close-ups from our processing facility.</p>
+            <div class="space-y-3">
+              {[
+                "Multi-pass colour sorting for uniformity",
+                "In-house lab-tested every batch",
+                "Aged for optimal aroma and elongation",
+              ].map((point) => (
+                <div class="flex items-center gap-3 text-sm text-slate-700">
+                  <span class={`h-2 w-2 rounded-full ${product.colorClass}`}></span>{point}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="lg:col-span-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+              {product.grainImages.map((img, i) => (
+                <div class:list={["rounded-2xl overflow-hidden border border-slate-200 shadow-lg group", i === 0 ? "col-span-2 md:col-span-1" : ""]} data-animate>
+                  <img src={img} alt={`048 ${product.name} rice grain close-up ${i + 1}`} class="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Cooking Guide -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div data-animate>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">Cooking Guide</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-5">Get the best from every grain.</h2>
+          <p class="text-slate-600 leading-relaxed mb-8">Simple tips to help your customers cook 048 {product.name} perfectly every time — whether at home, in a restaurant, or in a high-volume kitchen.</p>
+          <div class="space-y-4">
+            {product.cookingTips.map((tip, i) => (
+              <div class="flex gap-4 items-start" data-animate>
+                <div class={`shrink-0 w-9 h-9 rounded-xl ${product.colorClass} flex items-center justify-center text-white text-sm font-bold`}>
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <p class="text-sm md:text-base text-slate-700 leading-relaxed pt-1.5">{tip}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-xl" data-animate>
+          <img src={product.grainImages[0] || product.image} alt={`048 ${product.name} rice cooking`} class="w-full h-[350px] md:h-[420px] object-cover" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Available Pack Sizes -->
+  <section class="section-padding bg-forest-950 text-white overflow-hidden">
+    <div class="container-custom relative">
+      <div class="absolute -right-24 -top-24 w-80 h-80 rounded-full bg-gold-400/10 blur-3xl"></div>
+      <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div data-animate>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-300 mb-4">Pack Options</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-5">Available in sizes that suit your business.</h2>
+          <p class="text-forest-100/70 leading-relaxed mb-6">048 {product.name} is available across consumer and trade formats. Custom packaging options including private labelling are available for distribution and institutional partners.</p>
+          <a href="#product-inquiry" class="btn-gold">Discuss pack requirements</a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-animate>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300">
+            <div class="w-12 h-12 rounded-xl bg-gold-400/15 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-gold-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+            </div>
+            <p class="text-xl font-heading font-bold text-gold-300 mb-2">Consumer Packs</p>
+            <p class="text-sm text-forest-100/60 leading-relaxed">Retail-ready packs for supermarkets, kirana stores and online grocery</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300">
+            <div class="w-12 h-12 rounded-xl bg-gold-400/15 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-gold-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+            </div>
+            <p class="text-xl font-heading font-bold text-gold-300 mb-2">Bulk Packs</p>
+            <p class="text-sm text-forest-100/60 leading-relaxed">Trade and institutional formats for wholesale, HoReCa and distribution</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- India Trade Focus -->
+  <section class="section-padding bg-cream">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div data-animate>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">Built for Indian Distribution</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-5">A strong product story for your market.</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">{product.indiaPitch}</p>
+          <p class="text-slate-600 leading-relaxed">We welcome buyer and distributorship enquiries from Punjab, Haryana, Delhi NCR, Uttar Pradesh, Rajasthan, Gujarat, Maharashtra, Madhya Pradesh, Karnataka, Telangana, Tamil Nadu, Kerala, West Bengal, Odisha, Assam and markets across India.</p>
+        </div>
+        <div class="rounded-3xl bg-white border border-slate-200 shadow-xl p-7 md:p-9" data-animate>
+          <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-500 mb-3">Trade position</p>
+          <h3 class="text-2xl font-heading font-bold text-forest-900 mb-5">{product.tradePosition}</h3>
+          <div class="space-y-3">
+            {[
+              "Distributor and super-stockist enquiries",
+              "Wholesale and institutional buying",
+              "Modern trade and general trade placement",
+              "HoReCa and foodservice requirements",
+            ].map((item) => (
+              <div class="flex items-center gap-3 text-sm text-slate-700">
+                <span class={`h-2 w-2 rounded-full ${product.colorClass}`}></span>{item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Banner -->
+  {product.banner && (
+    <section class="section-padding bg-white">
+      <div class="container-custom" data-animate>
+        <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-2xl">
+          <img src={product.banner} alt={`048 ${product.name} premium rice campaign`} class="w-full aspect-[705/520] md:aspect-[16/7] object-cover" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Quality Promise -->
+  <section class="section-padding bg-slate-50">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12" data-animate>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">The 048 Promise</p>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-5">Every bag carries our commitment to quality.</h2>
+        <p class="text-slate-600 leading-relaxed">048 {product.name} is processed at Surya Foods' state-of-the-art facility in Punjab, India — with multi-stage quality controls, in-house lab testing and internationally certified food safety standards.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {[
+          { icon: "🏭", title: "Mill to Market", text: "Processed in our own facility — no middlemen, full traceability" },
+          { icon: "🔬", title: "Lab Tested", text: "Every batch tested for moisture, grain length, aroma and purity" },
+          { icon: "🛡️", title: "ISO 22000:2018", text: "International food safety management certification" },
+          { icon: "📋", title: "FSSAI Certified", text: "Full compliance with India's food safety standards" },
+        ].map((item) => (
+          <div class="rounded-2xl bg-white border border-slate-200 p-5 md:p-6 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300" data-animate>
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="text-base font-heading font-bold text-slate-900 mb-2">{item.title}</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  {product.faqs.length > 0 && (
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12" data-animate>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-4">Common Questions</p>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900">Everything you need to know about {product.name}.</h2>
+          </div>
+          <div class="space-y-4" data-animate>
+            {product.faqs.map((faq) => (
+              <details class="group rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden hover:border-gold-300 transition-colors duration-300">
+                <summary class="flex items-center justify-between cursor-pointer p-5 md:p-6 text-base font-heading font-bold text-slate-900 list-none [&::-webkit-details-marker]:hidden">
+                  <span class="pr-4">{faq.question}</span>
+                  <span class="shrink-0 w-8 h-8 rounded-full bg-gold-100 flex items-center justify-center text-gold-600 text-sm font-bold group-open:rotate-45 transition-transform duration-300">+</span>
+                </summary>
+                <div class="px-5 md:px-6 pb-5 md:pb-6 -mt-1">
+                  <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Related Products -->
+  <section class="section-padding bg-cream">
+    <div class="container-custom">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10" data-animate>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-500 mb-3">Explore 048</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900">More choices for your customers.</h2>
+        </div>
+        <a href="/048-brand#our-range" class="text-sm font-semibold text-forest-700 hover:text-gold-600 no-underline transition-colors">View the complete range →</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {relatedProducts.map((related) => (
+          <a href={`/048-brand/${related.slug}`} class="group rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 no-underline" data-animate>
+            <img src={related.image} alt={`048 ${related.name} rice bag`} class="w-full aspect-square object-cover group-hover:scale-[1.025] transition-transform duration-500" loading="lazy" decoding="async" />
+            <div class="p-5">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-gold-500 mb-1">048 Premium</p>
+              <h3 class="text-xl font-heading font-bold text-slate-900 mb-1">{related.name}</h3>
+              <p class="text-xs font-semibold uppercase tracking-wider text-forest-700">{related.subtext}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <LeadForm
+    formId="product-inquiry"
+    formType="brand"
+    interest={`048 ${product.name}`}
+    heading={`Partner With Us for ${product.name}`}
+    subtitle={`Share your city or market, business type and expected volume. Our team will contact you about 048 ${product.name} distribution, wholesale or buying opportunities.`}
+  />
+</MasterLayout>

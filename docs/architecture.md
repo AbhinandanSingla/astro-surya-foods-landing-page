@@ -82,6 +82,7 @@ astro-surya-foods-landing-page/
 │   │   ├── global-exports.astro     # /global-exports
 │   │   ├── private-labeling.astro   # /private-labeling
 │   │   ├── 048-brand.astro          # /048-brand
+│   │   ├── 048-brand/[slug].astro   # /048-brand/:slug (six brand product pages)
 │   │   ├── heritage.astro           # /heritage (Our Heritage)
 │   │   ├── infrastructure.astro     # /infrastructure (Milling & Infrastructure)
 │   │   ├── quality-control.astro    # /quality-control (Quality Assurance)
@@ -123,6 +124,7 @@ Astro uses **file-based routing** — each `.astro` file in `src/pages/` maps to
 | `src/pages/global-exports.astro` | `/global-exports` | Global Exports — Surya Foods |
 | `src/pages/private-labeling.astro` | `/private-labeling` | Private Labeling — Surya Foods |
 | `src/pages/048-brand.astro` | `/048-brand` | 048 Premium Rice — Surya Foods |
+| `src/pages/048-brand/[slug].astro` | `/048-brand/:slug` | 048 brand product detail pages |
 | `src/pages/heritage.astro` | `/heritage` | Our Heritage — Surya Foods |
 | `src/pages/infrastructure.astro` | `/infrastructure` | Milling & Infrastructure — Surya Foods |
 | `src/pages/quality-control.astro` | `/quality-control` | Quality Assurance — Surya Foods |

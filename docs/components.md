@@ -16,6 +16,7 @@
 | `LeadForm` | `src/components/LeadForm.astro` | Lead generation form | Global Exports, 048 Brand |
 | `StatsCounter` | `src/components/StatsCounter.astro` | Animated metric display | Home |
 | `ProductCard` | `src/components/ProductCard.astro` | Rice grade card | Global Exports |
+| `IndiaDistributionMap` | `src/components/IndiaDistributionMap.astro` | Library-backed India states map with raised 3D distribution arcs and animated route highlights | 048 Brand |
 | `TimelineItem` | `src/components/TimelineItem.astro` | Heritage timeline entry | Heritage |
 | `CertificationBadge` | `src/components/CertificationBadge.astro` | Certification display card | Heritage |
 | `BlogCard` | `src/components/BlogCard.astro` | Blog post preview card | Blog, Home |

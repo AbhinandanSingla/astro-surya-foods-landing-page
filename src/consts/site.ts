@@ -235,7 +235,7 @@ export const TIMELINE = [
     year: "2021",
     title: "Launch of 048 Brand",
     description:
-      'Introduced "048" — our premium direct-to-consumer Basmati rice brand for the domestic Indian market, offering Majesty and Platinum collections.',
+      'Introduced "048" — our premium Basmati rice brand for Indian households and trade partners, now presented as a six-product collection.',
   },
   {
     year: "2024",

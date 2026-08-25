@@ -39,7 +39,7 @@ The next decade was about **scaling without sacrificing quality**. We invested h
 
 In 2015, we were recognized as an established export house under DGFT — a milestone that validated our consistent export excellence.
 
-By 2021, we felt confident enough in our quality to launch **048 Premium Rice**, our flagship direct-to-consumer brand. The Majesty and Platinum collections brought the same B2B quality standards to Indian households.
+By 2021, we felt confident enough in our quality to launch **048 Premium Rice**, our own consumer brand. Today, its six-product collection brings the same B2B quality mindset to Indian households, retailers, distributors and foodservice buyers.
 
 ## Today: 15+ Countries and Growing
 

@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c3810d00-313f-46bc-94ff-9d3c18668a49" name="Changes" comment="feat: update site URL in configuration and enhance workspace settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/global-exports.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/global-exports.astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
       <workItem from="1783080737743" duration="1390000" />
       <workItem from="1783688745493" duration="1219000" />
       <workItem from="1784669591603" duration="1890000" />
-      <workItem from="1786436277127" duration="9674000" />
+      <workItem from="1786436277127" duration="11476000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add floating contact buttons, update footer and header with contact info, and enhance documentation">
       <option name="closed" value="true" />

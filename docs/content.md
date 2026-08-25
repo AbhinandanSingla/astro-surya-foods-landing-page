@@ -94,7 +94,7 @@
 
 **Card 2 — 048 Premium Retail:**
 - **Title**: `048 Premium Rice`
-- **Description**: `Our flagship D2C brand. Majesty and Platinum collections for the discerning Indian household.`
+- **Description**: `Our premium Basmati brand with six distinct choices for Indian households, distributors and global trade partners.`
 - **CTA**: `Discover 048 Brand →`
 
 ### CTA Banner
@@ -195,10 +195,24 @@
 - India focus: state distributors, modern trade, general trade and institutional buyers.
 - Named target markets are partnership interests only and do not claim current availability or exclusivity.
 
+### India Distribution Map
+- **Headline**: `From Punjab to markets across India.`
+- **Message**: Pan-India distribution, wholesale, modern trade, general trade and HoReCa partnership enquiries are welcome.
+- **Origin**: Patran, Punjab.
+- **Representative markets**: Delhi NCR, Jaipur, Lucknow, Ahmedabad, Mumbai, Hyderabad, Bengaluru, Chennai, Kochi, Kolkata and Guwahati.
+- **Map source**: `@svg-maps/india` state geometry, licensed CC BY 4.0 with visible attribution below the map.
+- The visualization is illustrative and does not claim warehouses, exclusivity, guaranteed coverage or political boundaries.
+
 ### Lead Form Section
 - **Headline**: `Bring 048 to Your Market`
 - **Form Type**: `brand`
 - **Audience**: International importers and distributors, Indian distributors, wholesale buyers and retail/HoReCa buyers.
+
+### Product Detail Pages
+- Each of the six products has a dedicated page with a public-facing grain profile, cooked result, ideal dishes, consumer fit and trade position.
+- Copy targets Indian households, distributors, super-stockists, wholesalers, modern trade, general trade, institutional buyers and HoReCa operators.
+- Internal sourcing and formulation mappings are not published.
+- Product-specific forms send the selected 048 product as `productInterest`.
 
 ---
 
@@ -229,7 +243,7 @@
 | 2012 | ISO 22000 Certified | Earned ISO 22000:2018 certification for our food safety management system, aligning our processes with the highest international standards. |
 | 2015 | Export House Recognition | Recognized as an established export house under DGFT — a testament to our export excellence. |
 | 2018 | Capacity Expansion | Expanded milling capacity to 50,000+ MT annually with investment in state-of-the-art sortex, color sorting, and automated processing technology. |
-| 2021 | Launch of 048 Brand | Introduced "048" — our premium direct-to-consumer Basmati rice brand for the domestic Indian market, featuring the Majesty and Platinum collections. |
+| 2021 | Launch of 048 Brand | Introduced "048" — our premium Basmati rice brand for Indian households and trade partners, now presented as a six-product collection. |
 | 2024 | 15+ Countries & Growing | Now exporting to over 15 countries across the Middle East, Africa, Europe, and Southeast Asia, with a growing network of international trade partners. |
 
 ### Our Process
@@ -340,9 +354,42 @@ Real product photography added for the following varieties:
 | **1509 Steam Rice** | `1509-steam-rice-1.png` through `1509-steam-rice-3.png` | 1509 products, Sugandha products, PR 14 products, PRF Steam |
 | **1718 Steam Rice** | `1718-steam-rice-1.png` through `1718-steam-rice-3.png` | 1718 products, Sharbati products, Parmal products, PRF Sella |
 | **Pusa Steam Rice** | `pusa-steam-rice-1.png` through `pusa-steam-rice-3.png` | Pusa products, Traditional products, Sona Masoori products, PRF Golden Sella |
+| **Tibar** | `TIBAR.jpeg` | 048 Tibar Classic grain gallery, 048 brand page grain showcase |
+| **Second Wand** | `Second wand.jpeg` | 048 Dubar Delight grain gallery, 048 brand page grain showcase |
 
 Each product in `RICE_PRODUCTS` now has:
 - `image` — Primary product image for cards and hero sections
 - `galleryImages` — Array of 3 images for the product detail page gallery
 
+Each product in `BRAND_048_PRODUCTS` now has:
+- `image` — Primary product bag image for cards and hero sections
+- `banner` — Campaign banner image for hero backgrounds and banner sections
+- `grainImages` — Array of 3 rice grain close-up images for the product detail page gallery
+- `cookingTips` — Array of 4 cooking tips specific to the variant
+- `packSizes` — Array of pack format categories (Consumer Packs, Bulk Packs)
+- `faqs` — Array of 4 product-specific FAQ entries for accordion UI and schema.org FAQPage markup
+
 The homepage gallery (`GALLERY_IMAGES` in `site.ts`) now uses 8 real rice images + factory/farm images.
+
+---
+
+## 11. 048 Brand Campaign Banners
+
+> **Location**: `public/images/Rice Bags/`
+
+Campaign banner images for all six 048 products:
+
+| Product | Banner File | Source |
+|---|---|---|
+| **XXXL Supreme** | `XXXL Supreme banner view image.jpeg` | AI-generated to match brand style |
+| **Signature XXL** | `Signature XXL banner view image.jpeg` | AI-generated to match brand style |
+| **Rozana** | `Rozana banner view image.jpeg` | Supplied |
+| **Tibar Classic** | `Tibar classic banner view image.jpeg` | Supplied |
+| **Dubar Delight** | `Dubar Delight Banner view image.jpeg` | Supplied |
+| **Mini Dubar Express** | `Mini Dubar Express Banner View Image.jpeg` | Supplied |
+
+Banners are used as:
+- Hero backgrounds on product detail pages (with dark gradient overlay)
+- Campaign gallery on the 048 brand landing page
+- Background for the 048 brand landing page hero section (Tibar Classic banner)
+- Homepage 048 pathway card background (Tibar Classic banner)

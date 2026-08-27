@@ -4,6 +4,7 @@ import SectionHeading from "../components/SectionHeading.astro";
 import StatsCounter from "../components/StatsCounter.astro";
 import BlogCard from "../components/BlogCard.astro";
 import HeroChimes from "../components/HeroChimes.astro";
+import HeroCarousel from "../components/HeroCarousel.astro";
 import { STATS, CERTIFICATIONS_DISPLAY, GALLERY_IMAGES, KEY_TO_SUCCESS, QUOTES, MILL_MAP_QUERY, MILL_ADDRESS } from "../consts";
 import { getCollection } from "astro:content";
 
@@ -17,9 +18,12 @@ const allPosts = (await getCollection("blog"))
   description="Surya Foods is a trusted rice manufacturer and exporter, milling premium Basmati rice since 2002. Partner with us for global exports and domestic distribution."
   transparentNav={true}
 >
-  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <!-- ═══════════════════ HERO CAROUSEL ═══════════════════ -->
+  <HeroCarousel />
+
+  <!-- ═══════════════════ PREVIOUS HERO (COMMENTED OUT) ═══════════════════
   <section class="relative min-h-screen flex items-center">
-    <!-- Background Image -->
+    <!-\- Background Image -\->
     <img
       src="/images/hero-rice-paddy.png"
       alt="Golden rice paddy field at sunset"
@@ -27,10 +31,10 @@ const allPosts = (await getCollection("blog"))
       loading="eager"
       decoding="async"
     />
-    <!-- Gradient Overlay — lightened -->
+    <!-\- Gradient Overlay — lightened -\->
     <div class="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-950/70 to-forest-950/40"></div>
 
-    <!-- ✨ Interactive Wind Chimes Overlay ✨ -->
+    <!-\- ✨ Interactive Wind Chimes Overlay ✨ -\->
     <HeroChimes />
 
     <div class="relative z-10 container-custom py-32 md:py-40">
@@ -58,12 +62,13 @@ const allPosts = (await getCollection("blog"))
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
+    <!-\- Scroll Indicator -\->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 text-white/40">
       <span class="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
       <div class="w-px h-8 bg-gradient-to-b from-white/40 to-transparent"></div>
     </div>
   </section>
+  ════════════════════════════════════════════════════════════════════════ -->
 
   <!-- ═══════════════════ STATS BAR ═══════════════════ -->
   <section class="bg-forest-900 py-12 md:py-16">

@@ -56,12 +56,19 @@
 
 ## 3. Home Page Content
 
-### Hero Section
-- **Overline**: `INTERNATIONALLY CERTIFIED EXPORT HOUSE`
-- **Headline**: `Milling Excellence Since 1999.`
-- **Subtitle**: `From the fertile fields of India to tables across the globe — Surya Foods delivers premium Basmati rice with uncompromising quality and trust.`
-- **CTA 1**: `Explore Global Exports`
-- **CTA 2**: `Discover 048 Brand`
+### Hero Section (6-Slide Carousel — Features & Private Labeling)
+
+The hero section uses the `HeroCarousel` component with 6 auto-advancing slides highlighting key company capabilities: Private Label, Best Infrastructure, Cleaning/Sortex, Grain Elongation, Global Export, and Next-Gen Sortex.
+
+| Slide | Image | Overline | Headline | Accent | Primary CTA |
+|---|---|---|---|---|---|
+| 1 | `ChatGPT Image Aug 27, 2026 at 03_31_32 PM.png` | Your Brand, Our Quality | Private Label | Solutions. | Start Private Labeling |
+| 2 | `infrasture.png` | State-of-the-Art Processing | Best-in-Class | Infrastructure. | See Facility |
+| 3 | `ChatGPT Image Aug 26, 2026 at 01_00_30 PM.png` | 100% Purity Guaranteed | Advanced Cleaning | & Sortex. | Quality Control |
+| 4 | `ChatGPT Image Aug 26, 2026 at 01_11_23 PM (2).png` | Aged to Perfection | Exceptional | Elongations. | Explore Products |
+| 5 | `global export.png` | Worldwide Shipping | Global Export | Capabilities. | Export Network |
+| 6 | `Infrastructure sortex.png` | Advanced Processing | Next-Gen Sortex | Technology. | See Facility |
+
 
 ### Stats Bar
 | Stat | Value | Label |
@@ -393,3 +400,17 @@ Banners are used as:
 - Campaign gallery on the 048 brand landing page
 - Background for the 048 brand landing page hero section (Tibar Classic banner)
 - Homepage 048 pathway card background (Tibar Classic banner)
+
+---
+
+## 12. Blog Articles & Educational Content
+
+Published technical articles located in `src/content/blog/`:
+
+1. `from-rice-mill-to-shipping-container.md` — *From Rice Mill to Shipping Container: The Complete Journey of Export-Quality Rice* (Category: Export Guide, Assets: `public/images/blog resources/From Rice Mill to Shipping Container/`)
+2. `ultimate-guide-to-rice.md` — *The Ultimate Guide to Rice: Choosing the Perfect Grain Every Time* (Category: Rice Knowledge)
+3. `basmati-rice-guide.md` — *The Complete Guide to Indian Basmati Rice: Varieties, Grading & Culinary Uses* (Category: Rice Knowledge)
+4. `quality-standards.md` — *Understanding Rice Quality Standards: From Paddy to Premium Export Grain* (Category: Industry Insights)
+5. `basmati-vs-non-basmati-fssai-standards.md` — *Basmati vs Non-Basmati: FSSAI Standards & Quality Parameters* (Category: Industry Insights)
+6. `welcome-to-surya-foods.md` — *Welcome to Surya Foods: Over Two Decades of Rice Milling Excellence* (Category: Company News)
+

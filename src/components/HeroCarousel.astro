@@ -1,0 +1,595 @@
+---
+/**
+ * HeroCarousel.astro — Premium Full-Screen Hero Carousel
+ * ──────────────────────────────────────────────────────
+ * Auto-advancing carousel for the homepage hero section.
+ * Uses all 8 Surya Foods marketing banners as backgrounds.
+ * Messaging targets B2B export buyers, importers, and
+ * private-label distributors worldwide — with heavy emphasis
+ * on private labeling as the core value proposition.
+ *
+ * Features:
+ *  • 6 slides with crossfade transitions (~800ms)
+ *  • Auto-advance every 6 seconds, pauses on hover
+ *  • Dot indicators + arrow navigation
+ *  • Prefers-reduced-motion support
+ *  • Fully responsive (arrows hidden on mobile)
+ */
+
+interface Slide {
+  image: string;
+  alt: string;
+  overline: string;
+  headline: string;
+  headlineAccent: string;
+  description: string;
+  cta1: { label: string; href: string };
+  cta2: { label: string; href: string };
+}
+
+const slides: Slide[] = [
+  /* ── Slide 1: Private Label ── */
+  {
+    image: "/images/banners/ChatGPT Image Aug 27, 2026 at 03_31_32 PM.png",
+    alt: "Private Label Solutions",
+    overline: "Your Brand, Our Quality",
+    headline: "Private Label",
+    headlineAccent: "Solutions.",
+    description: "End-to-end custom packaging solutions. From concept to container, we manufacture and pack premium rice under your brand for seamless global export.",
+    cta1: { label: "Start Private Labeling", href: "/contact" },
+    cta2: { label: "Learn More", href: "/global-exports" },
+  },
+  /* ── Slide 2: Best Infrastructure ── */
+  {
+    image: "/images/banners/infrasture.png",
+    alt: "Best-in-Class Infrastructure",
+    overline: "State-of-the-Art Processing",
+    headline: "Best-in-Class",
+    headlineAccent: "Infrastructure.",
+    description: "Our state-of-the-art milling facility boasts a 50,000+ MT annual capacity. Equipped with the latest technology for unparalleled processing efficiency.",
+    cta1: { label: "See Facility", href: "/about" },
+    cta2: { label: "Partner With Us", href: "/contact" },
+  },
+  /* ── Slide 3: Cleaning ── */
+  {
+    image: "/images/banners/ChatGPT Image Aug 26, 2026 at 01_00_30 PM.png",
+    alt: "Advanced Cleaning & Sortex",
+    overline: "100% Purity Guaranteed",
+    headline: "Advanced Cleaning",
+    headlineAccent: "& Sortex.",
+    description: "Every grain passes through multiple stages of optical sorting and grading, ensuring perfect hygiene, purity, and adherence to global food safety standards.",
+    cta1: { label: "Quality Control", href: "/quality-control" },
+    cta2: { label: "Contact Us", href: "/contact" },
+  },
+  /* ── Slide 4: Elongations ── */
+  {
+    image: "/images/banners/ChatGPT Image Aug 26, 2026 at 01_11_23 PM (2).png",
+    alt: "Exceptional Grain Elongation",
+    overline: "Aged to Perfection",
+    headline: "Exceptional",
+    headlineAccent: "Elongations.",
+    description: "Our premium Basmati varieties are carefully aged, delivering extraordinary grain length, fluffiness, and aromatic richness upon cooking.",
+    cta1: { label: "Explore Products", href: "/global-exports" },
+    cta2: { label: "Request a Quote", href: "/contact" },
+  },
+  /* ── Slide 5: Global Export ── */
+  {
+    image: "/images/banners/global export.png",
+    alt: "Worldwide Shipping and Global Export",
+    overline: "Worldwide Shipping",
+    headline: "Global Export",
+    headlineAccent: "Capabilities.",
+    description: "Delivering premium Indian Basmati rice to 50+ countries worldwide with complete documentation and seamless logistics.",
+    cta1: { label: "Export Network", href: "/global-exports" },
+    cta2: { label: "Contact Us", href: "/contact" },
+  },
+  /* ── Slide 6: Infrastructure Sortex ── */
+  {
+    image: "/images/banners/Infrastructure sortex.png",
+    alt: "Advanced Sortex Processing",
+    overline: "Advanced Processing",
+    headline: "Next-Gen Sortex",
+    headlineAccent: "Technology.",
+    description: "Our facility is equipped with state-of-the-art sortex machines for ultimate precision, removing impurities to guarantee perfect, uniform grains.",
+    cta1: { label: "See Facility", href: "/about" },
+    cta2: { label: "Quality Standards", href: "/quality-control" },
+  }
+];
+---
+
+<section class="hero-carousel" id="hero-carousel" aria-label="Feature showcase carousel">
+  <!-- Slides -->
+  <div class="hc-slides">
+    {slides.map((slide, i) => (
+      <div
+        class={`hc-slide ${i === 0 ? "hc-slide--active" : ""}`}
+        data-slide-index={i}
+        role="group"
+        aria-roledescription="slide"
+        aria-label={`Slide ${i + 1} of ${slides.length}`}
+      >
+        <!-- Background Image -->
+        <img
+          src={slide.image}
+          alt={slide.alt}
+          class="hc-slide__bg"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <!-- Gradient Overlays for text readability -->
+        <div class="hc-slide__overlay"></div>
+
+        <!-- Content -->
+        <div class="hc-slide__content container-custom">
+          <div class="hc-slide__inner">
+            <p class="hc-overline">{slide.overline}</p>
+            <h2 class="hc-headline">
+              {slide.headline}<br />
+              <span class="text-gradient-gold">{slide.headlineAccent}</span>
+            </h2>
+            <p class="hc-description">{slide.description}</p>
+            <div class="hc-ctas">
+              <a href={slide.cta1.href} class="btn-primary">{slide.cta1.label}</a>
+              <a href={slide.cta2.href} class="btn-secondary">{slide.cta2.label}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Arrow Navigation -->
+  <button class="hc-arrow hc-arrow--prev" aria-label="Previous slide" id="hc-prev">
+    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+  <button class="hc-arrow hc-arrow--next" aria-label="Next slide" id="hc-next">
+    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+
+  <!-- Dot Indicators -->
+  <div class="hc-dots" role="tablist" aria-label="Carousel slide indicators">
+    {slides.map((_, i) => (
+      <button
+        class={`hc-dot ${i === 0 ? "hc-dot--active" : ""}`}
+        data-dot-index={i}
+        role="tab"
+        aria-selected={i === 0 ? "true" : "false"}
+        aria-label={`Go to slide ${i + 1}`}
+      >
+        <span class="hc-dot__fill"></span>
+      </button>
+    ))}
+  </div>
+
+  <!-- Progress bar -->
+  <div class="hc-progress">
+    <div class="hc-progress__bar" id="hc-progress-bar"></div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="hc-scroll-hint">
+    <span>Scroll</span>
+    <div class="hc-scroll-hint__line"></div>
+  </div>
+</section>
+
+<style>
+  /* ── Container ── */
+  .hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 1000px;
+    overflow: hidden;
+    background-color: var(--color-forest-950);
+  }
+
+  /* ── Slides Wrapper ── */
+  .hc-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ── Individual Slide ── */
+  .hc-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+    z-index: 1;
+  }
+
+  .hc-slide--active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+
+  /* ── Background Image ── */
+  .hc-slide__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* ── Gradient Overlay ── */
+  .hc-slide__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(10, 31, 15, 0.92) 0%,
+      rgba(10, 31, 15, 0.80) 25%,
+      rgba(10, 31, 15, 0.55) 50%,
+      rgba(10, 31, 15, 0.25) 75%,
+      rgba(10, 31, 15, 0.10) 100%
+    );
+    z-index: 2;
+  }
+
+  /* ── Content ── */
+  .hc-slide__content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 5rem; /* account for navbar */
+    padding-bottom: 5rem;
+  }
+
+  .hc-slide__inner {
+    max-width: 42rem;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .hc-slide--active .hc-slide__inner {
+    animation: hc-content-enter 0.7s 0.3s ease-out forwards;
+  }
+
+  @keyframes hc-content-enter {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ── Text ── */
+  .hc-overline {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--color-gold-400);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .hc-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.12;
+    margin-bottom: 1.25rem;
+  }
+
+  .hc-description {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2rem;
+    max-width: 36rem;
+  }
+
+  @media (min-width: 768px) {
+    .hc-overline {
+      font-size: 0.75rem;
+    }
+    .hc-description {
+      font-size: 1rem;
+    }
+  }
+
+  /* ── CTAs ── */
+  .hc-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .hc-ctas {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+
+  /* ── Arrow Buttons ── */
+  .hc-arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(10, 31, 15, 0.5);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  .hero-carousel:hover .hc-arrow {
+    opacity: 1;
+  }
+
+  .hc-arrow:hover {
+    background: rgba(10, 31, 15, 0.8);
+    border-color: var(--color-gold-400);
+    color: var(--color-gold-400);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  .hc-arrow--prev { left: 1.5rem; }
+  .hc-arrow--next { right: 1.5rem; }
+
+  @media (min-width: 768px) {
+    .hc-arrow {
+      display: flex;
+    }
+  }
+
+  /* ── Dot Indicators ── */
+  .hc-dots {
+    position: absolute;
+    bottom: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .hc-dot {
+    width: 2rem;
+    height: 4px;
+    padding: 0;
+    border: none;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hc-dot--active {
+    width: 3rem;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .hc-dot__fill {
+    position: absolute;
+    inset: 0;
+    background: var(--color-gold-400);
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: inherit;
+    transition: none;
+  }
+
+  .hc-dot--active .hc-dot__fill {
+    animation: hc-dot-progress 6s linear forwards;
+  }
+
+  .hc-dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  @keyframes hc-dot-progress {
+    to { transform: scaleX(1); }
+  }
+
+  /* ── Progress bar (thin line at bottom) ── */
+  .hc-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 10;
+  }
+
+  .hc-progress__bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, var(--color-gold-500), var(--color-gold-400));
+    transition: width 0.3s;
+  }
+
+  /* ── Scroll Hint ── */
+  .hc-scroll-hint {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .hc-scroll-hint span {
+    font-size: 0.5625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+  }
+
+  .hc-scroll-hint__line {
+    width: 1px;
+    height: 2rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.35), transparent);
+  }
+
+  @media (min-width: 768px) {
+    .hc-scroll-hint {
+      display: flex;
+    }
+    .hc-dots {
+      bottom: 5rem;
+    }
+  }
+
+  /* ── Reduced Motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .hc-slide {
+      transition: none;
+    }
+    .hc-slide--active .hc-slide__inner {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+    .hc-dot--active .hc-dot__fill {
+      animation: none;
+      transform: scaleX(1);
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const carousel = document.getElementById("hero-carousel");
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll(".hc-slide");
+    const dots = carousel.querySelectorAll(".hc-dot");
+    const prevBtn = document.getElementById("hc-prev");
+    const nextBtn = document.getElementById("hc-next");
+    const progressBar = document.getElementById("hc-progress-bar");
+
+    const TOTAL = slides.length;
+    const INTERVAL = 6000; // 6 seconds
+    let current = 0;
+    let timer = null;
+    let isPaused = false;
+    let startTime = Date.now();
+
+    // Detect prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function goTo(index, resetTimer) {
+      if (index < 0) index = TOTAL - 1;
+      if (index >= TOTAL) index = 0;
+
+      // Deactivate current
+      slides[current].classList.remove("hc-slide--active");
+      dots[current].classList.remove("hc-dot--active");
+      dots[current].setAttribute("aria-selected", "false");
+      // Reset the fill animation
+      var fill = dots[current].querySelector(".hc-dot__fill");
+      if (fill) {
+        fill.style.animation = "none";
+        fill.offsetHeight; // trigger reflow
+        fill.style.animation = "";
+      }
+
+      // Activate new
+      current = index;
+      slides[current].classList.add("hc-slide--active");
+      dots[current].classList.add("hc-dot--active");
+      dots[current].setAttribute("aria-selected", "true");
+
+      // Update progress bar
+      if (progressBar) {
+        progressBar.style.width = ((current + 1) / TOTAL * 100) + "%";
+      }
+
+      if (resetTimer !== false) {
+        startTime = Date.now();
+        restartTimer();
+      }
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function restartTimer() {
+      if (timer) clearInterval(timer);
+      if (prefersReducedMotion) return;
+      timer = setInterval(function () {
+        if (!isPaused) next();
+      }, INTERVAL);
+    }
+
+    // Arrow clicks
+    if (prevBtn) prevBtn.addEventListener("click", prev);
+    if (nextBtn) nextBtn.addEventListener("click", next);
+
+    // Dot clicks
+    dots.forEach(function (dot) {
+      dot.addEventListener("click", function () {
+        var idx = parseInt(dot.getAttribute("data-dot-index"), 10);
+        if (idx !== current) goTo(idx);
+      });
+    });
+
+    // Pause on hover
+    carousel.addEventListener("mouseenter", function () { isPaused = true; });
+    carousel.addEventListener("mouseleave", function () { isPaused = false; });
+
+    // Touch swipe support
+    var touchStartX = 0;
+    var touchEndX = 0;
+
+    carousel.addEventListener("touchstart", function (e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", function (e) {
+      touchEndX = e.changedTouches[0].screenX;
+      var diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) next(); else prev();
+      }
+    }, { passive: true });
+
+    // Keyboard navigation
+    carousel.setAttribute("tabindex", "0");
+    carousel.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    });
+
+    // Initialize progress bar
+    if (progressBar) {
+      progressBar.style.width = (1 / TOTAL * 100) + "%";
+    }
+
+    // Start auto-advance
+    restartTimer();
+  })();
+</script>

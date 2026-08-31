@@ -416,3 +416,4 @@ Published technical articles located in `src/content/blog/`:
 
 7. `how-optical-sorting-works.md` — *How Optical Sorting Works: The Technology Behind Cleaner Rice* (Category: Industry Insights, Assets: `public/images/blog resources/optimal sorting work/`)
 8. `rice-grain-defects-quality-inspector.md` — *Rice Grain Defects: The Quality Inspector’s View* (Category: Industry Insights, Assets: `public/images/blog resources/Rice Grain Defects/`)
+9. `buyers-guide-reliable-rice-exporter.md` — *The Buyer’s Guide to Choosing a Reliable Rice Exporter* (Category: Export Guide, Assets: `public/images/blog resources/Reliable Rice Exporter/`)

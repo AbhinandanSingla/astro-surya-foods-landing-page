@@ -11,6 +11,7 @@ export const EMAIL = "contact@suryafoodspatran.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/company/surya-foods-patran/";
 export const MILL_ADDRESS = "Village Banwala, Patran Road, Nial Bye Pass Patran, Patiala, Punjab 147105";
 export const MILL_MAP_QUERY = "Village+Banwala+Patran+Road+Nial+Bye+Pass+Patran+Patiala+Punjab+147105";
+export const MAPS_DIR_LINK = "https://www.google.com/maps/place/Surya+foods/@29.9610442,76.082964,792m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3911b92f5487b297:0xd464206e72dbef30!8m2!3d29.9610442!4d76.0855389!16s%2Fg%2F11h616082m?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
 
 export const LANGUAGES = [
   { code: "af", label: "Afrikaans" },

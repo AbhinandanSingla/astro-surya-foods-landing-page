@@ -8,12 +8,6 @@ tags: ["optical sorting", "rice quality", "export", "AI", "processing"]
 category: "Industry Insights"
 ---
 
-# How Optical Sorting Works: The Technology Behind Cleaner Rice
-
-*Discover how AI-powered optical sorting transforms ordinary rice into export-quality rice by removing defective grains with incredible speed and precision.*
-
----
-
 ## Introduction
 
 Imagine standing beside a modern rice processing line.

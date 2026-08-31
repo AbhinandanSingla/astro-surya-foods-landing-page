@@ -415,3 +415,4 @@ Published technical articles located in `src/content/blog/`:
 6. `welcome-to-surya-foods.md` — *Welcome to Surya Foods: Over Two Decades of Rice Milling Excellence* (Category: Company News)
 
 7. `how-optical-sorting-works.md` — *How Optical Sorting Works: The Technology Behind Cleaner Rice* (Category: Industry Insights, Assets: `public/images/blog resources/optimal sorting work/`)
+8. `rice-grain-defects-quality-inspector.md` — *Rice Grain Defects: The Quality Inspector’s View* (Category: Industry Insights, Assets: `public/images/blog resources/Rice Grain Defects/`)

@@ -5,7 +5,7 @@ import StatsCounter from "../components/StatsCounter.astro";
 import BlogCard from "../components/BlogCard.astro";
 import HeroChimes from "../components/HeroChimes.astro";
 import HeroCarousel from "../components/HeroCarousel.astro";
-import { STATS, CERTIFICATIONS_DISPLAY, GALLERY_IMAGES, KEY_TO_SUCCESS, QUOTES, MILL_MAP_QUERY, MILL_ADDRESS } from "../consts";
+import { STATS, CERTIFICATIONS_DISPLAY, GALLERY_IMAGES, KEY_TO_SUCCESS, QUOTES, MILL_MAP_QUERY, MILL_ADDRESS, MAPS_DIR_LINK } from "../consts";
 import { getCollection } from "astro:content";
 
 const allPosts = (await getCollection("blog"))
@@ -400,20 +400,17 @@ const allPosts = (await getCollection("blog"))
       <div class="text-center mb-8" data-animate>
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400 mb-3">Our Location</p>
         <h2 class="text-2xl md:text-3xl font-heading font-bold text-white mb-2">Visit Our Rice Mill</h2>
-        <p class="text-sm text-forest-200/60">{MILL_ADDRESS}</p>
+        <p class="text-sm text-forest-200/60 mb-5">{MILL_ADDRESS}</p>
+        <a href={MAPS_DIR_LINK} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-2.5 bg-forest-800/80 hover:bg-forest-700 border border-forest-600/50 text-white rounded-lg transition-colors text-sm font-medium">
+          Get Directions
+          <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
       </div>
     </div>
     <div class="w-full h-[350px] md:h-[450px]">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.6395766727624!2d76.08296397571034!3d29.961044174965725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3911b92f5487b297%3A0xd464206e72dbef30!2sSurya%20foods!5e0!3m2!1sen!2sin!4v1783427565449!5m2!1sen!2sin"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        title="Surya Foods Rice Mill Location"
-      ></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.6379111085107!2d76.08296397554008!3d29.961044174965696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3911b92f5487b297%3A0xd464206e72dbef30!2sSurya%20foods!5e1!3m2!1sen!2sus!4v1788198417457!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </section>
 

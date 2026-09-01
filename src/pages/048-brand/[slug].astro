@@ -59,12 +59,8 @@ const faqSchema = product.faqs.length > 0 ? {
 
   <!-- Product Hero -->
   <section class="relative overflow-hidden bg-forest-950 min-h-[75vh] flex items-center">
-    {product.banner ? (
-      <img src={product.banner} alt={`048 ${product.name} premium rice campaign`} class="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async" />
-      <div class="absolute inset-0 bg-gradient-to-r from-forest-950/92 via-forest-950/70 to-forest-950/40"></div>
-    ) : (
-      <div class="absolute inset-0 brand-hero-bg"></div>
-    )}
+    <img src="/images/048-hero-bg.jpg" alt="Premium Basmati rice grains with dramatic lighting" class="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async" />
+    <div class="absolute inset-0 bg-gradient-to-r from-forest-950/95 via-forest-950/75 to-forest-950/30"></div>
     <div class={`absolute inset-x-0 bottom-0 h-1.5 ${product.colorClass}`}></div>
     <div class="relative z-10 container-custom pt-36 md:pt-44 pb-20 md:pb-28">
       <nav aria-label="Breadcrumb" class="mb-10 text-xs font-medium tracking-wide text-forest-200/65">

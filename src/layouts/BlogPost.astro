@@ -40,6 +40,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   title={`${title} — Surya Foods Blog`}
   description={description}
   image={heroImage}
+  keywords={[title, ...tags, "Indian Basmati rice exporter", "bulk Basmati rice supplier"].join(", ")}
 >
   <article class="bg-slate-50/50 pb-16">
     <!-- Hero Image -->
@@ -183,6 +184,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       "headline": title,
       "description": description,
       "image": heroImage,
+      "keywords": tags.join(", "),
       "datePublished": pubDate.toISOString(),
       "dateModified": (updatedDate ?? pubDate).toISOString(),
       "author": {

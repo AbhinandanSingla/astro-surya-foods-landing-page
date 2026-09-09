@@ -63,8 +63,8 @@ This guide explains how to identify each variety, where each performs best, and 
 - an Indian Basmati rice variety suitable for retail, wholesale and private-label programmes.
 
 <figure class="my-8">
-  <img src="/images/rice-images/1509-steam-rice-3.png" alt="1509 Basmati rice grain sample for bulk export quality inspection" loading="lazy" decoding="async" />
-  <figcaption class="mt-3 text-center text-sm text-slate-500">A 1509 Basmati sample: assess average grain length, uniformity, colour, broken percentage and aroma—not one grain in isolation.</figcaption>
+  <img src="/images/blog/1509-vs-1401/pusa-1509-grain-profile.webp" alt="Editorial comparison of uncooked and cooked Pusa 1509 Basmati rice showing extra-long slender grains" loading="lazy" decoding="async" />
+  <figcaption class="mt-3 text-center text-sm text-slate-500">Pusa 1509 grain profile: extra-long, slender raw kernels and strong elongation after cooking. Always confirm the shipment against a representative physical sample.</figcaption>
 </figure>
 
 ### How to identify 1509 Basmati rice
@@ -86,8 +86,8 @@ A visual check is useful, but it cannot confirm varietal purity. For a bulk orde
 - a value-led alternative that still carries genuine Basmati character.
 
 <figure class="my-8">
-  <img src="/images/rice-images/1401-steam-rice-3.png" alt="1401 Basmati rice grain sample showing long uniform kernels" loading="lazy" decoding="async" />
-  <figcaption class="mt-3 text-center text-sm text-slate-500">1401 Basmati is valued for uniform cooked shape, dependable texture and a pronounced aromatic profile.</figcaption>
+  <img src="/images/blog/1509-vs-1401/pusa-1401-grain-profile.webp" alt="Editorial comparison of uncooked and cooked Pusa 1401 Basmati rice showing long uniform grains" loading="lazy" decoding="async" />
+  <figcaption class="mt-3 text-center text-sm text-slate-500">Pusa 1401 grain profile: long, uniform kernels with a dependable cooked shape and aromatic character. Lot-specific results should be verified before purchase.</figcaption>
 </figure>
 
 ### How to identify 1401 Basmati rice
@@ -119,7 +119,7 @@ Sella rice is parboiled in the husk before milling. It is firmer, tolerant of la
 
 <div class="not-prose my-8 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-xl">
   <div class="grid md:grid-cols-2">
-    <img src="/images/rice-images/1509-steam-rice-1.png" alt="1509 Basmati rice close-up for grain comparison" class="h-80 w-full object-cover" loading="lazy" decoding="async" />
+    <img src="/images/blog/1509-vs-1401/cooking-test-comparison.webp" alt="Controlled side-by-side cooking test comparing two Basmati rice samples for grain elongation and separation" class="h-80 w-full object-cover" loading="lazy" decoding="async" />
     <div class="flex flex-col justify-center p-6 text-white md:p-8">
       <p class="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-gold-300">Buyer’s rule</p>
       <p class="m-0 font-heading text-2xl font-bold leading-snug text-white">Compare the same form, crop year and ageing period.</p>
@@ -166,6 +166,11 @@ Price should never be the only deciding factor. Basmati rice prices move with cr
 ## A 9-Point Quality Checklist Before You Buy
 
 Whether you are evaluating a **1509 Basmati rice exporter** or a **1401 Basmati rice supplier**, request the following:
+
+<figure class="my-8">
+  <img src="/images/blog/1509-vs-1401/basmati-quality-inspection.webp" alt="Rice quality inspector measuring a long Basmati grain with a digital caliper beside moisture-testing equipment" loading="lazy" decoding="async" />
+  <figcaption class="mt-3 text-center text-sm text-slate-500">A representative Basmati quality inspection checks measurable specifications such as grain length, broken percentage, moisture, colour and defects.</figcaption>
+</figure>
 
 1. **Average grain length:** measure a representative sample, not only the longest kernels.
 2. **Varietal purity:** confirm the agreed purity level and testing method.

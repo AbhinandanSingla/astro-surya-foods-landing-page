@@ -4,11 +4,12 @@ interface Props {
   description: string;
   pubDate: Date;
   heroImage?: string;
+  heroImageAlt?: string;
   category: string;
   slug: string;
 }
 
-const { title, description, pubDate, heroImage, category, slug } = Astro.props;
+const { title, description, pubDate, heroImage, heroImageAlt, category, slug } = Astro.props;
 
 const formattedDate = pubDate.toLocaleDateString("en-US", {
   year: "numeric",
@@ -27,7 +28,7 @@ const formattedDate = pubDate.toLocaleDateString("en-US", {
     <div class="relative h-48 md:h-56 overflow-hidden">
       <img
         src={heroImage}
-        alt={title}
+        alt={heroImageAlt ?? title}
         loading="lazy"
         decoding="async"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

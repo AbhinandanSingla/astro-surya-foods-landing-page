@@ -9,6 +9,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
     author: z.string().default("Surya Foods Editorial"),
     tags: z.array(z.string()).default([]),
     category: z

@@ -3,6 +3,7 @@ title: "How to Evaluate a Basmati Rice Sample Before Buying"
 description: "Use a repeatable raw and cooked sample test for grain length, aroma, moisture, defects, texture, separation and yield."
 pubDate: 2026-08-17
 heroImage: "/images/blog/seo-cluster-2026/23-rice-sample-evaluation.webp"
+heroImageAlt: "Professional Basmati sample evaluation with cooked bowls, raw grain tray and caliper"
 author: "Surya Foods Editorial"
 tags: ["Basmati Rice Sample","Rice Quality Test","Rice Buyer Checklist","Pre Shipment Sample"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ Evaluate both raw appearance and cooked performance. Customers eat cooked rice, 
 - Keep signed reference samples sealed.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/23-rice-sample-evaluation.webp" alt="Professional Basmati sample evaluation with cooked bowls, raw grain tray and caliper" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/23-rice-sample-evaluation.webp" alt="Professional Basmati sample evaluation with cooked bowls, raw grain tray and caliper" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: How to Evaluate a Basmati Rice Sample Before Buying. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

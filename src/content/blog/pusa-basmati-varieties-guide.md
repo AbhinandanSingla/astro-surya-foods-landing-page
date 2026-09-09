@@ -3,6 +3,7 @@ title: "Pusa Basmati Varieties Explained: 1121, 1509, 1401 and 1718"
 description: "An easy guide to four major Pusa Basmati varieties and how buyers can compare their grains, cooking performance and uses."
 pubDate: 2026-09-04
 heroImage: "/images/blog/seo-cluster-2026/05-pusa-basmati-varieties.webp"
+heroImageAlt: "Five bowls of long-grain rice arranged for comparing major Pusa Basmati varieties"
 author: "Surya Foods Editorial"
 tags: ["Pusa Basmati Varieties","1121 Basmati","1509 Basmati","1401 Basmati","1718 Basmati"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ This guide gives a simple commercial map. It is not a substitute for varietal te
 - Supplier grading determines lot consistency.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/05-pusa-basmati-varieties.webp" alt="Five bowls of long-grain rice arranged for comparing major Pusa Basmati varieties" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/05-pusa-basmati-varieties.webp" alt="Five bowls of long-grain rice arranged for comparing major Pusa Basmati varieties" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Pusa Basmati Varieties Explained: 1121, 1509, 1401 and 1718. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

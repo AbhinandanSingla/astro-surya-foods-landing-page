@@ -3,6 +3,7 @@ title: "Basmati Rice Market Trends 2026: What Buyers Should Watch"
 description: "A clear 2026 Basmati market outlook covering export demand, premium varieties, packaged rice, compliance and supply planning."
 pubDate: 2026-08-12
 heroImage: "/images/blog/seo-cluster-2026/28-basmati-market-trends-2026.webp"
+heroImageAlt: "Basmati samples, globe and shipping containers arranged for a 2026 rice market analysis"
 author: "Surya Foods Editorial"
 tags: ["Basmati Rice Market 2026","Rice Export Trends","Indian Basmati Export","Bulk Rice Buyers"]
 category: "Industry Insights"
@@ -25,7 +26,7 @@ Numbers can change as official data is revised. Buyers should use the trend to p
 - Freight and currency can move landed cost quickly.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/28-basmati-market-trends-2026.webp" alt="Basmati samples, globe and shipping containers arranged for a 2026 rice market analysis" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/28-basmati-market-trends-2026.webp" alt="Basmati samples, globe and shipping containers arranged for a 2026 rice market analysis" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Basmati Rice Market Trends 2026: What Buyers Should Watch. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

@@ -3,6 +3,7 @@ title: "Pesticide-Residue Compliant Basmati Rice: Buyer Guide"
 description: "Understand MRLs, destination-specific testing, farm controls, laboratory scope and shipment planning for compliant Basmati rice."
 pubDate: 2026-08-16
 heroImage: "/images/blog/seo-cluster-2026/24-pesticide-residue-testing.webp"
+heroImageAlt: "Sealed Basmati samples and laboratory vials prepared for pesticide-residue analysis"
 author: "Surya Foods Editorial"
 tags: ["Pesticide Residue Free Rice","EU Compliant Basmati","Rice MRL","Basmati Testing"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ MRLs and testing expectations can change. Confirm the current destination list b
 - One test does not replace a control programme.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/24-pesticide-residue-testing.webp" alt="Sealed Basmati samples and laboratory vials prepared for pesticide-residue analysis" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/24-pesticide-residue-testing.webp" alt="Sealed Basmati samples and laboratory vials prepared for pesticide-residue analysis" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Pesticide-Residue Compliant Basmati Rice: Buyer Guide. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

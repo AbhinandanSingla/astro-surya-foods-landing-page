@@ -3,6 +3,7 @@ title: "Basmati Rice Landed Cost: Simple Calculation for Buyers"
 description: "Calculate the real landed cost of imported Basmati rice using product, packing, freight, insurance, duty and local charges."
 pubDate: 2026-08-18
 heroImage: "/images/blog/seo-cluster-2026/22-basmati-landed-cost.webp"
+heroImageAlt: "Rice sample, calculator, miniature container and shipping papers on a procurement desk"
 author: "Surya Foods Editorial"
 tags: ["Basmati Rice Landed Cost","Rice Import Cost","FOB CIF Rice","Rice Buyer Guide"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ Build the calculation per saleable kilogram or pack, not only per container.
 - Include finance, inspection and loss.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/22-basmati-landed-cost.webp" alt="Rice sample, calculator, miniature container and shipping papers on a procurement desk" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/22-basmati-landed-cost.webp" alt="Rice sample, calculator, miniature container and shipping papers on a procurement desk" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Basmati Rice Landed Cost: Simple Calculation for Buyers. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

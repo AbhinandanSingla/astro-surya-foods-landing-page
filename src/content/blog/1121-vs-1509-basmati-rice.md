@@ -3,6 +3,7 @@ title: "1121 vs 1509 Basmati Rice: Which One Should You Buy?"
 description: "Understand the difference between 1121 and 1509 Basmati rice for biryani, retail, catering and bulk import programmes."
 pubDate: 2026-09-07
 heroImage: "/images/blog/seo-cluster-2026/02-1121-vs-1509-basmati.webp"
+heroImageAlt: "Side-by-side uncooked and cooked samples for comparing 1121 and 1509 Basmati rice"
 author: "Surya Foods Editorial"
 tags: ["1121 vs 1509","1509 Basmati Rice","1121 Basmati Rice","Basmati for Biryani"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ The better choice depends on the result your customer notices: raw grain appeara
 - Ageing and milling can change the result substantially.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/02-1121-vs-1509-basmati.webp" alt="Side-by-side uncooked and cooked samples for comparing 1121 and 1509 Basmati rice" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/02-1121-vs-1509-basmati.webp" alt="Side-by-side uncooked and cooked samples for comparing 1121 and 1509 Basmati rice" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: 1121 vs 1509 Basmati Rice: Which One Should You Buy?. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

@@ -3,6 +3,7 @@ title: "Brown vs White Basmati Rice: Nutrition, Taste and Cooking"
 description: "Compare brown and white Basmati rice by processing, fibre, texture, cooking time, storage and everyday meal use."
 pubDate: 2026-08-24
 heroImage: "/images/blog/seo-cluster-2026/16-brown-vs-white-basmati.webp"
+heroImageAlt: "Brown and white Basmati rice shown as raw and cooked samples with vegetables and lentils"
 author: "Surya Foods Editorial"
 tags: ["Brown Basmati Rice","White Basmati Rice","Whole Grain Rice","Basmati Nutrition"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ Neither choice turns one meal into a complete diet. The best option also depends
 - Individual nutrition needs differ.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/16-brown-vs-white-basmati.webp" alt="Brown and white Basmati rice shown as raw and cooked samples with vegetables and lentils" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/16-brown-vs-white-basmati.webp" alt="Brown and white Basmati rice shown as raw and cooked samples with vegetables and lentils" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Brown vs White Basmati Rice: Nutrition, Taste and Cooking. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

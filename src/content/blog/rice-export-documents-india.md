@@ -3,6 +3,7 @@ title: "Rice Export Documents from India: A Buyer-Friendly Checklist"
 description: "Understand the main commercial, transport, origin, inspection and food-safety documents used in rice exports from India."
 pubDate: 2026-08-22
 heroImage: "/images/blog/seo-cluster-2026/18-rice-export-documents.webp"
+heroImageAlt: "Organised export desk with shipping papers, certificate folder and sealed rice sample"
 author: "Surya Foods Editorial"
 tags: ["Rice Export Documents","Basmati Export India","Bill of Lading","Rice Import Documentation"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ The exact list changes by destination, payment method and product. Use this as a
 - Review drafts before vessel departure.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/18-rice-export-documents.webp" alt="Organised export desk with shipping papers, certificate folder and sealed rice sample" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/18-rice-export-documents.webp" alt="Organised export desk with shipping papers, certificate folder and sealed rice sample" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Rice Export Documents from India: A Buyer-Friendly Checklist. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

@@ -8,12 +8,13 @@ interface Props {
   pubDate: Date;
   updatedDate?: Date;
   heroImage?: string;
+  heroImageAlt?: string;
   author: string;
   category: string;
   tags: string[];
 }
 
-const { title, description, pubDate, updatedDate, heroImage, author, category, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, author, category, tags } = Astro.props;
 
 const formattedPubDate = pubDate.toLocaleDateString("en-US", {
   year: "numeric",
@@ -49,7 +50,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <div class="relative w-full h-[300px] md:h-[450px] overflow-hidden">
         <img
           src={heroImage}
-          alt={title}
+          alt={heroImageAlt ?? title}
           class="w-full h-full object-cover"
           loading="eager"
           decoding="async"

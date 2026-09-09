@@ -3,6 +3,7 @@ title: "Basmati Rice for Meal Prep: Cooking, Cooling and Reheating"
 description: "Prepare Basmati rice for weekly meals with simple portioning, cooling, storage and reheating guidance for good texture."
 pubDate: 2026-08-25
 heroImage: "/images/blog/seo-cluster-2026/15-basmati-rice-meal-prep.webp"
+heroImageAlt: "Three glass meal-prep containers filled with Basmati rice and colourful vegetables"
 author: "Surya Foods Editorial"
 tags: ["Basmati Meal Prep","Rice Meal Prep","Reheat Rice","Healthy Rice Meals"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ Build each container with vegetables and a protein source for a more balanced me
 - Reheat thoroughly and avoid repeated warming.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/15-basmati-rice-meal-prep.webp" alt="Three glass meal-prep containers filled with Basmati rice and colourful vegetables" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/15-basmati-rice-meal-prep.webp" alt="Three glass meal-prep containers filled with Basmati rice and colourful vegetables" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Basmati Rice for Meal Prep: Cooking, Cooling and Reheating. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

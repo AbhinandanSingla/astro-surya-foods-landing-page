@@ -3,6 +3,7 @@ title: "White Sella vs Golden Sella Rice: What Is the Difference?"
 description: "A simple comparison of White Sella and Golden Sella rice covering colour, parboiling, texture, cooking and buyer selection."
 pubDate: 2026-09-01
 heroImage: "/images/blog/seo-cluster-2026/08-white-sella-vs-golden-sella.webp"
+heroImageAlt: "White Sella and Golden Sella rice displayed as pale and amber raw and cooked samples"
 author: "Surya Foods Editorial"
 tags: ["White Sella Rice","Golden Sella Rice","Parboiled Basmati","Sella Rice Difference"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ The name Sella describes processing, not one variety. Both forms can be produced
 - Customer colour preference is commercially important.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/08-white-sella-vs-golden-sella.webp" alt="White Sella and Golden Sella rice displayed as pale and amber raw and cooked samples" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/08-white-sella-vs-golden-sella.webp" alt="White Sella and Golden Sella rice displayed as pale and amber raw and cooked samples" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: White Sella vs Golden Sella Rice: What Is the Difference?. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

@@ -3,6 +3,7 @@ title: "Rice Container Loading and Packaging: Export Checklist"
 description: "Protect bulk rice shipments with practical checks for bags, pallets, container condition, moisture, loading and seal records."
 pubDate: 2026-08-21
 heroImage: "/images/blog/seo-cluster-2026/19-container-loading-rice.webp"
+heroImageAlt: "Food-grade shipping container being loaded with neatly stacked unbranded rice sacks"
 author: "Surya Foods Editorial"
 tags: ["Rice Container Loading","Rice Export Packaging","Food Grade Container","Bulk Rice Shipment"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ The loading plan should be agreed while the product and pack are being designedâ
 - Keep photo and seal records.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/19-container-loading-rice.webp" alt="Food-grade shipping container being loaded with neatly stacked unbranded rice sacks" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/19-container-loading-rice.webp" alt="Food-grade shipping container being loaded with neatly stacked unbranded rice sacks" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Rice Container Loading and Packaging: Export Checklist. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

@@ -3,6 +3,7 @@ title: "Sustainable Basmati Rice Sourcing: Questions Buyers Should Ask"
 description: "Move beyond vague green claims with practical questions about water, inputs, soil, energy, workers, traceability and evidence."
 pubDate: 2026-08-10
 heroImage: "/images/blog/seo-cluster-2026/30-sustainable-basmati-sourcing.webp"
+heroImageAlt: "Farmer hands inspecting rice panicles beside a water-efficient paddy irrigation channel"
 author: "Surya Foods Editorial"
 tags: ["Sustainable Basmati Rice","Responsible Rice Sourcing","Water Efficient Rice","Rice Supply Chain"]
 category: "Industry Insights"
@@ -25,7 +26,7 @@ Buyers can begin with a few material topics: water, crop inputs, soil, energy, e
 - Avoid environmental language that evidence cannot prove.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/30-sustainable-basmati-sourcing.webp" alt="Farmer hands inspecting rice panicles beside a water-efficient paddy irrigation channel" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/30-sustainable-basmati-sourcing.webp" alt="Farmer hands inspecting rice panicles beside a water-efficient paddy irrigation channel" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Sustainable Basmati Rice Sourcing: Questions Buyers Should Ask. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

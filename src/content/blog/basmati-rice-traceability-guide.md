@@ -3,6 +3,7 @@ title: "Basmati Rice Traceability: From Farm and Paddy to Export Bag"
 description: "Learn how Basmati traceability connects farmers, paddy lots, milling, tests, packing and shipments for stronger quality control."
 pubDate: 2026-08-14
 heroImage: "/images/blog/seo-cluster-2026/26-basmati-traceability.webp"
+heroImageAlt: "Paddy, sealed rice samples, mill sample and digital record arranged as a traceability chain"
 author: "Surya Foods Editorial"
 tags: ["Basmati Rice Traceability","Basmati.Net","Rice Supply Chain","Varietal Purity"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ For Basmati, traceability also supports authenticity, residue management and fas
 - Mock recalls test whether the system works.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/26-basmati-traceability.webp" alt="Paddy, sealed rice samples, mill sample and digital record arranged as a traceability chain" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/26-basmati-traceability.webp" alt="Paddy, sealed rice samples, mill sample and digital record arranged as a traceability chain" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Basmati Rice Traceability: From Farm and Paddy to Export Bag. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

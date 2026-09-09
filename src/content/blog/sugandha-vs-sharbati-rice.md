@@ -3,6 +3,7 @@ title: "Sugandha vs Sharbati Rice: Differences, Uses and Buyer Tips"
 description: "Compare Sugandha and Sharbati rice by grain appearance, aroma, cooking behaviour, price position and commercial applications."
 pubDate: 2026-09-03
 heroImage: "/images/blog/seo-cluster-2026/06-sugandha-vs-sharbati-rice.webp"
+heroImageAlt: "Two raw and two cooked long-grain rice samples comparing Sugandha and Sharbati rice"
 author: "Surya Foods Editorial"
 tags: ["Sugandha Rice","Sharbati Rice","Non Basmati Rice","Long Grain Rice"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ The practical choice depends on grain appearance, aroma expectation, cooking tol
 - Set realistic aroma and length claims.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/06-sugandha-vs-sharbati-rice.webp" alt="Two raw and two cooked long-grain rice samples comparing Sugandha and Sharbati rice" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/06-sugandha-vs-sharbati-rice.webp" alt="Two raw and two cooked long-grain rice samples comparing Sugandha and Sharbati rice" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Sugandha vs Sharbati Rice: Differences, Uses and Buyer Tips. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

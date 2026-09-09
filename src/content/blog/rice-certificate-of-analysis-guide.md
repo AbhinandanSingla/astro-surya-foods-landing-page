@@ -3,6 +3,7 @@ title: "Rice Certificate of Analysis: What Buyers Should Check"
 description: "Read a rice COA with confidence by checking lot identity, methods, grain quality, moisture, residues and laboratory details."
 pubDate: 2026-08-15
 heroImage: "/images/blog/seo-cluster-2026/25-rice-certificate-of-analysis.webp"
+heroImageAlt: "Rice certificate review beside a sample tray, moisture meter, weighing scale and magnifier"
 author: "Surya Foods Editorial"
 tags: ["Rice Certificate of Analysis","Rice COA","Basmati Quality Parameters","Rice Lab Test"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ A long table of numbers can still be weak evidence if the sample was not represe
 - COA and contract should use the same limits.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/25-rice-certificate-of-analysis.webp" alt="Rice certificate review beside a sample tray, moisture meter, weighing scale and magnifier" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/25-rice-certificate-of-analysis.webp" alt="Rice certificate review beside a sample tray, moisture meter, weighing scale and magnifier" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Rice Certificate of Analysis: What Buyers Should Check. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

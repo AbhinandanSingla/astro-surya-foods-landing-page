@@ -3,6 +3,7 @@ title: "Aged vs New-Crop Basmati Rice: Cooking and Buying Differences"
 description: "Learn how ageing affects Basmati rice moisture, aroma, water absorption, grain separation, storage and bulk buying decisions."
 pubDate: 2026-08-31
 heroImage: "/images/blog/seo-cluster-2026/09-aged-vs-new-crop-basmati.webp"
+heroImageAlt: "Sealed jar of aged Basmati rice beside a fresh new-crop rice sample and paddy panicles"
 author: "Surya Foods Editorial"
 tags: ["Aged Basmati Rice","New Crop Rice","Basmati Rice Ageing","Rice Storage"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ Ageing is not simply leaving bags in a warehouse. Time adds value only when temp
 - Aroma and texture should be tested, not assumed.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/09-aged-vs-new-crop-basmati.webp" alt="Sealed jar of aged Basmati rice beside a fresh new-crop rice sample and paddy panicles" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/09-aged-vs-new-crop-basmati.webp" alt="Sealed jar of aged Basmati rice beside a fresh new-crop rice sample and paddy panicles" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Aged vs New-Crop Basmati Rice: Cooking and Buying Differences. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

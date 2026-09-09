@@ -3,6 +3,7 @@ title: "How Parboiled Rice Is Made: Process, Benefits and Uses"
 description: "Follow the parboiled rice process from soaking and steaming to drying, milling and cooking, with simple buyer guidance."
 pubDate: 2026-08-30
 heroImage: "/images/blog/seo-cluster-2026/10-parboiled-rice-process.webp"
+heroImageAlt: "Parboiled rice stages showing soaked paddy, steam treatment, drying and finished grains"
 author: "Surya Foods Editorial"
 tags: ["Parboiled Rice","Sella Rice","Rice Processing","Golden Sella Rice"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ The process changes the kernel structure, which is why parboiled rice often feel
 - Milling removes husk and bran after treatment.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/10-parboiled-rice-process.webp" alt="Parboiled rice stages showing soaked paddy, steam treatment, drying and finished grains" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/10-parboiled-rice-process.webp" alt="Parboiled rice stages showing soaked paddy, steam treatment, drying and finished grains" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: How Parboiled Rice Is Made: Process, Benefits and Uses. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

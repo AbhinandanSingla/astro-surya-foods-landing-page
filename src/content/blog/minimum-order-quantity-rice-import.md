@@ -3,6 +3,7 @@ title: "Rice Minimum Order Quantity: MOQ Guide for Importers"
 description: "Understand rice MOQ, container quantities, custom packaging limits, samples and how to plan a practical first import order."
 pubDate: 2026-08-19
 heroImage: "/images/blog/seo-cluster-2026/21-rice-moq-guide.webp"
+heroImageAlt: "Sample carton, rice bags and full pallet arranged to represent different order quantities"
 author: "Surya Foods Editorial"
 tags: ["Rice MOQ","Minimum Order Quantity","Bulk Rice Import","Rice Supplier India"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ A smart first order balances learning with shipping economics instead of chasing
 - A pilot may still save money by preventing a bad large order.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/21-rice-moq-guide.webp" alt="Sample carton, rice bags and full pallet arranged to represent different order quantities" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/21-rice-moq-guide.webp" alt="Sample carton, rice bags and full pallet arranged to represent different order quantities" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Rice Minimum Order Quantity: MOQ Guide for Importers. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

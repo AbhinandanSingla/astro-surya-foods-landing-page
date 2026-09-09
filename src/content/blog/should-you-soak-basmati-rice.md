@@ -3,6 +3,7 @@ title: "Should You Soak Basmati Rice? Timing and Benefits Explained"
 description: "Learn why Basmati rice is soaked, how long to soak different forms and how soaking affects cooking time, length and texture."
 pubDate: 2026-08-27
 heroImage: "/images/blog/seo-cluster-2026/13-soaking-basmati-rice.webp"
+heroImageAlt: "Basmati grains soaking in a clear glass bowl beside a dry rice sample and kitchen timer"
 author: "Surya Foods Editorial"
 tags: ["Soak Basmati Rice","Basmati Cooking Tips","Long Grain Rice","Biryani Preparation"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ It is useful, but not automatic. New-crop Raw rice and aged Sella rice may need 
 - Do not copy one time for every rice.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/13-soaking-basmati-rice.webp" alt="Basmati grains soaking in a clear glass bowl beside a dry rice sample and kitchen timer" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/13-soaking-basmati-rice.webp" alt="Basmati grains soaking in a clear glass bowl beside a dry rice sample and kitchen timer" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Should You Soak Basmati Rice? Timing and Benefits Explained. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

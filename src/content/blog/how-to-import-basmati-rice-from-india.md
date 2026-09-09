@@ -3,6 +3,7 @@ title: "How to Import Basmati Rice from India: Step-by-Step Guide"
 description: "A practical guide for importers covering supplier selection, rice specifications, samples, compliance, shipping and receiving."
 pubDate: 2026-08-23
 heroImage: "/images/blog/seo-cluster-2026/17-import-basmati-rice-from-india.webp"
+heroImageAlt: "International buyer and Indian rice supplier reviewing samples and shipment plans at an export office"
 author: "Surya Foods Editorial"
 tags: ["Import Basmati Rice from India","Indian Rice Exporter","Bulk Rice Supplier","Rice Import Guide"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ Rules vary by destination and change over time. Confirm current requirements wit
 - Use clear inspection and claim procedures.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/17-import-basmati-rice-from-india.webp" alt="International buyer and Indian rice supplier reviewing samples and shipment plans at an export office" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/17-import-basmati-rice-from-india.webp" alt="International buyer and Indian rice supplier reviewing samples and shipment plans at an export office" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: How to Import Basmati Rice from India: Step-by-Step Guide. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

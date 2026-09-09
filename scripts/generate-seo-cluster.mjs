@@ -642,6 +642,7 @@ title: "${a.title}"
 description: "${a.description}"
 pubDate: ${a.date}
 heroImage: "${imageDir}/${a.image}"
+heroImageAlt: "${a.alt}"
 author: "Surya Foods Editorial"
 tags: ${JSON.stringify(a.tags)}
 category: "${a.category}"
@@ -659,7 +660,7 @@ ${a.intro.join("\n\n")}
 ${a.points.map((point) => `- ${point}`).join("\n")}
 
 <figure class="my-8">
-  <img src="${secondaryImage}" alt="${related.alt}" loading="lazy" decoding="async" />
+  <img src="${secondaryImage}" alt="${related.alt}" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: ${related.title}. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

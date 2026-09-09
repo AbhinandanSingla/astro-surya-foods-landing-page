@@ -3,6 +3,7 @@ title: "How to Cook Fluffy, Non-Sticky Basmati Rice Every Time"
 description: "A beginner-friendly method for fluffy Basmati rice with separate grains, plus simple fixes for sticky, hard or broken rice."
 pubDate: 2026-08-26
 heroImage: "/images/blog/seo-cluster-2026/14-fluffy-non-sticky-basmati.webp"
+heroImageAlt: "Bowl of fluffy white Basmati rice with visibly long separate grains beside a cooking pot"
 author: "Surya Foods Editorial"
 tags: ["Fluffy Basmati Rice","Non Sticky Rice","Cook Basmati Rice","Rice Cooking Guide"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ This absorption method is designed for a normal household pot and can be adjuste
 - Rest ten minutes before opening.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/14-fluffy-non-sticky-basmati.webp" alt="Bowl of fluffy white Basmati rice with visibly long separate grains beside a cooking pot" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/14-fluffy-non-sticky-basmati.webp" alt="Bowl of fluffy white Basmati rice with visibly long separate grains beside a cooking pot" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: How to Cook Fluffy, Non-Sticky Basmati Rice Every Time. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

@@ -3,6 +3,7 @@ title: "1121 vs 1718 Basmati Rice: A Practical Buyer Comparison"
 description: "Compare 1121 and 1718 Basmati rice by grain shape, cooked elongation, aroma, processing form and best commercial use."
 pubDate: 2026-09-08
 heroImage: "/images/blog/seo-cluster-2026/01-1121-vs-1718-basmati.webp"
+heroImageAlt: "Four bowls comparing uncooked and cooked 1121 and 1718 Basmati rice samples"
 author: "Surya Foods Editorial"
 tags: ["1121 Basmati Rice","1718 Basmati Rice","Basmati Rice Comparison","Bulk Basmati Rice"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ Pusa Basmati 1718 was developed from the 1121 background with improved resistanc
 - Confirm purity, broken percentage, moisture and crop year in writing.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/01-1121-vs-1718-basmati.webp" alt="Four bowls comparing uncooked and cooked 1121 and 1718 Basmati rice samples" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/01-1121-vs-1718-basmati.webp" alt="Four bowls comparing uncooked and cooked 1121 and 1718 Basmati rice samples" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: 1121 vs 1718 Basmati Rice: A Practical Buyer Comparison. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

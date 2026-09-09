@@ -3,6 +3,7 @@ title: "Basmati Rice Water Ratio: Pot, Absorption and Rice Cooker"
 description: "Use practical starting water ratios for Basmati rice and learn how rinsing, soaking, ageing and processing change the result."
 pubDate: 2026-08-28
 heroImage: "/images/blog/seo-cluster-2026/12-basmati-rice-water-ratio.webp"
+heroImageAlt: "Measuring jug, cup of dry Basmati rice and covered pot arranged for water-ratio cooking"
 author: "Surya Foods Editorial"
 tags: ["Basmati Rice Water Ratio","How to Cook Basmati Rice","Rice Cooker Basmati","Fluffy Rice"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ Use a ratio as a starting point, then adjust one small step at a time.
 - Rest before fluffing.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/12-basmati-rice-water-ratio.webp" alt="Measuring jug, cup of dry Basmati rice and covered pot arranged for water-ratio cooking" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/12-basmati-rice-water-ratio.webp" alt="Measuring jug, cup of dry Basmati rice and covered pot arranged for water-ratio cooking" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Basmati Rice Water Ratio: Pot, Absorption and Rice Cooker. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

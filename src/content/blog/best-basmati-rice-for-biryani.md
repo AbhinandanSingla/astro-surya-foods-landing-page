@@ -3,6 +3,7 @@ title: "Best Basmati Rice for Biryani: Variety and Cooking Guide"
 description: "Choose the best Basmati rice for biryani by variety, processing, ageing, grain length, kitchen method and budget."
 pubDate: 2026-08-29
 heroImage: "/images/blog/seo-cluster-2026/11-best-basmati-rice-for-biryani.webp"
+heroImageAlt: "Finished biryani with separate extra-long Basmati grains in a dark serving pot"
 author: "Surya Foods Editorial"
 tags: ["Best Basmati Rice for Biryani","Biryani Rice","1121 Basmati","1509 Basmati"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ The best biryani rice must do more than look long in the bag. It should absorb f
 - Sella handles large batches well.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/11-best-basmati-rice-for-biryani.webp" alt="Finished biryani with separate extra-long Basmati grains in a dark serving pot" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/11-best-basmati-rice-for-biryani.webp" alt="Finished biryani with separate extra-long Basmati grains in a dark serving pot" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Best Basmati Rice for Biryani: Variety and Cooking Guide. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

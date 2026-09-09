@@ -3,6 +3,7 @@ title: "Rice Storage and Shelf Life: Guide for Homes and Warehouses"
 description: "Keep dry rice in good condition with practical guidance on moisture, temperature, pests, packaging, rotation and warning signs."
 pubDate: 2026-08-13
 heroImage: "/images/blog/seo-cluster-2026/27-rice-storage-shelf-life.webp"
+heroImageAlt: "Clean dry rice warehouse with sealed sacks on pallets and a humidity monitor"
 author: "Surya Foods Editorial"
 tags: ["Rice Storage","Rice Shelf Life","Basmati Rice Storage","Food Warehouse"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ Homes and warehouses use the same basic principles at different scales: protect,
 - Printed dates do not replace inspection.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/27-rice-storage-shelf-life.webp" alt="Clean dry rice warehouse with sealed sacks on pallets and a humidity monitor" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/27-rice-storage-shelf-life.webp" alt="Clean dry rice warehouse with sealed sacks on pallets and a humidity monitor" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Rice Storage and Shelf Life: Guide for Homes and Warehouses. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

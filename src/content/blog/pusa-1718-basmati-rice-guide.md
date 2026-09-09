@@ -3,6 +3,7 @@ title: "Pusa 1718 Basmati Rice: Grain, Cooking and Buying Guide"
 description: "A clear guide to Pusa 1718 Basmati rice, including its background, grain profile, cooking performance and bulk buying checks."
 pubDate: 2026-09-06
 heroImage: "/images/blog/seo-cluster-2026/03-pusa-1718-basmati-guide.webp"
+heroImageAlt: "Bowl of Pusa 1718 Basmati grains beside a cooked long-grain rice sample and paddy panicles"
 author: "Surya Foods Editorial"
 tags: ["Pusa 1718 Basmati Rice","1718 Steam Rice","1718 Sella Rice","Basmati Buyer Guide"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ A variety name, however, does not guarantee one fixed result. Crop year, field c
 - Lot approval remains essential.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/03-pusa-1718-basmati-guide.webp" alt="Bowl of Pusa 1718 Basmati grains beside a cooked long-grain rice sample and paddy panicles" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/03-pusa-1718-basmati-guide.webp" alt="Bowl of Pusa 1718 Basmati grains beside a cooked long-grain rice sample and paddy panicles" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Pusa 1718 Basmati Rice: Grain, Cooking and Buying Guide. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

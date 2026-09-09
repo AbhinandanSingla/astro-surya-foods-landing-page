@@ -3,6 +3,7 @@ title: "How to Start a Private-Label Rice Brand: Complete Guide"
 description: "Plan a private-label rice brand from market research and grain selection to packaging, compliance, production and launch."
 pubDate: 2026-08-20
 heroImage: "/images/blog/seo-cluster-2026/20-private-label-rice-packaging.webp"
+heroImageAlt: "Private-label rice packaging development table with blank pouches, sacks and grain samples"
 author: "Surya Foods Editorial"
 tags: ["Private Label Rice","Rice Brand","Custom Rice Packaging","Basmati Rice Supplier"]
 category: "Export Guide"
@@ -25,7 +26,7 @@ Starting with a clear market brief prevents costly packaging from being built ar
 - Pilot packs reveal real handling problems.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/20-private-label-rice-packaging.webp" alt="Private-label rice packaging development table with blank pouches, sacks and grain samples" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/20-private-label-rice-packaging.webp" alt="Private-label rice packaging development table with blank pouches, sacks and grain samples" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: How to Start a Private-Label Rice Brand: Complete Guide. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

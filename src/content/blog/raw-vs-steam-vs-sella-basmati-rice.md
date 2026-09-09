@@ -3,6 +3,7 @@ title: "Raw vs Steam vs Sella Basmati Rice: Complete Comparison"
 description: "Learn how Raw, Steam, White Sella and Golden Sella processing changes Basmati colour, texture, cooking and best use."
 pubDate: 2026-09-02
 heroImage: "/images/blog/seo-cluster-2026/07-raw-steam-sella-rice.webp"
+heroImageAlt: "Four bowls showing Raw, Steam, White Sella and Golden Sella rice processing forms"
 author: "Surya Foods Editorial"
 tags: ["Raw Basmati Rice","Steam Basmati Rice","Sella Basmati Rice","Golden Sella Rice"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ Understanding processing prevents unfair comparisons and helps buyers select ric
 - Cook every shortlisted form using its suitable method.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/07-raw-steam-sella-rice.webp" alt="Four bowls showing Raw, Steam, White Sella and Golden Sella rice processing forms" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/07-raw-steam-sella-rice.webp" alt="Four bowls showing Raw, Steam, White Sella and Golden Sella rice processing forms" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Raw vs Steam vs Sella Basmati Rice: Complete Comparison. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

@@ -3,6 +3,7 @@ title: "Top Markets Importing Indian Basmati Rice in 2025–26"
 description: "See the leading destinations for Indian Basmati rice and understand how product, packaging and compliance needs differ by market."
 pubDate: 2026-08-11
 heroImage: "/images/blog/seo-cluster-2026/29-top-basmati-import-markets.webp"
+heroImageAlt: "Rice sample, globe and global serving bowls overlooking an international container port"
 author: "Surya Foods Editorial"
 tags: ["Basmati Import Markets","Indian Basmati Export","Saudi Arabia Rice","UAE Rice Import"]
 category: "Industry Insights"
@@ -25,7 +26,7 @@ A destination's size does not mean every buyer wants the same grain or pack. Use
 - Local partners provide essential market knowledge.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/29-top-basmati-import-markets.webp" alt="Rice sample, globe and global serving bowls overlooking an international container port" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/29-top-basmati-import-markets.webp" alt="Rice sample, globe and global serving bowls overlooking an international container port" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Top Markets Importing Indian Basmati Rice in 2025–26. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

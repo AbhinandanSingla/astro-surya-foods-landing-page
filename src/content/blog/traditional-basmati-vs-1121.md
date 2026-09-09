@@ -3,6 +3,7 @@ title: "Traditional Basmati vs 1121: Aroma, Length and Best Uses"
 description: "Compare Traditional Basmati and Pusa 1121 by aroma, grain length, cooking style, market positioning and ideal dishes."
 pubDate: 2026-09-05
 heroImage: "/images/blog/seo-cluster-2026/04-traditional-vs-1121-basmati.webp"
+heroImageAlt: "Traditional woven rice basket and modern bowls comparing Traditional and 1121 Basmati rice"
 author: "Surya Foods Editorial"
 tags: ["Traditional Basmati","1121 Basmati","Aromatic Rice","Premium Basmati Rice"]
 category: "Rice Knowledge"
@@ -25,7 +26,7 @@ Neither is automatically better. The right choice depends on what the customer w
 - Purity and lot consistency should be verified.
 
 <figure class="my-8">
-  <img src="/images/blog/seo-cluster-2026/04-traditional-vs-1121-basmati.webp" alt="Traditional woven rice basket and modern bowls comparing Traditional and 1121 Basmati rice" loading="lazy" decoding="async" />
+  <img src="/images/blog/seo-cluster-2026/04-traditional-vs-1121-basmati.webp" alt="Traditional woven rice basket and modern bowls comparing Traditional and 1121 Basmati rice" width="1536" height="1024" loading="lazy" decoding="async" />
   <figcaption class="mt-3 text-center text-sm text-slate-500">Related visual: Traditional Basmati vs 1121: Aroma, Length and Best Uses. Editorial imagery; approve commercial rice against an actual representative sample.</figcaption>
 </figure>
 

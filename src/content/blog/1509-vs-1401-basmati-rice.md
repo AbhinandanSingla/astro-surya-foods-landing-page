@@ -2,7 +2,7 @@
 title: "1509 vs 1401 Basmati Rice: How to Tell the Difference"
 description: "Compare 1509 and 1401 Basmati rice by grain length, aroma, cooking performance, processing form, price positioning, and best use for bulk buyers."
 pubDate: 2026-09-09
-heroImage: "/images/rice-images/1509-steam-rice-1.png"
+heroImage: "/images/blog/1509-vs-1401/hero-1509-vs-1401.webp"
 author: "Surya Foods Editorial"
 tags: ["1509 Basmati Rice", "1401 Basmati Rice", "Basmati Rice Comparison", "Steam Basmati Rice", "Sella Basmati Rice", "Golden Sella Rice", "Indian Basmati Rice Exporter", "Bulk Rice Supplier"]
 category: "Rice Knowledge"
@@ -99,6 +99,11 @@ Do not judge 1401 by colour alone. Steam processing, parboiling, polishing and a
 ## The Most Important Difference: Variety vs Processing Method
 
 One of the most common sourcing mistakes is comparing **1509 Steam Basmati rice** with **1401 Sella Basmati rice** and assuming every visible difference comes from the seed variety. Processing can affect colour, hardness, cooking tolerance and aroma almost as much as the variety itself.
+
+<figure class="my-8">
+  <img src="/images/blog/1509-vs-1401/raw-steam-golden-sella.webp" alt="Three bowls comparing Raw, Steam and Golden Sella Basmati rice processing forms" loading="lazy" decoding="async" />
+  <figcaption class="mt-3 text-center text-sm text-slate-500">From left to right: an editorial comparison of Raw, Steam and Golden Sella Basmati. Processing changes colour, firmness and cooking behaviour, so compare matching forms.</figcaption>
+</figure>
 
 ### Raw Basmati rice
 

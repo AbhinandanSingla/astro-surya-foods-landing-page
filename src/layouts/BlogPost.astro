@@ -28,9 +28,10 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString("en-US", {
 });
 
 // Fetch all posts for the sidebar
-const allPosts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const allPosts = (await getCollection("blog"))
+  .filter((post) => post.data.title !== title)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
 
 // Estimate reading time from the slot content
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -145,8 +146,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             <ul class="space-y-4">
               {allPosts.map((p) => (
                 <li>
-                  <a href={`/blog/${p.id}`} class={`group flex flex-col gap-1 no-underline ${p.data.title === title ? 'pointer-events-none' : ''}`}>
-                    <span class={`text-sm font-semibold leading-snug transition-colors line-clamp-2 ${p.data.title === title ? 'text-forest-600' : 'text-slate-700 group-hover:text-forest-600'}`}>
+                  <a href={`/blog/${p.id}`} class="group flex flex-col gap-1 no-underline">
+                    <span class="text-sm font-semibold leading-snug text-slate-700 transition-colors line-clamp-2 group-hover:text-forest-600">
                       {p.data.title}
                     </span>
                     <span class="text-xs text-slate-400 font-medium">

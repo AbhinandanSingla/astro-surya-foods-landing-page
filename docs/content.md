@@ -14,7 +14,7 @@
 | **Industry** | Rice Manufacturing & Export |
 | **Headquarters** | Haryana, India (placeholder — update with actual city) |
 | **Annual Capacity** | 50,000+ MT |
-| **Export Countries** | 15+ |
+| **Export Countries** | 15+ (open to supply globally) |
 | **Recognition** | Internationally Certified Export House |
 | **Key Certifications** | ISO 22000:2018, FSSAI, APEDA, HACCP |
 
@@ -50,7 +50,7 @@
 > From the fertile fields of India to tables across the globe — Surya Foods delivers premium Basmati rice with uncompromising quality and trust.
 
 ### Company Elevator Pitch
-> Surya Foods is one of India's leading Basmati rice manufacturers and exporters, operating since 1999. With a state-of-the-art milling capacity of over 50,000 MT annually and exports to 15+ countries, we are a Internationally Certified Export House committed to delivering the finest grain, every time.
+> Surya Foods is one of India's leading Basmati rice manufacturers and exporters, operating since 1999. With a state-of-the-art milling capacity of over 50,000 MT annually and the capability to supply to 15+ countries, we are a Internationally Certified Export House committed to delivering the finest grain, every time.
 
 ---
 
@@ -74,7 +74,7 @@ The hero section uses the `HeroCarousel` component with 6 auto-advancing slides 
 | Stat | Value | Label |
 |---|---|---|
 | 1 | `25+` | Years of Legacy |
-| 2 | `15+` | Countries Served |
+| 2 | `15+` | Countries Ready to Supply |
 | 3 | `50,000+` | MT Annual Capacity |
 | 4 | `500+` | B2B Partners |
 
@@ -116,7 +116,7 @@ The hero section uses the `HeroCarousel` component with 6 auto-advancing slides 
 ### Hero Section
 - **Overline**: `INTERNATIONAL TRADE`
 - **Headline**: `Exporting India's Finest Basmati to the World`
-- **Subtitle**: `As a Internationally Certified Export House, we deliver premium Basmati rice to 15+ countries with unmatched consistency and compliance.`
+- **Subtitle**: `As a Internationally Certified Export House, we are ready to deliver premium Basmati rice to any country worldwide with unmatched consistency and compliance.`
 
 ### Export Overview
 
@@ -238,7 +238,7 @@ The hero section uses the `HeroCarousel` component with 6 auto-advancing slides 
 | Name | Designation | Role Tag | Bio |
 |---|---|---|---|
 | Mr. Kidarnath | Managing Director | Founder & Visionary | The patriarch who laid the foundation of the Singla family's rice legacy. His vision and decades of industry experience continue to guide Surya Foods' commitment to uncompromising quality. |
-| Mr. Raj Kumar Singla | Managing Director | Partner & Operations Head | Carrying forward the family legacy with modern expertise, Mr. Raj Kumar Singla drives Surya Foods' operations, export growth, and strategic partnerships across 25+ countries. |
+| Mr. Raj Kumar Singla | Managing Director | Partner & Operations Head | Carrying forward the family legacy with modern expertise, Mr. Raj Kumar Singla drives Surya Foods' operations, export growth, and strategic partnerships across 25+ countries worldwide. |
 
 ### Timeline
 
@@ -251,7 +251,7 @@ The hero section uses the `HeroCarousel` component with 6 auto-advancing slides 
 | 2015 | Export House Recognition | Recognized as an established export house under DGFT — a testament to our export excellence. |
 | 2018 | Capacity Expansion | Expanded milling capacity to 50,000+ MT annually with investment in state-of-the-art sortex, color sorting, and automated processing technology. |
 | 2021 | Launch of 048 Brand | Introduced "048" — our premium Basmati rice brand for Indian households and trade partners, now presented as a six-product collection. |
-| 2024 | 15+ Countries & Growing | Now exporting to over 15 countries across the Middle East, Africa, Europe, and Southeast Asia, with a growing network of international trade partners. |
+| 2024 | Global Reach & Growing | Now equipped to supply premium Basmati rice to markets across the Middle East, Africa, Europe, and Southeast Asia, with a growing network of international trade partners. |
 
 ### Our Process
 
@@ -287,7 +287,7 @@ The hero section uses the `HeroCarousel` component with 6 auto-advancing slides 
 ### Column 1: Company Description
 > **Surya Foods**
 >
-> A Internationally Certified Export House, milling premium Basmati rice since 1999. Trusted by partners in 15+ countries worldwide.
+> A Internationally Certified Export House, milling premium Basmati rice since 1999. Ready to partner with buyers across 15+ countries worldwide.
 
 ### Column 2: Quick Links
 - Home
@@ -344,7 +344,7 @@ The hero section uses the `HeroCarousel` component with 6 auto-advancing slides 
 | Social media URLs | Footer | Real social profiles |
 | ~~Unsplash image URLs~~ | ~~All pages~~ | ✅ Replaced with real Surya Foods rice photography in `/images/rice-images/` |
 | `500+` B2B Partners | Home stats | Real number |
-| `15+` Countries | Home stats, exports page | Real number |
+| `15+` Countries Ready | Home stats, exports page | Real number |
 | `50,000+` MT | Home stats, multiple pages | Real capacity number |
 
 ---

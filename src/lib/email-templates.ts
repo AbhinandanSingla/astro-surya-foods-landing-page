@@ -141,7 +141,7 @@ export function buildUserThankYouEmail(lead: LeadData): { subject: string; html:
         <ul style="color:#374151;font-size:14px;line-height:1.8;margin:0;padding-left:20px;">
           <li>Premium Basmati Rice — 1121, 1509, 1718, Pusa & Traditional varieties</li>
           <li>ISO 22000, FSSAI, HACCP & APEDA certified</li>
-          <li>Trusted export house serving 25+ countries</li>
+          <li>Trusted export house — ready to serve countries worldwide</li>
           <li>State-of-the-art milling with 50,000+ MT annual capacity</li>
           <li>Custom private labeling & packaging solutions</li>
         </ul>

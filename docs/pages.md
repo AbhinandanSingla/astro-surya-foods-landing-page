@@ -150,7 +150,7 @@ Both cards use hover effects: overlay darkens, text slides up slightly, subtle s
 **Content:**
 - Overline: `INTERNATIONAL TRADE`
 - H1: `Exporting India's Finest Basmati to the World`
-- Subtitle: `As a Internationally Certified Export House, we deliver premium Basmati rice to 15+ countries with unmatched consistency and compliance.`
+- Subtitle: `As a Internationally Certified Export House, we are ready to deliver premium Basmati rice to any country worldwide with unmatched consistency and compliance.`
 
 ### Section 2: Export Overview
 
@@ -354,7 +354,7 @@ Exact numerical specifications are intentionally excluded because crop, processi
 | Name | Designation | Role | Bio |
 |---|---|---|---|
 | `Mr. Kidarnath` | Managing Director | Founder & Visionary | The patriarch who laid the foundation of the Singla family's rice legacy. |
-| `Mr. Raj Kumar Singla` | Managing Director | Partner & Operations Head | Drives Surya Foods' operations, export growth, and strategic partnerships across 25+ countries. |
+| `Mr. Raj Kumar Singla` | Managing Director | Partner & Operations Head | Drives Surya Foods' operations, export growth, and strategic partnerships across 25+ countries worldwide. |
 
 **Notes:**
 - Currently uses monogram placeholders (KN, RS) — replace with real photos at `/images/gallery/kidarnath.jpg` and `/images/gallery/raj-kumar-singla.jpg`
@@ -392,7 +392,7 @@ Exact numerical specifications are intentionally excluded because crop, processi
 | `2016` | `FSSAI & ISO 22000 Certified` | Both certifications earned for food safety and quality management. |
 | `2018` | `Export House Recognition` | Recognized under DGFT and registered with APEDA. |
 | `2021` | `Launch of 048 Brand` | Premium Basmati rice brand for Indian households and trade partners, now presented as a six-product collection. |
-| `2024` | `25+ Countries & Growing` | Exporting to 25+ countries across the Middle East, Africa, Europe, and SE Asia. |
+| `2024` | `Global Reach & Growing` | Equipped to supply to 25+ countries across the Middle East, Africa, Europe, and SE Asia. |
 
 ### Section 3: Our Process
 

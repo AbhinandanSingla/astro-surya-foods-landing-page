@@ -223,6 +223,53 @@ The hero section uses the `HeroCarousel` component with 6 auto-advancing slides 
 
 ---
 
+## 5a. 48 Brand Page Content
+
+### Hero Section
+- **Overline**: `MARKET-TRUSTED BASMATI RICE BRAND`
+- **Headline**: `Trusted name. Five proven choices.`
+- **Subtitle**: `48 is Surya Foods' heritage Basmati rice brand — a name recognised in mandis and markets across North India for consistent quality and trade-friendly positioning.`
+- **CTAs**: `Explore the range` and `Become a distributor`
+
+### Five-Product Range
+| Product | Descriptor | Pack Color |
+|---|---|---|
+| GOLD | PREMIUM BASMATI | Vibrant Orange `#D4651A` |
+| SILVER | SELECT BASMATI | Royal Blue `#1E3A6E` |
+| DIAMOND | CLASSIC BASMATI | Deep Red `#8B1A1A` |
+| CRYSTAL | PURE BASMATI | Navy Purple `#2D2260` |
+| MINI GOLD | EVERYDAY BASMATI | Crimson Red `#A01C28` |
+
+### Brand Identity
+- 48 is Surya Foods' original market brand, built over years of consistent supply to wholesale mandis, retail shops and institutional buyers.
+- Each bag carries the iconic "48" mark with ornate decorative flourishes — a heritage design element that traders and families recognise instantly.
+- The brand uses the actual old rice bag photography alongside AI-generated studio product shots for a premium web presence.
+
+### Trade Positioning
+- India focus: wholesale mandis, kirana stores, general trade, institutional buyers, and regional distribution.
+- Target markets include Punjab, Haryana, Delhi NCR, Rajasthan, Uttar Pradesh, Gujarat, Maharashtra, Madhya Pradesh, Karnataka, Telangana, Tamil Nadu, and West Bengal.
+- Pack sizes are primarily 25 kg and 26 kg trade packs for wholesale distribution.
+
+### Data Source
+- **Constants file**: `src/consts/brand48.ts`
+- **Interface**: `Brand48Product` (mirrors `Brand048Product` structure)
+- **Landing page**: `src/pages/48-brand.astro`
+- **Detail page template**: `src/pages/48-brand/[slug].astro`
+- **Product images**: `public/images/Rice Bags/Old Rice Bags/` (original bag photos + AI-generated studio shots)
+- **Hero background**: `public/images/48-hero-bg.jpg`
+
+### Lead Form Section
+- **Headline**: `Become a 48 Distribution Partner`
+- **Form Type**: `brand`
+- **Audience**: Mandi traders, wholesale distributors, kirana networks, institutional buyers and bulk supply partners.
+
+### Product Detail Pages
+- Each of the five products has a dedicated page with grain profile, cooked result, ideal dishes, consumer fit and trade position.
+- Copy targets Indian wholesale buyers, mandi traders, distributors, kirana stores, institutional kitchens and catering businesses.
+- Product-specific forms send the selected 48 product as `productInterest`.
+
+---
+
 ## 6. Heritage & Quality Page Content
 
 ### Hero Section

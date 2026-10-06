@@ -14,7 +14,10 @@
 | Global Exports | `src/pages/global-exports.astro` | `/global-exports` | 70vh hero, transparent nav |
 | Private Labeling | `src/pages/private-labeling.astro` | `/private-labeling` | 70vh hero, transparent nav |
 | Certifications | `src/pages/certificates.astro` | `/certificates` | 70vh hero, transparent nav |
-| 048 Brand | `src/pages/048-brand.astro` | `/048-brand` | 70vh hero, transparent nav |
+| 048 Brand | `src/pages/048-brand.astro` | `/048-brand` | 88vh hero, transparent nav |
+| 048 Brand Detail (dynamic) | `src/pages/048-brand/[slug].astro` | `/048-brand/:slug` | 75vh hero, transparent nav |
+| 48 Brand | `src/pages/48-brand.astro` | `/48-brand` | 88vh hero, transparent nav |
+| 48 Brand Detail (dynamic) | `src/pages/48-brand/[slug].astro` | `/48-brand/:slug` | 75vh hero, transparent nav |
 | Our Heritage | `src/pages/heritage.astro` | `/heritage` | 70vh hero, transparent nav |
 | Milling & Infrastructure | `src/pages/infrastructure.astro` | `/infrastructure` | 60vh hero, transparent nav |
 | Quality Assurance | `src/pages/quality-control.astro` | `/quality-control` | 60vh hero, transparent nav |
@@ -23,7 +26,7 @@
 
 All pages use `MasterLayout` with `transparentNav={true}`.
 
-> **Dynamic Routes**: Product detail pages are generated at build time from `RICE_PRODUCTS` data in `consts.ts`. Adding a new product is as simple as adding an entry to that array — no new `.astro` file needed.
+> **Dynamic Routes**: Product detail pages are generated at build time from `RICE_PRODUCTS` data in `consts/products.ts`. Brand 048 detail pages use `BRAND_048_PRODUCTS` from `consts/brand048.ts`. Brand 48 detail pages use `BRAND_48_PRODUCTS` from `consts/brand48.ts`. Adding a new product or brand variant is as simple as adding an entry to the relevant array — no new `.astro` file needed.
 
 ---
 

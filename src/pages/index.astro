@@ -257,11 +257,11 @@ const allPosts = (await getCollection("blog"))
     <div class="container-custom">
       <SectionHeading
         overline="Partner With Us"
-        title="Two Powerful Avenues"
-        subtitle="Choose the partnership model that fits your business. Whether you operate globally or across India, we have the right program for you."
+        title="Three Powerful Avenues"
+        subtitle="Choose the partnership model that fits your business. Global exports, premium retail brands, or market-trusted wholesale brands — we have the right program for you."
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <!-- Card 1: Global Exports -->
         <a href="/global-exports" class="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline" data-animate>
           <img
@@ -298,13 +298,38 @@ const allPosts = (await getCollection("blog"))
           />
           <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/40 to-transparent group-hover:from-forest-950/95 transition-all duration-500"></div>
           <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400 mb-2">Domestic Retail</p>
+            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400 mb-2">Premium Retail</p>
             <h3 class="text-2xl md:text-3xl font-heading font-bold text-white mb-3">048 Premium Rice</h3>
             <p class="text-sm text-white/70 mb-4 max-w-sm">
               Our premium Basmati brand with six distinct choices for Indian households, distributors and global trade partners.
             </p>
             <span class="inline-flex items-center text-sm font-semibold text-gold-400 group-hover:gap-3 gap-2 transition-all duration-300">
               Discover 048 Brand
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Card 3: 48 Brand -->
+        <a href="/48-brand" class="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline" data-animate>
+          <img
+            src="/images/Rice Bags/Old Rice Bags/48-Gold.jpg"
+            alt="48 Basmati Rice Brand"
+            loading="lazy"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/40 to-transparent group-hover:from-forest-950/95 transition-all duration-500"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400 mb-2">Wholesale & Mandi</p>
+            <h3 class="text-2xl md:text-3xl font-heading font-bold text-white mb-3">48 Basmati Rice</h3>
+            <p class="text-sm text-white/70 mb-4 max-w-sm">
+              Our heritage brand trusted across mandis and wholesale markets — Gold, Silver, Diamond, Crystal and Mini Gold.
+            </p>
+            <span class="inline-flex items-center text-sm font-semibold text-gold-400 group-hover:gap-3 gap-2 transition-all duration-300">
+              Discover 48 Brand
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

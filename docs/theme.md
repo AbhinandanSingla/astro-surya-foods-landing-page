@@ -86,6 +86,16 @@ Standard grays for body text, borders, and subtle UI elements.
 | `--color-048-brown` | `#5C351B` | Dubar Delight |
 | `--color-048-teal` | `#205C66` | Mini Dubar Express |
 
+### 48 Product Range Colors
+
+| Token | Hex | Product |
+|---|---|---|
+| `--color-48-orange` | `#D4651A` | Gold |
+| `--color-48-blue` | `#1E3A6E` | Silver |
+| `--color-48-red` | `#8B1A1A` | Diamond |
+| `--color-48-navy` | `#2D2260` | Crystal |
+| `--color-48-crimson` | `#A01C28` | Mini Gold |
+
 ---
 
 ## 3. Typography
